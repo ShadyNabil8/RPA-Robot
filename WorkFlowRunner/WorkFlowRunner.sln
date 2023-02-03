@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkFlowRunner", "WorkFlowRunner\WorkFlowRunner.csproj", "{EAAB840E-F135-4597-A2D1-D57402F2EEBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAAB840E-F135-4597-A2D1-D57402F2EEBA}.Debug|x86.ActiveCfg = Debug|x86
+		{EAAB840E-F135-4597-A2D1-D57402F2EEBA}.Debug|x86.Build.0 = Debug|x86
+		{EAAB840E-F135-4597-A2D1-D57402F2EEBA}.Release|x86.ActiveCfg = Release|x86
+		{EAAB840E-F135-4597-A2D1-D57402F2EEBA}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F815E6C8-8EFA-423A-9223-F62F8A643E39}
+	EndGlobalSection
+EndGlobal
