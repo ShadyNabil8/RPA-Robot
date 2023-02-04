@@ -13,3 +13,9 @@ E:\CSE\4th comp\grad.Proj\robot\robot\obj\Debug\net6.0\refint\robot.dll
 E:\CSE\4th comp\grad.Proj\robot\robot\obj\Debug\net6.0\robot.pdb
 E:\CSE\4th comp\grad.Proj\robot\robot\obj\Debug\net6.0\robot.genruntimeconfig.cache
 E:\CSE\4th comp\grad.Proj\robot\robot\obj\Debug\net6.0\ref\robot.dll
+E:\CSE\4th comp\grad.Proj\robot\robot\bin\Debug\net6.0\log4net.dll
+E:\CSE\4th comp\grad.Proj\robot\robot\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+E:\CSE\4th comp\grad.Proj\robot\robot\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\CSE\4th comp\grad.Proj\robot\robot\bin\Debug\net6.0\System.Security.Permissions.dll
+E:\CSE\4th comp\grad.Proj\robot\robot\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\CSE\4th comp\grad.Proj\robot\robot\obj\Debug\net6.0\robot.csproj.CopyComplete
