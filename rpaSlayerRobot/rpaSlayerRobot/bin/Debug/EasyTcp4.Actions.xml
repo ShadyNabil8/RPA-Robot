@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EasyTcp4.Actions</name>
+    </assembly>
+    <members>
+        <member name="M:EasyTcp4.Actions.ActionsCore.Delegates.GetActionDelegateType(System.Reflection.MethodInfo)">
+            <summary>
+            Get delegate type for a specific action method
+            Return null when method isn't a valid action method.
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.ActionsCore.Delegates.ExecuteActionDelegate(System.Delegate,System.Object,EasyTcp4.Message)">
+            <summary>
+            Execute an action mehod
+            </summary>
+            <param name="d">valid action delegate</param>
+            <param name="sender">instance of an EasyTcpClient or EasyTcpServer</param>
+            <param name="message">received message</param>
+        </member>
+        <member name="F:EasyTcp4.Actions.ActionsCore.LoadedAction.ActionMethod">
+            <summary>
+            Valid action delegate
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Actions.ActionsCore.LoadedAction.Filters">
+            <summary>
+            Array with action filters
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.ActionsCore.LoadedAction.#ctor(System.Reflection.MethodInfo,System.Object)">
+            <summary>
+            Create new action
+            </summary>
+            <param name="actionMethod">valid action method</param>
+            <param name="classInstance">instance of the declaring class of the actionMethod, null when actionMethod is static</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.ActionsCore.LoadedAction.TryExecute(System.Object,EasyTcp4.Message,System.Func{EasyTcp4.Message,System.Boolean})">
+            <summary>
+            Trigger actionMethod
+            </summary>
+            <param name="sender">instance of an EasyTcpClient or EasyTcpServer</param>
+            <param name="message">received message</param>
+            <param name="interceptor">function that determines whether action should be executed</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.ActionsCore.LoadedAction.HasAccess(System.Object,EasyTcp4.Message)">
+            <summary>
+            Determines whether the remote host has access to this action based on the filter attributes
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.ActionsCore.ReflectionCore.GetActionsFromAssembly(System.Reflection.Assembly,System.String)">
+            <summary>
+            Get all methods with the action attribute from an assembly
+            </summary>
+            <param name="assembly">assembly with actions</param>
+            <param name="nameSpace">only load actions from a specific namespace</param>
+            <returns>all valid actions within an assembly</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.ActionsCore.ReflectionCore.IsValidAction(System.Reflection.MethodInfo)">
+            <summary>
+            Determines whether method is a valid action
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.ActionsCore.ReflectionCore.GetClassInstance(System.Reflection.MethodInfo,System.Collections.Generic.Dictionary{System.Type,System.Object})">
+            <summary>
+            Get a class instance for an action
+            New class instance is created when not available inside classInstances.
+            </summary>
+            <param name="method">valid action method</param>
+            <param name="classInstances">list with already initialized classes</param>
+            <returns>null if method is static, else instance of declaring class</returns>
+        </member>
+        <member name="T:EasyTcp4.Actions.EasyAction">
+            <summary>
+            Attribute for the actions, methods with this attribute will get detected as actions
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Actions.EasyAction.ActionCode">
+            <summary>
+            ActionCode of action, used to determine action method when receiving data
+            ActionCode must be unique
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyAction.#ctor(System.Int32)">
+            <summary></summary>
+            <param name="actionCode">action code</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyAction.#ctor(System.String)">
+            <summary>
+            Create action with a string as actionCode, string gets converted to an int with djb2a
+            </summary>
+            <param name="actionCode">action code as string</param>
+        </member>
+        <member name="F:EasyTcp4.Actions.EasyTcpActionClient.Actions">
+            <summary>
+            Dictionary with all loaded actions of client [action code, action method]
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Actions.EasyTcpActionClient.Interceptor">
+            <summary>
+            Function that determines whether an action should be executed
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.Actions.EasyTcpActionClient.OnUnknownAction">
+            <summary>
+            Event that is fired when an unknown action is received 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionClient.FireOnUnknownAction(EasyTcp4.Message)">
+            <summary>
+            Fire the OnUnknownAction event
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionClient.LoadActionsFromAssembly(System.Reflection.Assembly,System.String)">
+            <summary>
+            Load new actions from an assembly
+            </summary>
+            <param name="assembly">assembly with actions</param>
+            <param name="nameSpace">only load actions from a specific namespace</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionClient.#ctor(EasyTcp4.Protocols.IEasyProtocol,System.Reflection.Assembly,System.String)">
+            <summary>
+            Create new EasyTcpActionClient and load actions from (calling) assembly
+            </summary>
+            <param name="protocol"></param>
+            <param name="assembly">assembly with actions, calling assembly if null</param>
+            <param name="nameSpace">only load actions from a specific namespace</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionClient.ExecuteAction(EasyTcp4.Message)">
+            <summary>
+            Execute action
+            </summary>
+            <param name="message">message with an action code</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionClient.ExecuteAction(System.Int32,EasyTcp4.Message)">
+            <summary>
+            Execute action
+            </summary>
+            <param name="actionCode"></param>
+            <param name="message">message without action code</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionClient.ExecuteAction(System.String,EasyTcp4.Message)">
+            <summary>
+            Execute action
+            </summary>
+            <param name="actionCode"></param>
+            <param name="message">message without action code</param>
+        </member>
+        <member name="F:EasyTcp4.Actions.EasyTcpActionServer.Actions">
+            <summary>
+            Dictionary with all loaded actions of server [action code, action method]
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Actions.EasyTcpActionServer.Interceptor">
+            <summary>
+            Function that determines whether an action should be executed
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.Actions.EasyTcpActionServer.OnUnknownAction">
+            <summary>
+            Event that is fired when an unknown action is received 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionServer.FireOnUnknownAction(EasyTcp4.Message)">
+            <summary>
+            Fire the OnUnknownAction event
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionServer.LoadActionsFromAssembly(System.Reflection.Assembly,System.String)">
+            <summary>
+            Load new actions from an assembly
+            </summary>
+            <param name="assembly">assembly with actions</param>
+            <param name="nameSpace">only load actions from a specific namespace</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionServer.#ctor(EasyTcp4.Protocols.IEasyProtocol,System.Reflection.Assembly,System.String)">
+            <summary>
+            Create new EasyTcpActionServer and load actions from (calling) assembly
+            </summary>
+            <param name="protocol"></param>
+            <param name="assembly">assembly with actions, calling assembly if null</param>
+            <param name="nameSpace">only load actions from a specific namespace</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionServer.ExecuteAction(EasyTcp4.Message)">
+            <summary>
+            Execute action
+            </summary>
+            <param name="message">message with an action code</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionServer.ExecuteAction(System.Int32,EasyTcp4.Message)">
+            <summary>
+            Execute action
+            </summary>
+            <param name="actionCode"></param>
+            <param name="message">message without action code</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.EasyTcpActionServer.ExecuteAction(System.String,EasyTcp4.Message)">
+            <summary>
+            Execute action
+            </summary>
+            <param name="actionCode"></param>
+            <param name="message">message without action code</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.ActionCodeUtil.ToActionCode(System.String)">
+            <summary>
+            Convert string to actionCode with the djb2a algorithm
+            The djb2a algorithm can be found here: http://www.cse.yorku.ca/~oz/hash.html 
+            </summary>
+            <param name="str">action string</param>
+            <returns>hash of action string (action code)</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.ActionCodeUtil.IsEqualToAction(System.Int32,System.String)">
+            <summary>
+            Determines whether specified action string is equal to an action code
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.ActionCodeUtil.IsAction(EasyTcp4.Message,System.String)">
+            <summary>
+            Determines whether a message holds a specic action code
+            </summary>
+            <param name="message">message with actionCode</param>
+            <param name="str">action string</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.ActionMessageUtil.SetActionCode(EasyTcp4.Message,System.Int32)">
+            <summary>
+            Store the value of an action code inside a message
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.ActionMessageUtil.GetActionCode(EasyTcp4.Message)">
+            <summary>
+            Get action code from message 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.ActionMessageUtil.ConvertToActionMessage(EasyTcp4.Message)">
+            <summary>
+            Get action code from received message and set message attribute + remove action code from data
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.Async.SendActionAndGetReplyAsyncUtil.SendActionAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.Int32,System.Byte[],System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.Async.SendActionAndGetReplyAsyncUtil.SendActionAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.String,System.Byte[],System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns> 
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.Async.SendActionAndGetReplyAsyncUtil.SendActionAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.Int32,System.String,System.Nullable{System.TimeSpan},System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.Async.SendActionAndGetReplyAsyncUtil.SendActionAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.String,System.String,System.Nullable{System.TimeSpan},System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.Async.SendActionAndGetReplyAsyncUtil.SendActionAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.Int32,EasyTcp4.PacketUtils.IEasyPacket,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.Async.SendActionAndGetReplyAsyncUtil.SendActionAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.String,EasyTcp4.PacketUtils.IEasyPacket,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.Async.SendActionAndGetReplyAsyncUtil.SendActionAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.Int32,System.Object,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.Async.SendActionAndGetReplyAsyncUtil.SendActionAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.String,System.Object,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.EasyActionFilter.HasAccess(System.Object,EasyTcp4.Message)">
+            <summary>
+            Determines whether client has access to an action
+            Action call is aborted when function returns false.
+            </summary>
+            <param name="sender">EasyTcpActionServer/EasyTcpActionClient as sender</param>
+            <param name="message">received action message</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionAndGetReplyUtil.SendActionAndGetReply(EasyTcp4.EasyTcpClient,System.Int32,System.Byte[],System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns> 
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionAndGetReplyUtil.SendActionAndGetReply(EasyTcp4.EasyTcpClient,System.String,System.Byte[],System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns> 
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionAndGetReplyUtil.SendActionAndGetReply(EasyTcp4.EasyTcpClient,System.Int32,System.String,System.Nullable{System.TimeSpan},System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionAndGetReplyUtil.SendActionAndGetReply(EasyTcp4.EasyTcpClient,System.String,System.String,System.Nullable{System.TimeSpan},System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionAndGetReplyUtil.SendActionAndGetReply(EasyTcp4.EasyTcpClient,System.Int32,EasyTcp4.PacketUtils.IEasyPacket,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionAndGetReplyUtil.SendActionAndGetReply(EasyTcp4.EasyTcpClient,System.String,EasyTcp4.PacketUtils.IEasyPacket,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionAndGetReplyUtil.SendActionAndGetReply(EasyTcp4.EasyTcpClient,System.Int32,System.Object,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionAndGetReplyUtil.SendActionAndGetReply(EasyTcp4.EasyTcpClient,System.String,System.Object,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send action to remote host. Then wait and return the reply
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionUtil.SendAction(EasyTcp4.EasyTcpClient,System.Int32,System.Byte[],System.Boolean)">
+            <summary>
+            Send action to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionUtil.SendAction(EasyTcp4.EasyTcpClient,System.String,System.Byte[],System.Boolean)">
+            <summary>
+            Send action to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionUtil.SendAction(EasyTcp4.EasyTcpClient,System.Int32,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send action to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionUtil.SendAction(EasyTcp4.EasyTcpClient,System.String,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send action to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionUtil.SendAction(EasyTcp4.EasyTcpClient,System.Int32,EasyTcp4.PacketUtils.IEasyPacket,System.Boolean)">
+            <summary>
+            Send action to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionUtil.SendAction(EasyTcp4.EasyTcpClient,System.String,EasyTcp4.PacketUtils.IEasyPacket,System.Boolean)">
+            <summary>
+            Send action to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionUtil.SendAction(EasyTcp4.EasyTcpClient,System.Int32,System.Object,System.Boolean)">
+            <summary>
+            Send action to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendActionUtil.SendAction(EasyTcp4.EasyTcpClient,System.String,System.Object,System.Boolean)">
+            <summary>
+            Send action to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendAllActionUtil.SendAllAction(EasyTcp4.EasyTcpServer,System.Int32,System.Byte[],System.Boolean)">
+            <summary>
+            Send action to connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to connected clients</param>
+            <param name="compression">compress data using Deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendAllActionUtil.SendAllAction(EasyTcp4.EasyTcpServer,System.String,System.Byte[],System.Boolean)">
+            <summary>
+            Send action to connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to connected clients</param>
+            <param name="compression">compress data using Deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendAllActionUtil.SendAllAction(EasyTcp4.EasyTcpServer,System.Int32,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send action to connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to connected clients</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendAllActionUtil.SendAllAction(EasyTcp4.EasyTcpServer,System.String,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send action to connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to connected clients</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendAllActionUtil.SendAllAction(EasyTcp4.EasyTcpServer,System.Int32,EasyTcp4.PacketUtils.IEasyPacket,System.Boolean)">
+            <summary>
+            Send action to connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to connected clients</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendAllActionUtil.SendAllAction(EasyTcp4.EasyTcpServer,System.String,EasyTcp4.PacketUtils.IEasyPacket,System.Boolean)">
+            <summary>
+            Send action to connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to connected clients</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendAllActionUtil.SendAllAction(EasyTcp4.EasyTcpServer,System.Int32,System.Object,System.Boolean)">
+            <summary>
+            Send action to connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="action">action code</param>
+            <param name="data">data to send to connected clients</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.Actions.Utils.SendAllActionUtil.SendAllAction(EasyTcp4.EasyTcpServer,System.String,System.Object,System.Boolean)">
+            <summary>
+            Send action to connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="action">action code as string</param>
+            <param name="data">data to send to connected clients</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+    </members>
+</doc>

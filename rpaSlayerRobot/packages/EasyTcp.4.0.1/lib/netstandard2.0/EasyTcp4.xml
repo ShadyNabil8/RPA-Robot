@@ -1,0 +1,1111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EasyTcp4</name>
+    </assembly>
+    <members>
+        <member name="M:EasyTcp4.ClientUtils.ArrayUtil.SendArray(EasyTcp4.EasyTcpClient,System.Byte[],System.Boolean,System.Boolean)">
+            <summary>
+            Send array to the remote host
+            </summary>
+            <param name="client"></param>
+            <param name="array"></param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <param name="sendLengthPrefix">determines whether prefix with length of the data is send to the remote host</param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.ArrayUtil.ReceiveArray(EasyTcp4.Message,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Receive array from the remote host
+            Use this method only when not client is not listening for incoming messages (Inside OnReceive event handlers)
+            </summary>
+            <param name="message"></param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <param name="count">length of data, use prefix when 0</param>
+            <param name="bufferSize"></param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.ArrayAsyncUtil.SendArrayAsync(EasyTcp4.EasyTcpClient,System.Byte[],System.Boolean,System.Boolean)">
+            <summary>
+            Send array to the remote host
+            </summary>
+            <param name="client"></param>
+            <param name="array"></param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <param name="sendLengthPrefix">determines whether prefix with length of the data is send to the remote host</param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.ArrayAsyncUtil.ReceiveArrayAsync(EasyTcp4.Message,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Receive array from the remote host
+            Use this method only when not client is not listening for incoming messages (Inside OnReceive event handlers)
+            </summary>
+            <param name="message"></param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <param name="count">length of data, use prefix when 0</param>
+            <param name="bufferSize"></param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.ConnectAsyncUtil.ConnectAsync(EasyTcp4.EasyTcpClient,System.Net.EndPoint,System.Net.Sockets.Socket)">
+            <summary>
+            Establish connection with remote host
+            </summary>
+            <param name="client"></param>
+            <param name="endPoint">endPoint of remote host</param>
+            <param name="socket">base socket for EasyTcpClient, new one is created when null</param>
+            <returns>determines whether the client connected successfully</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.ConnectAsyncUtil.ConnectAsync(EasyTcp4.EasyTcpClient,System.Net.IPAddress,System.UInt16,System.Net.Sockets.Socket)">
+            <summary>
+            Establish connection with remote host
+            </summary>
+            <param name="client"></param>
+            <param name="ipAddress">ipAddress of remote host</param>
+            <param name="port">port of remote host</param>
+            <param name="socket">base socket for EasyTcpClient, new one is created when null</param>
+            <returns>determines whether the client connected successfully</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.ConnectAsyncUtil.ConnectAsync(EasyTcp4.EasyTcpClient,System.String,System.UInt16,System.Net.Sockets.Socket)">
+            <summary>
+            Establish connection with remote host
+            </summary>
+            <param name="client"></param>
+            <param name="ipAddress">ipAddress of remote host as string</param>
+            <param name="port">port of remote host</param>
+            <param name="socket">base socket for EasyTcpClient, new one is created when null</param>
+            <returns>determines whether the client connected successfully</returns>
+            <exception cref="T:System.ArgumentException">ipAddress is not a valid IPv4/IPv6 address</exception>
+        </member>
+        <member name="F:EasyTcp4.ClientUtils.Async.SendAndGetReplyAsyncUtil.DefaultTimeout">
+            <summary>
+            Default timeout when timeout parameter is not specified 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.SendAndGetReplyAsyncUtil.SendAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.Nullable{System.TimeSpan},System.Byte[][])">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.SendAndGetReplyAsyncUtil.SendAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.Byte[],System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.SendAndGetReplyAsyncUtil.SendAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.String,System.Nullable{System.TimeSpan},System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="encoding">encoding type (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received data or null</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.SendAndGetReplyAsyncUtil.SendAndGetReplyAsync(EasyTcp4.EasyTcpClient,EasyTcp4.PacketUtils.IEasyPacket,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received data or null</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.SendAndGetReplyAsyncUtil.SendAndGetReplyAsync(EasyTcp4.EasyTcpClient,System.Object,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received data or null</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.StreamAsyncUtil.SendStreamAsync(EasyTcp4.EasyTcpClient,System.IO.Stream,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Send stream to the remote host
+            </summary>
+            <param name="client"></param>
+            <param name="stream">input stream</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <param name="sendLengthPrefix">determines whether prefix with length of the data is send to the remote host</param>
+            <param name="bufferSize"></param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.Async.StreamAsyncUtil.ReceiveStreamAsync(EasyTcp4.Message,System.IO.Stream,System.Boolean,System.Int64,System.Int32)">
+            <summary>
+            Receive stream from the remote host
+            Use this method only when not client is not listening for incoming messages (Inside OnReceive event handlers)
+            </summary>
+            <param name="message"></param>
+            <param name="stream">output stream for receiving data</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <param name="count">length of receiving stream, use prefix when 0</param>
+            <param name="bufferSize"></param>
+        </member>
+        <member name="F:EasyTcp4.ClientUtils.ConnectUtil.DefaultTimeout">
+            <summary>
+            Default timeout when timeout parameter is not specified 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.ConnectUtil.Connect(EasyTcp4.EasyTcpClient,System.Net.EndPoint,System.Nullable{System.TimeSpan},System.Net.Sockets.Socket)">
+            <summary>
+            Establish connection with remote host
+            </summary>
+            <param name="client"></param>
+            <param name="endPoint">endPoint of remote host</param>
+            <param name="timeout">maximum time for connecting with remote host</param>
+            <param name="socket">base socket for EasyTcpClient, new one is created when null</param>
+            <returns>determines whether the client connected successfully</returns> 
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.ConnectUtil.Connect(EasyTcp4.EasyTcpClient,System.Net.IPAddress,System.UInt16,System.Nullable{System.TimeSpan},System.Net.Sockets.Socket)">
+            <summary>
+            Establish connection with remote host
+            </summary>
+            <param name="client"></param>
+            <param name="ipAddress">ipAddress of remote host</param>
+            <param name="port">port of remote host</param>
+            <param name="timeout">maximum time for connecting with remote host</param>
+            <param name="socket">base socket for EasyTcpClient, new one is created when null</param>
+            <returns>determines whether the client connected successfully</returns> 
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.ConnectUtil.Connect(EasyTcp4.EasyTcpClient,System.String,System.UInt16,System.Nullable{System.TimeSpan},System.Net.Sockets.Socket)">
+            <summary>
+            Establish connection with remote host
+            </summary>
+            <param name="client"></param>
+            <param name="ipAddress">ipAddress of remote host as string</param>
+            <param name="port">port of remote host</param>
+            <param name="timeout">maximum time for connecting with remote host</param>
+            <param name="socket">base socket for EasyTcpClient, new one is created when null</param>
+            <returns>determines whether the client connected successfully</returns>  
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.InformationUtil.IsConnected(EasyTcp4.EasyTcpClient,System.Boolean)">
+            <summary>
+            Determines whether client is still connected to the remote endpoint
+            </summary>
+            <param name="client"></param>
+            <param name="poll">use poll if set to true, more accurate but decreases performance</param>
+            <returns>determines whether the client is still connected</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.InformationUtil.GetEndPoint(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Get endpoint of client
+            </summary>
+            <param name="client"></param>s
+            <returns>endpoint of client</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.InformationUtil.GetIp(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Get ip of client
+            </summary>
+            <param name="client"></param>
+            <returns>ip of client</returns>
+        </member>
+        <member name="F:EasyTcp4.ClientUtils.SendAndGetReplyUtil.DefaultTimeout">
+            <summary>
+            Default timeout when timeout parameter is not specified 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendAndGetReplyUtil.SendAndGetReply(EasyTcp4.EasyTcpClient,System.Nullable{System.TimeSpan},System.Byte[][])">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendAndGetReplyUtil.SendAndGetReply(EasyTcp4.EasyTcpClient,System.Byte[],System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using Deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendAndGetReplyUtil.SendAndGetReply(EasyTcp4.EasyTcpClient,System.String,System.Nullable{System.TimeSpan},System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="encoding">encoding (default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendAndGetReplyUtil.SendAndGetReply(EasyTcp4.EasyTcpClient,EasyTcp4.PacketUtils.IEasyPacket,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendAndGetReplyUtil.SendAndGetReply(EasyTcp4.EasyTcpClient,System.Object,System.Nullable{System.TimeSpan},System.Boolean)">
+            <summary>
+            Send data to remote host. Then wait and return the reply 
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="timeout">maximum time to wait for a reply, return null when time expires</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <returns>received reply</returns>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendUtil.Send(EasyTcp4.EasyTcpClient,System.Byte[][])">
+            <summary>
+            Send data to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendUtil.Send(EasyTcp4.EasyTcpClient,System.Byte[],System.Boolean)">
+            <summary>
+            Send data to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendUtil.Send(EasyTcp4.EasyTcpClient,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send data to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="encoding">encoding type (Default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendUtil.Send(EasyTcp4.EasyTcpClient,EasyTcp4.PacketUtils.IEasyPacket,System.Boolean)">
+            <summary>
+            Send data to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.SendUtil.Send(EasyTcp4.EasyTcpClient,System.Object,System.Boolean)">
+            <summary>
+            Send data to remote host
+            </summary>
+            <param name="client"></param>
+            <param name="data">data to send to remote host</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.StreamUtil.SendStream(EasyTcp4.EasyTcpClient,System.IO.Stream,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Send stream to the remote host
+            </summary>
+            <param name="client"></param>
+            <param name="stream">input stream</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <param name="sendLengthPrefix">determines whether prefix with length of the data is send to the remote host</param>
+            <param name="bufferSize"></param>
+        </member>
+        <member name="M:EasyTcp4.ClientUtils.StreamUtil.ReceiveStream(EasyTcp4.Message,System.IO.Stream,System.Boolean,System.Int64,System.Int32)">
+            <summary>
+            Receive stream from the remote host
+            Use this method only when not client is not listening for incoming messages (Inside OnReceive event handlers)
+            </summary>
+            <param name="message"></param>
+            <param name="stream">output stream for receiving data</param>
+            <param name="compression">compress data using deflate if set to true</param>
+            <param name="count">length of receiving stream, use prefix when 0</param>
+            <param name="bufferSize"></param>
+        </member>
+        <member name="T:EasyTcp4.EasyTcpClient">
+            <summary>
+            Class with all EasyTcpClient properties and basic functions
+            See the "ClientUtils" folder for all the other functions.
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.EasyTcpClient.BaseSocket">
+            <summary>
+            BaseSocket of client
+            null if client isn't connected to remote host.
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.EasyTcpClient.Protocol">
+            <summary>
+            Protocol used for this connection
+            The used protocol determines the internal behavior of the client. 
+            The protocol can't be changed when connected. 
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.EasyTcpClient.Session">
+            <summary>
+            List with session variables
+            Available to store custom information.
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.EasyTcpClient.Serialize">
+            <summary>
+            Function used to serialize custom objects
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.EasyTcpClient.Deserialize">
+            <summary>
+            Function used to deserialize byte[] to custom objects
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpClient.OnConnect">
+            <summary>
+            Event that is fired when client connects to remote host 
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpClient.OnDisconnect">
+            <summary>
+            Event that is fired when client disconnects from remote host
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpClient.OnDataSend">
+            <summary>
+            Event that is fired when client sends any data to remote host
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpClient.OnDataReceive">
+            <summary>
+            Event that is fired when client receives data from remote host
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpClient.OnDataReceiveAsync">
+            <summary>
+            Async event that is fired when client receives data from remote host
+            </summary>
+        </member>
+        <member name="T:EasyTcp4.EasyTcpClient.OnDataReceiveAsyncDelegate">
+            <summary>
+            Delegate type for OnDataReceiveAsync
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpClient.OnError">
+            <summary>
+            Event that is fired when an (internal) error occurs
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpClient.FireOnConnect">
+            <summary>
+            Fire the OnConnect event
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpClient.FireOnDisconnect">
+            <summary>
+            Fire the OnDisconnect event
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpClient.FireOnDataSend(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Fire the OnDataSend event
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.EasyTcpClient.DataReceiveHandler">
+            <summary>
+            Execute custom action when receiving data 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpClient.FireOnDataReceiveEvent(EasyTcp4.Message)">
+            <summary>
+            Fire the OnDataReceive and OnDataReceiveAsync events
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpClient.ResetDataReceiveHandler">
+            <summary>
+            Set DataReceiveHandler back to default behavior (calling private function FireOnDataReceiveEvent)
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpClient.FireOnError(System.Exception)">
+            <summary>
+            Fire the OnError event,
+            throw error if event handler isn't used
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpClient.#ctor(EasyTcp4.Protocols.IEasyProtocol)">
+            <summary>
+            Construct new EasyTcpClient
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpClient.Dispose">
+            <summary>
+            Dispose and disconnect EasyTcpClient
+            </summary>
+        </member>
+        <member name="T:EasyTcp4.EasyTcpServer">
+            <summary>
+            Class with all EasyTcpServer properties and basic functions
+            See the "ServerUtils" folder for all the other functions.
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.EasyTcpServer.BaseSocket">
+            <summary>
+            BaseSocket of server 
+            null if server isn't running.
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.EasyTcpServer.Protocol">
+            <summary>
+            Protocol used for this server and all connected clients 
+            The used protocol determines the internal behavior of the server. 
+            The protocol can't be changed when the server is running. 
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.EasyTcpServer.Serialize">
+            <summary>
+            Function used to serialize custom objects
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.EasyTcpServer.Deserialize">
+            <summary>
+            Function used to deserialize byte[] to custom objects
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.EasyTcpServer.IsRunning">
+            <summary>
+            Determines whether the server is running
+            set to true when server is started, set to false before server is disposed
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.EasyTcpServer.UnsafeConnectedClients">
+            <summary>
+            Non-thread safe list with connected clients
+            Use with caution!
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.EasyTcpServer.ConnectedClientsCount">
+            <summary>
+            Number of connected clients
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpServer.GetConnectedClients">
+            <summary>
+            List with connected clients
+            </summary>
+            <returns>copy of UnsafeConnectedClients</returns>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpServer.OnConnect">
+            <summary>
+            Event that is fired when a client connects to the server
+            Dispose client to dismiss connection attempt.
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpServer.OnDisconnect">
+            <summary>
+            Event that is fired when a client disconnects from server
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpServer.OnDataSend">
+            <summary>
+            Event that is fired when server sends data to a client
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpServer.OnDataReceive">
+            <summary>
+            Event that is fired when server receives data from a client
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpServer.OnDataReceiveAsync">
+            <summary>
+            Async event that is fired when server receives data from a client 
+            </summary>
+        </member>
+        <member name="E:EasyTcp4.EasyTcpServer.OnError">
+            <summary>
+            Event that is fired when an (internal) error occurs within the server or a connected client
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpServer.FireOnConnect(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Fire the OnConnect event and add client to UnsafeConnectedClients
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpServer.FireOnDisconnect(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Fire the OnDisconnect event and remove client from UnsafeConnectedClients
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpServer.FireOnDataSend(EasyTcp4.Message)">
+            <summary>
+            Fire the OnDataSend event
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpServer.FireOnDataReceive(EasyTcp4.Message)">
+            <summary>
+            Fire the OnDataReceive event
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpServer.FireOnError(System.Exception)">
+            <summary>
+            Fire the OnError event,
+            throw error if event handler isn't used
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpServer.#ctor(EasyTcp4.Protocols.IEasyProtocol)">
+            <summary>
+            Construct new EasyTcpServer
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.EasyTcpServer.Dispose">
+            <summary>
+            Dispose and stop EasyTcpServer
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.LogUtils.LogUtil.UseLogging``1(``0,System.Action{System.String})">
+            <summary>
+            Enable logging
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.LogUtils.LogUtil.UseServerLogging``1(``0,System.Action{System.String})">
+            <summary>
+            Enable logging
+            </summary>
+        </member>
+        <member name="T:EasyTcp4.Message">
+            <summary>
+            Class that represents received data
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Message.Data">
+            <summary>
+            Received data
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Message.Client">
+            <summary>
+            Server: sender of message
+            Client: current client 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Message.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:EasyTcp4.Message.#ctor(System.Byte[],EasyTcp4.EasyTcpClient)">
+            <summary></summary>
+        </member>
+        <member name="P:EasyTcp4.Message.MetaData">
+            <summary>
+            List with MetaData of received message
+            Available to custom protocols to store information.
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Message.ToString(System.Text.Encoding)">
+            <summary>
+            Convert data to String
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Message.ToString">
+            <summary>
+            Convert data to string with UTF8
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Message.ToPacket``1">
+            <summary>
+            Convert data to custom IEasyTcpPacket 
+            </summary>
+            <returns>data as custom IEasyTcpPacket</returns>
+        </member>
+        <member name="M:EasyTcp4.Message.To``1">
+            <summary>
+            Deserialize data to custom object
+            </summary>
+            <returns>data as custom object</returns>
+        </member>
+        <member name="M:EasyTcp4.PacketUtils.CompressionUtil.Compress(System.Byte[])">
+            <summary>
+            Compress byte[] of data using deflate and add magic number
+            </summary>
+            <param name="data">uncompressed data</param>
+            <returns>magic number + compressed data</returns>
+        </member>
+        <member name="M:EasyTcp4.PacketUtils.CompressionUtil.Decompress(System.Byte[])">
+            <summary>
+            Decompress byte[] of data using deflate
+            </summary>
+            <param name="data">magic number + compressed data</param>
+            <returns>decompressed data</returns>
+        </member>
+        <member name="M:EasyTcp4.PacketUtils.CompressionUtil.IsCompressed(System.Byte[])">
+            <summary>
+            Determines whether the receive data is compressed with deflate by looking for the magic number
+            </summary>
+            <returns>true if compressed</returns>
+        </member>
+        <member name="M:EasyTcp4.PacketUtils.CompressionUtil.IsCompressed(EasyTcp4.PacketUtils.IEasyPacket)">
+            <summary>
+            Determines whether the receive data is compressed with deflate by looking for the magic number
+            </summary>
+            <returns>true if compressed</returns>
+        </member>
+        <member name="M:EasyTcp4.PacketUtils.CompressionUtil.Compress``1(``0)">
+            <summary>
+            Compress package if not already compressed
+            </summary>
+            <param name="packet">packet to compress</param>
+            <typeparam name="T">packet type</typeparam>
+            <returns>compressed package</returns>
+        </member>
+        <member name="M:EasyTcp4.PacketUtils.CompressionUtil.Decompress``1(``0)">
+            <summary>
+            Decompress package if data is compressed
+            </summary>
+            <param name="packet">compressed package</param>
+            <typeparam name="T">packet type</typeparam>
+            <returns>decompressed package</returns>
+        </member>
+        <member name="T:EasyTcp4.PacketUtils.IEasyPacket">
+            <summary>
+            Interface used by multiple EasyTcp functions,
+            implement when a class needs to be send over the network and standard serialization is too slow / not possible
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.PacketUtils.IEasyPacket.Data">
+            <summary>
+            get => return class as byte[]
+            set => create class from byte[]
+            </summary>
+        </member>
+        <member name="T:EasyTcp4.Protocols.IEasyProtocol">
+             <summary>
+             Template for EasyTcp protocols,
+             A protocol determines all behavior of an EasyTcpClient and EasyTcpServer
+             All protocol classes should implement IDisposable
+             See the implemented protocols inside the Tcp folder for examples
+            
+             Feel free to open a pull request for any implemented protocol
+             </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.IEasyProtocol.GetSocket(System.Net.Sockets.AddressFamily)">
+            <summary>
+            Get a new instance of a socket compatible with protocol 
+            Used by the Connect and Start utils
+            </summary>
+            <param name="addressFamily"></param>
+            <returns>new instance of a socket compatible with protocol</returns>
+        </member>
+        <member name="M:EasyTcp4.Protocols.IEasyProtocol.GetStream(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Get receiving/sending stream
+            Stream will not be disposed after use, reuse same stream and dispose stream in .Dispose function of protocol
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.IEasyProtocol.StartAcceptingClients(EasyTcp4.EasyTcpServer)">
+            <summary>
+            Start accepting new connections 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.IEasyProtocol.EnsureDataReceiverIsRunning(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Start or continue listerning for incoming data
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.IEasyProtocol.OnConnect(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Method that is triggered when client connected to remote endpoint 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.IEasyProtocol.OnConnectServer(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Method that is triggered when server acceptes a new client
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.IEasyProtocol.SendMessage(EasyTcp4.EasyTcpClient,System.Byte[][])">
+            <summary>
+            Send message to remote host
+            This method should trigger the OnDataSend event
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.IEasyProtocol.Clone">
+            <summary>
+            Return new instance of protocol
+            Used by the server to create copies of protocol for all connected clients.
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.ProtocolUtil.UseDelimiter``1(``0,System.String,System.Boolean,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Use the delimiter protocol 
+            </summary>
+            <param name="client"></param>
+            <param name="delimiter">sequence of bytes that determine the end of a message</param>
+            <param name="autoAddDelimiter">determines whether the delimiter gets automatically added to the end of a message</param>
+            <param name="autoRemoveDelimiter">determines whether the delimiter gets automatically removed from a received message</param>
+            <param name="encoding">encoding (default: UTF8)</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.ProtocolUtil.UseServerDelimiter``1(``0,System.String,System.Boolean,System.Boolean,System.Text.Encoding)">
+            <summary>
+            Use the delimiter protocol 
+            </summary>
+            <param name="server"></param>
+            <param name="delimiter">sequence of bytes that determine the end of a message</param>
+            <param name="autoAddDelimiter">determines whether the delimiter gets automatically added to the end of a message</param>
+            <param name="autoRemoveDelimiter">determines whether the delimiter gets automatically removed from a received message</param>
+            <param name="encoding">encoding (default: UTF8)</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.ProtocolUtil.UsePlainTcp``1(``0,System.Int32)">
+            <summary>
+            Use the plain tcp protocol
+            </summary>
+            <param name="client"></param>
+            <param name="bufferSize">size of the receive buffer, maximum size of a message</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.ProtocolUtil.UseServerPlainTcp``1(``0,System.Int32)">
+            <summary>
+            Use the plain tcp protocol
+            </summary>
+            <param name="server"></param>
+            <param name="bufferSize">size of the receive buffer, maximum size of a message</param>
+        </member>
+        <member name="T:EasyTcp4.Protocols.Tcp.DelimiterProtocol">
+            <summary>
+            Protocol that determines the end of a message based on a sequence of bytes at the end of the received data 
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.DelimiterProtocol.Delimiter">
+            <summary>
+            Sequence of bytes that determine the end of a message
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.DelimiterProtocol.AutoAddDelimiter">
+            <summary>
+            Determines whether the delimiter gets automatically added to the end of a message
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.DelimiterProtocol.AutoRemoveDelimiter">
+            <summary>
+            Determines whether the delimiter gets automatically removed from a received message 
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.DelimiterProtocol.ReceivedBytes">
+            <summary>
+            List with received bytes
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Protocols.Tcp.DelimiterProtocol.BufferSize">
+            <summary>
+            BufferSize, always 1 byte
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.DelimiterProtocol.#ctor(System.Byte[],System.Boolean,System.Boolean)">
+            <summary></summary>
+            <param name="delimiter">sequence of bytes that determine the end of a message</param>
+            <param name="autoAddDelimiter">determines whether the delimiter gets automatically added to the end of a message</param>
+            <param name="autoRemoveDelimiter">determines whether the delimiter gets automatically removed from a received message</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.DelimiterProtocol.#ctor(System.String,System.Boolean,System.Boolean,System.Text.Encoding)">
+            <summary></summary>
+            <param name="delimiter">sequence of bytes that determine the end of a message</param>
+            <param name="autoAddDelimiter">determines whether the delimiter gets automatically added to the end of a message</param>
+            <param name="autoRemoveDelimiter">determines whether the delimiter gets automatically removed from a received message</param>
+            <param name="encoding">encoding (default: UTF8)</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.DelimiterProtocol.SendMessage(EasyTcp4.EasyTcpClient,System.Byte[][])">
+            <summary>
+            Send message to remote host
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.DelimiterProtocol.OnDataReceive(System.Byte[],System.Int32,EasyTcp4.EasyTcpClient)">
+            <summary>
+            Handle received data, this function should trigger the OnDataReceive event of the passed client
+            </summary>
+            <param name="data">received data</param>
+            <param name="receivedBytes">amount of received bytes</param>
+            <param name="client">client that received the data</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.DelimiterProtocol.Clone">
+            <summary>
+            Return new instance of protocol
+            </summary>
+        </member>
+        <member name="T:EasyTcp4.Protocols.Tcp.PlainTcpProtocol">
+            <summary>
+            Protocol that doesn't implements any framing
+            Useful when communicating with an already existing tcp server/client
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.PlainTcpProtocol.DefaultBufferSize">
+            <summary>
+            Default bufferSize when not specified
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Protocols.Tcp.PlainTcpProtocol.BufferSize">
+            <summary>
+            Size of the receive buffer 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.PlainTcpProtocol.#ctor(System.Int32)">
+            <summary></summary>
+            <param name="bufferSize">size of the receive buffer, maximum size of a message</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.PlainTcpProtocol.SendMessage(EasyTcp4.EasyTcpClient,System.Byte[][])">
+            <summary>
+            Send message to remote host
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.PlainTcpProtocol.OnDataReceive(System.Byte[],System.Int32,EasyTcp4.EasyTcpClient)">
+            <summary>
+            Handle received data, this function should trigger the OnDataReceive event of the passed client
+            </summary>
+            <param name="data">received data</param>
+            <param name="receivedBytes">amount of received bytes</param>
+            <param name="client">client that received the data</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.PlainTcpProtocol.Clone">
+            <summary>
+            Return new instance of protocol 
+            </summary>
+        </member>
+        <member name="T:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol">
+            <summary>
+            Protocol that determines the length of a message based on a small header
+            Header is an int as byte[] with the length of the message.
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.BufferSize">
+            <summary>
+            Size of the receive buffer 
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.BufferOffset">
+            <summary>
+            Offset of the receive buffer, where to start saving the received data
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.BufferCount">
+            <summary>
+            The maximum amount of bytes to receive in the receive buffer
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.ReceivedHeader">
+            <summary>
+            Determines whether the header for the message is received 
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.MaxMessageLength">
+            <summary>
+            Maximimum amount of bytes for one message
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.#ctor(System.Int32)">
+            <summary></summary>
+            <param name="maxMessageLength">maximimum amount of bytes for one message</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.SendMessage(EasyTcp4.EasyTcpClient,System.Byte[][])">
+            <summary>
+            Send message to remote host
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.OnDataReceive(System.Byte[],System.Int32,EasyTcp4.EasyTcpClient)">
+            <summary>
+            Handle received data, this function should trigger the OnDataReceive event of the passed client
+            </summary>
+            <param name="data">received data</param>
+            <param name="receivedBytes">amount of received bytes</param>
+            <param name="client">client that received the data</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.PrefixLengthProtocol.Clone">
+            <summary>
+            Return new instance of protocol 
+            </summary>
+            <returns>new object</returns>
+        </member>
+        <member name="T:EasyTcp4.Protocols.Tcp.TcpProtocol">
+            <summary>
+            Abstract implementation of the tcp protocol
+            Base class of the other tcp protocols
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.TcpProtocol.ReceiveBuffer">
+            <summary>
+            AsyncEventArgs used to receive new data
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.TcpProtocol.AcceptArgs">
+            <summary>
+            AsyncEventArgs used to accept new connections (null for clients)
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.TcpProtocol.IsListening">
+            <summary>
+            Determines whether client is listening for data
+            </summary>
+        </member>
+        <member name="F:EasyTcp4.Protocols.Tcp.TcpProtocol.NetworkStream">
+            <summary>
+            NetworkStream used by getStream()
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.GetSocket(System.Net.Sockets.AddressFamily)">
+            <summary>
+            Get a new instance of a socket compatible with protocol 
+            Used by the Connect and Start utils
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.GetStream(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Get receiving/sending stream
+            Stream will not be disposed after use, reuse same stream and dispose stream in .Dispose function of protocol
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.StartAcceptingClients(EasyTcp4.EasyTcpServer)">
+            <summary>
+            Start accepting new connections 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.EnsureDataReceiverIsRunning(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Start or continue listerning for incoming data
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.OnConnect(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Method that is triggered when client connected to remote endpoint 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.OnConnectServer(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Method that is triggered when server acceptes a new client
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.Dispose">
+            <summary>
+            Dispose protocol, automatically called by client.Dispose and server.Dispose 
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Protocols.Tcp.TcpProtocol.BufferSize">
+            <summary>
+            Size of the receive buffer 
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Protocols.Tcp.TcpProtocol.BufferOffset">
+            <summary>
+            Offset of the receive buffer, where to start saving the received data
+            Default is offset is 0
+            </summary>
+        </member>
+        <member name="P:EasyTcp4.Protocols.Tcp.TcpProtocol.BufferCount">
+            <summary>
+            The maximum amount of bytes to receive in the receive buffer
+            Default count is the bufferSize - BufferOffset
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.SendMessage(EasyTcp4.EasyTcpClient,System.Byte[][])">
+            <summary>
+            Send message to remote host
+            This method should trigger the OnDataSend event
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.OnDataReceive(System.Byte[],System.Int32,EasyTcp4.EasyTcpClient)">
+            <summary>
+            Handle received data, this function should trigger the OnDataReceive event of the passed client
+            </summary>
+            <param name="data">received data</param>
+            <param name="receivedBytes">amount of received bytes</param>
+            <param name="client">client that received the data</param>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.Clone">
+            <summary>
+            Return new instance of protocol
+            Used by the server to create copies of protocol for all connected clients.
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.HandleDisconnect(EasyTcp4.EasyTcpClient)">
+            <summary>
+            Process a disconnected client 
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.OnConnectCallback(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Callback method that accepts new tcp connections
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.Protocols.Tcp.TcpProtocol.OnReceiveCallback(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            Callback method that handles receiving data and disconnects
+            </summary>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.SendAllUtil.SendAll(EasyTcp4.EasyTcpServer,System.Byte[][])">
+            <summary>
+            Send data to all connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="dataArray">data to send to connected clients</param>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.SendAllUtil.SendAll(EasyTcp4.EasyTcpServer,System.Byte[],System.Boolean)">
+            <summary>
+            Send data to all connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="data">data to send to the connected clients</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.SendAllUtil.SendAll(EasyTcp4.EasyTcpServer,System.String,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Send data to all connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="data">data to send to the connected clients</param>
+            <param name="encoding">encoding type (Default: UTF8)</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.SendAllUtil.SendAll(EasyTcp4.EasyTcpServer,EasyTcp4.PacketUtils.IEasyPacket,System.Boolean)">
+            <summary>
+            Send data to all connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="data">data to send to the connected clients</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.SendAllUtil.SendAll(EasyTcp4.EasyTcpServer,System.Object,System.Boolean)">
+            <summary>
+            Send data to all connected clients
+            </summary>
+            <param name="server"></param>
+            <param name="data">data to send to the connected clients</param>
+            <param name="compression">compress data using deflate if set to true</param>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.StartUtil.Start``1(``0,System.Net.IPEndPoint,System.Boolean,System.Net.Sockets.Socket)">
+            <summary>
+            Start server and start listening for new connections
+            </summary>
+            <param name="server"></param>
+            <param name="endPoint">server endpoint</param>
+            <param name="dualMode">determines whether the server is started in dual-mode (IPv4 and IPv6)</param>
+            <param name="socket">baseSocket for EasyTcpServer, new one is create when null</param>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.StartUtil.Start``1(``0,System.Net.IPAddress,System.UInt16,System.Boolean,System.Net.Sockets.Socket)">
+            <summary>
+            Start server and start listening for new connections
+            </summary>
+            <param name="server"></param>
+            <param name="ipAddress"></param>
+            <param name="port"></param>
+            <param name="dualMode">determines if the socket is a dual-mode socket (IPv4 and IPv6)</param>
+            <param name="socket">baseSocket for EasyTcpServer, new one is create when null</param>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.StartUtil.Start``1(``0,System.String,System.UInt16,System.Boolean,System.Net.Sockets.Socket)">
+            <summary>
+            Start server and start listening for new connections
+            </summary>
+            <param name="server"></param>
+            <param name="ipAddress">ipAddress as string</param>
+            <param name="port"></param>
+            <param name="dualMode">determines if the socket is a dual-mode socket (IPv4 and IPv6)</param>
+            <param name="socket">baseSocket for EasyTcpServer, new one is create when null</param>
+        </member>
+        <member name="M:EasyTcp4.ServerUtils.StartUtil.Start``1(``0,System.UInt16,System.Net.Sockets.Socket)">
+            <summary>
+            Start server and start listening for new connections on 0.0.0.0
+            </summary>
+            <param name="server"></param>
+            <param name="port"></param>
+            <param name="socket">baseSocket for EasyTcpServer, new one is create when null</param>
+        </member>
+    </members>
+</doc>
