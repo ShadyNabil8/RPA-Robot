@@ -6,26 +6,23 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using Serilog;
 
 namespace rpaSlayerRobot
 {
     internal class TcpSocket
     {
         
-        const int port = 9000;
+        const int RobotListiningPort = 9000;
         
-        public static void StartServer()
+        public void StartServer()
         {
             // Get Host IP Address that is used to establish a connection
             // In this case, we get one IP address of localhost that is IP : 127.0.0.1
             // If a host has multiple addresses, you will get a list of addresses
             IPHostEntry host = Dns.GetHostEntry("localhost");
             IPAddress ipAddress = host.AddressList[0];
-            IPEndPoint localEndPoint = new IPEndPoint(ipAddress, port);
-            
-
-            // create an instance of the logger
-
+            IPEndPoint localEndPoint = new IPEndPoint(ipAddress, RobotListiningPort);
 
             try
             {
@@ -42,11 +39,13 @@ namespace rpaSlayerRobot
                 while (true)
                 {
                     // waiting for a call
+                    Log.Information("Robot listing in port {0}", RobotListiningPort);
                     Socket handler = listener.Accept();
-                    
+                    Log.Information("Robot is connected with the service");
+
 
                     // Use a different thread for each client
-                   
+
 
                     // Incoming data from the client.
                     string data = null;
@@ -62,6 +61,7 @@ namespace rpaSlayerRobot
                         if (data.Equals("Run Xaml"))
                         {
                             Handler.RunWorkFlow();
+                            Log.Information("WF is executed");
                             break;
                         }
                         else
@@ -78,6 +78,7 @@ namespace rpaSlayerRobot
                     //handler.Send(msg);
                     handler.Shutdown(SocketShutdown.Both);
                     handler.Close();
+                    Log.Information("Connection off");
 
 
                     if (TerminationFlag)
@@ -88,7 +89,7 @@ namespace rpaSlayerRobot
             }
             catch (Exception e)
             {
-                // log here
+                Log.Information("Cannot initiate the TCP connection");
             }
 
         }

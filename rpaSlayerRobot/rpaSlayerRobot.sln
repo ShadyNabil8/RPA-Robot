@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rpaSlayerRobot", "rpaSlayerRobot\rpaSlayerRobot.csproj", "{97020B80-A8CA-4DC9-9AEE-4E7C9F406C9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotService", "RobotService\RobotService.csproj", "{4EAEE94F-EC8B-4FCA-BCAF-A722206D5926}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{97020B80-A8CA-4DC9-9AEE-4E7C9F406C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97020B80-A8CA-4DC9-9AEE-4E7C9F406C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97020B80-A8CA-4DC9-9AEE-4E7C9F406C9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EAEE94F-EC8B-4FCA-BCAF-A722206D5926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EAEE94F-EC8B-4FCA-BCAF-A722206D5926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EAEE94F-EC8B-4FCA-BCAF-A722206D5926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EAEE94F-EC8B-4FCA-BCAF-A722206D5926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
