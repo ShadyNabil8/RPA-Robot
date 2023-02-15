@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace rpaSlayerRobot
 {
     public partial class rpaSlayerRobotForm : Form
     {
+        private TcpSocket ServiceConnection;
+
         public rpaSlayerRobotForm()
         {
             InitializeComponent();
@@ -25,15 +28,22 @@ namespace rpaSlayerRobot
             notifyIcon1.Text = "rpaSlayerRobot";
 
 
-            //Add log configuration here
+            //Add log configuration 
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.File(@"D:\New folder\CSE\grad.Proj\logs\RobotLog.log")
+                .CreateLogger();
+
+            ServiceConnection=new TcpSocket();
+
         }
 
         private void tcpWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            TcpSocket.StartServer();
+            ServiceConnection.StartServer();
+            Log.Information("Robot start listining");
         }
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -45,7 +55,7 @@ namespace rpaSlayerRobot
             else
             {
                 tcpWorker.RunWorkerAsync();
-                
+
             }
         }
 
