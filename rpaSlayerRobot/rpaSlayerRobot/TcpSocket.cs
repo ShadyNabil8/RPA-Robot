@@ -12,9 +12,12 @@ namespace rpaSlayerRobot
 {
     internal class TcpSocket
     {
-        
-        const int RobotListiningPort = 9000;
-        
+        public static IPHostEntry host = Dns.GetHostEntry("localhost");
+        public IPAddress ServiceListeningIP = host.AddressList[0];
+        public IPAddress RobotListeningIP   = host.AddressList[1];
+        public Socket RobotListener;
+        public Socket RobotClient;
+        /*
         public void StartServer()
         {
             // Get Host IP Address that is used to establish a connection
@@ -92,7 +95,34 @@ namespace rpaSlayerRobot
                 Log.Information("Cannot initiate the TCP connection");
             }
 
+        }*/
+        public void ReciveByTCP(IPAddress IP, int Port)
+        {
+            RobotListener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint remoteEB = new IPEndPoint(IP, Port);
+            RobotListener.Bind(remoteEB);
+            RobotListener.Listen(1);
+        }
+        public void SendByTCP(IPAddress IP, int Port, String data)
+        {
+            RobotClient = new Socket(IP.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            IPEndPoint remoteEB = new IPEndPoint(IP, Port);
+            byte[] msg = Encoding.ASCII.GetBytes(data);
+            try
+            {
+                RobotClient.Connect(remoteEB);
+                Log.Information("ROBOT CONNECTED TO SERVICE AS CLIENT");
+                int bytesSent = RobotClient.Send(msg);
+                RobotClient.Shutdown(SocketShutdown.Both);
+                RobotClient.Close();
+            }
+            catch 
+            {
+                throw new SocketException();
+                            
+            }
         }
 
     }
+
 }

@@ -17,7 +17,7 @@ namespace rpaService
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new RpaRobot()
+                new rpaService()
             };
             ServiceBase.Run(ServicesToRun);
         }

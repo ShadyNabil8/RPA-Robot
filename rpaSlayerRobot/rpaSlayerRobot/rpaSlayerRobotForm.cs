@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +15,7 @@ namespace rpaSlayerRobot
 {
     public partial class rpaSlayerRobotForm : Form
     {
-        private TcpSocket ServiceConnection;
+        private TcpSocket service;
 
         public rpaSlayerRobotForm()
         {
@@ -33,14 +35,49 @@ namespace rpaSlayerRobot
                 .WriteTo.File(@"D:\New folder\CSE\grad.Proj\logs\RobotLog.log")
                 .CreateLogger();
 
-            ServiceConnection=new TcpSocket();
+            service=new TcpSocket();
 
         }
 
         private void tcpWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            ServiceConnection.StartServer();
-            Log.Information("Robot start listining");
+            try
+            {
+                service.ReciveByTCP(service.RobotListeningIP, 9001);
+                Log.Information("ROBOT IS READY TO LISTEN FROM SERVICE!");
+                while (true)
+                {
+                    Log.Information("ROBOT IS LISTENING FROM SERVICE!");
+                    Socket handler = service.RobotListener.Accept();
+                    Log.Information("CONNEDTED TO SERVICE!");
+                    try
+                    {
+                        byte[] buffer = new byte[255];
+                        int rec = handler.Receive(buffer);
+                        if (rec > 0)
+                        {
+                            Array.Resize(ref buffer, rec);
+                            Log.Information("ROBOT RECEIVED : " + Encoding.ASCII.GetString(buffer, 0, rec));
+                        }
+                        else
+                        {
+                            throw new SocketException();
+                        }
+                    }
+                    catch
+                    {
+                        Log.Error("CONNECTION WITH SERVICE FAILED");
+                    }
+
+                    handler.Shutdown(SocketShutdown.Both);
+                    handler.Close();
+                }
+            }
+            catch
+            {
+                Log.Error("ROBOT CANNOT CONNECT TO SERVICE");
+            }
+
         }
 
 
@@ -87,6 +124,12 @@ namespace rpaSlayerRobot
                 notifyIcon1.Visible = false;
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TcpSocket Service = new TcpSocket();
+            Service.SendByTCP(Service.ServiceListeningIP, 9000, "I AM ROBOT");
         }
     }
 }

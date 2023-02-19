@@ -1,6 +1,6 @@
 ﻿namespace rpaService
 {
-    partial class RpaRobot
+    partial class rpaService
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            // 
+            // rpaService
+            // 
             this.ServiceName = "Service1";
+
         }
 
         #endregion

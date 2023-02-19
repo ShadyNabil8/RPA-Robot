@@ -61,7 +61,7 @@
     <Compile Include="ProjectInstaller.Designer.cs">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
-    <Compile Include="RobotConnection.cs" />
+    <Compile Include="TcpSocket.cs" />
     <Compile Include="RpaRobot.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -78,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RpaRobot.resx">
+      <DependentUpon>RpaRobot.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
