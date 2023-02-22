@@ -60,6 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsynchronousClient.cs" />
+    <Compile Include="AsynchronousSocketListener .cs" />
     <Compile Include="Handler.cs" />
     <Compile Include="rpaSlayerRobotForm.cs">
       <SubType>Form</SubType>
@@ -69,7 +71,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TcpSocket.cs" />
+    <Compile Include="StateObject.cs" />
     <EmbeddedResource Include="rpaSlayerRobotForm.resx">
       <DependentUpon>rpaSlayerRobotForm.cs</DependentUpon>
     </EmbeddedResource>

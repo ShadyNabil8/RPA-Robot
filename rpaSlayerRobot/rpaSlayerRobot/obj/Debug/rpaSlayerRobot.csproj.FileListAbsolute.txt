@@ -1,0 +1,17 @@
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\bin\Debug\rpaSlayerRobot.exe.config
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\bin\Debug\rpaSlayerRobot.exe
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\bin\Debug\rpaSlayerRobot.pdb
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\bin\Debug\Serilog.dll
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\bin\Debug\Serilog.Sinks.File.dll
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\bin\Debug\Serilog.xml
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\bin\Debug\Serilog.Sinks.File.pdb
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\bin\Debug\Serilog.Sinks.File.xml
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.csproj.AssemblyReference.cache
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.csproj.SuggestedBindingRedirects.cache
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.rpaSlayerRobotForm.resources
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.Properties.Resources.resources
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.csproj.GenerateResource.cache
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.csproj.CoreCompileInputs.cache
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.csproj.CopyComplete
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.exe
+D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\obj\Debug\rpaSlayerRobot.pdb

@@ -1,0 +1,2060 @@
+2023-02-22 01:44:54.638 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:44:54.648 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:44:54.652 +02:00 [ERR] hhhhhhhhhhhhhhhhhhhhhhhhhh
+2023-02-22 01:44:54.652 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 01:44:54.652 +02:00 [ERR] hhhhhhhhhhhhhhhhhhhhhhhhhh
+2023-02-22 01:44:54.652 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 01:44:54.652 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:45:01.989 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:45:01.989 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:45:01.989 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:45:02.000 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 146
+2023-02-22 01:45:02.000 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 01:45:21.821 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:45:21.822 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 146
+2023-02-22 01:45:21.822 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 01:45:21.822 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 194
+2023-02-22 01:45:21.837 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 01:45:24.086 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:45:24.086 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:45:24.086 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:45:24.086 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 146
+2023-02-22 01:45:24.086 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 01:45:24.771 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:45:24.771 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:45:24.771 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:45:24.772 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 146
+2023-02-22 01:45:24.772 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 01:45:25.468 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:45:25.468 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:45:25.468 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:45:25.469 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 146
+2023-02-22 01:45:25.469 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 01:53:11.684 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:11.696 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:11.700 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:12.733 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:12.733 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:12.749 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 196
+2023-02-22 01:53:18.205 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:18.205 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:18.205 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:25.685 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:25.685 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:25.685 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:26.557 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:26.557 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:26.557 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:27.189 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:27.189 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:27.189 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:28.076 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:28.076 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:28.076 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:28.621 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:28.621 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:28.621 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:29.061 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:29.061 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:29.061 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:29.493 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:29.493 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:29.493 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:29.980 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:29.981 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:29.981 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:30.389 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:30.389 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:30.389 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:30.813 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:30.813 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:30.813 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:31.279 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:31.279 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:31.279 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:31.701 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:31.701 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:31.701 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:32.133 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:32.133 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:32.133 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:32.589 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:32.589 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:32.589 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:49.405 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:49.405 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 196
+2023-02-22 01:53:49.406 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 01:53:49.836 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:49.836 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:49.836 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:50.445 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:50.445 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:50.445 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:50.932 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:50.932 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:50.932 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:51.462 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:51.462 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:51.462 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:51.854 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:51.855 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:51.854 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:52.031 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:52.031 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:52.052 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:52.212 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:52.212 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:52.212 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:52.400 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:52.400 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:52.400 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:52.581 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:52.581 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:52.581 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:52.780 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:52.780 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:52.780 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:52.989 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:52.989 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:52.989 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:53.197 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:53.197 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:53.197 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:53.399 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:53.399 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:53.399 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:53.600 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:53.600 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:53.600 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:53.774 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:53.774 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:53.774 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:53.971 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:53.971 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:53.971 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:54.158 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:54.158 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:54.158 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:54.356 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:54.356 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:54.356 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:54.542 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:54.542 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:54.542 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:54.726 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:54.726 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:54.726 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:54.933 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:54.933 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:54.933 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:55.148 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:55.148 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:55.148 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:55.327 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:55.327 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:55.327 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:55.543 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:55.544 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:55.543 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:55.757 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:55.757 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:55.757 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:55.973 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:55.973 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:55.973 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:56.196 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:56.196 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:56.196 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:56.438 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:56.438 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:56.438 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:56.677 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:56.677 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:56.677 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:56.933 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:56.933 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:56.933 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:57.157 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:57.157 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:57.157 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:57.388 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:57.388 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:57.388 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:57.651 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:57.651 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:57.651 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:57.900 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:57.900 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:57.900 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:58.173 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:58.173 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:58.173 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:58.580 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:53:58.580 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:58.580 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:58.853 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:53:58.853 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:53:58.853 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:22.620 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:22.629 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:22.633 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:26.758 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:26.758 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:26.774 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 196
+2023-02-22 01:55:29.421 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:29.421 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:29.421 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:30.495 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:30.495 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:30.495 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:31.205 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:31.205 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:31.205 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:31.805 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:31.805 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:31.805 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:32.317 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:32.317 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:32.317 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:32.805 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:32.805 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:32.805 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:33.332 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:33.332 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:33.332 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:33.807 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:33.807 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:33.807 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:34.317 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:34.317 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:34.317 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:34.829 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:34.829 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:34.830 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 01:55:35.335 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:35.335 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:55:35.335 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:35.949 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:55:35.949 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:55:35.949 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:50.101 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:50.109 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:50.113 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:50.869 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:50.869 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:50.880 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 197
+2023-02-22 01:57:52.477 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:52.477 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:52.477 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:53.261 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:53.261 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:53.261 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:54.021 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:54.021 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:54.021 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:56.662 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:56.662 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:56.662 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:57.358 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:57.358 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:57.358 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:57.901 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:57.901 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:57.901 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:58.365 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:58.365 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:58.365 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:58.869 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:58.869 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:58.869 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:59.285 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:57:59.285 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:59.285 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:59.779 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:57:59.779 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:57:59.780 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:00.261 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:00.261 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:00.261 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:00.837 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:00.837 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:00.837 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:02.548 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:02.548 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:02.548 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:03.133 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:03.133 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:03.133 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:03.581 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:03.581 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:03.581 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:04.268 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:04.268 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:04.268 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:04.846 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:04.846 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:04.846 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:05.413 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:05.413 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:05.413 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:05.917 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:05.917 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:05.917 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:06.421 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:06.421 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:06.421 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:06.917 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:06.917 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:06.917 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:07.414 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:07.414 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:07.414 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:07.621 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:07.621 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:07.621 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:07.807 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:07.807 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:07.807 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:07.989 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:07.989 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:07.989 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:08.189 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:08.189 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:08.189 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:08.365 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:08.365 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:08.365 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:08.557 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:08.557 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:08.557 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:08.717 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:08.717 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:08.717 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:08.925 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:08.925 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:08.925 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:09.103 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:09.103 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:09.116 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:10.174 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:10.174 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:10.174 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:10.800 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:10.800 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:10.800 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:11.309 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:11.309 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:11.309 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:12.005 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:12.005 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:12.005 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:12.580 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:12.580 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:12.580 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:13.054 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:13.054 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:13.054 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:13.557 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:13.557 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:13.557 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:14.045 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:14.045 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:14.045 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:14.502 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:14.502 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:14.502 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:15.021 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:15.021 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:15.021 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:15.445 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:15.445 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:15.445 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:15.949 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:15.949 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:15.949 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:16.525 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:16.525 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:16.525 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:19.173 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:19.173 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:19.173 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:19.925 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:19.925 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:19.925 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:20.605 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:20.605 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:20.605 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:28.171 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:28.183 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:28.184 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:28.991 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:28.991 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:29.001 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 197
+2023-02-22 01:58:30.070 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:30.070 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:30.070 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:30.893 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:30.893 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:30.893 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:31.389 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:31.389 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:31.389 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:36.045 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:36.045 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:36.045 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:36.622 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:36.622 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:36.623 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 01:58:37.230 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:37.230 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:37.230 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:38.054 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:38.054 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 01:58:38.054 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:38.646 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 01:58:38.646 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 01:58:38.646 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:40.723 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:40.734 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:40.738 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:41.846 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:41.847 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:41.863 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 02:02:43.702 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:43.702 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:43.702 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:44.495 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:44.495 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:44.495 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:45.270 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:45.270 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:45.270 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:45.846 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:45.846 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:45.846 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:46.341 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:46.341 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:46.341 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:46.862 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:46.862 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:46.862 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:47.334 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:47.334 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:47.334 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:47.613 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:47.613 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:47.613 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:47.783 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:47.783 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:47.783 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:47.941 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:47.941 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:47.941 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:48.124 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:48.124 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:48.124 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:48.294 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:48.294 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:48.294 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:48.462 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:48.462 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:48.462 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:48.615 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:48.615 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:48.615 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:48.763 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:48.763 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:48.763 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:48.931 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:48.931 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:48.931 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:49.102 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:49.102 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:49.102 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:49.245 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:49.245 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:49.245 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:49.604 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:49.604 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:49.604 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:49.805 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:49.805 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:49.805 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:50.006 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:50.006 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:50.006 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:50.222 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:50.222 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:50.222 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:50.444 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:50.444 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:50.444 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:50.622 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:50.622 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:50.622 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:50.815 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:50.815 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:50.815 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:50.990 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:50.990 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:50.990 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:51.142 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:51.142 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:51.142 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:51.301 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:51.301 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:51.301 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:51.454 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:51.454 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:51.454 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:51.606 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:51.606 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:51.606 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:51.767 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:51.767 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:51.767 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:51.925 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:51.925 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:51.925 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:52.085 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:52.085 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:52.085 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:52.238 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:52.238 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:52.238 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:52.413 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:52.413 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:52.413 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:52.606 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:52.606 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:52.606 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:52.950 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:52.950 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:52.950 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:53.150 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:53.150 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:53.150 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:53.342 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:53.342 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:53.342 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:53.524 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:53.524 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:53.524 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:53.711 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:53.711 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:53.711 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:53.885 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:53.885 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:53.885 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:54.087 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:54.087 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:54.087 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:54.255 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:54.255 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:54.255 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:54.461 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:54.461 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:54.461 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:54.647 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:54.647 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:54.647 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:54.822 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:54.822 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:54.822 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:55.029 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:55.029 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:55.029 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:55.422 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:55.422 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:55.422 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:55.782 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:55.782 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:55.782 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:56.148 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:56.148 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:56.148 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 02:02:56.509 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:56.509 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:56.509 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:56.725 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:56.725 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:56.725 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:02:59.390 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:02:59.390 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:02:59.390 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:00.287 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:00.287 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:00.287 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:00.910 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:00.910 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:00.910 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:01.549 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:01.549 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:01.549 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:02.333 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:02.333 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:02.333 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:03.054 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:03.054 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:03.054 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:04.022 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:04.022 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:04.022 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:04.663 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:04.663 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:04.663 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:05.429 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:05.429 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:05.429 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:06.070 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:06.070 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:06.070 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:06.542 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:06.542 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:06.542 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:07.094 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:07.094 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:07.094 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:07.583 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:07.583 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:07.583 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:08.111 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:08.111 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:08.111 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:08.613 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:08.613 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:08.613 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:09.094 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:09.094 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:09.094 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:09.535 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:09.535 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:09.535 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:10.110 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:10.110 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:10.110 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:10.662 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:10.662 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:10.662 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:11.190 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:11.190 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:11.190 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:11.717 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:11.717 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:11.717 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:12.270 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:12.270 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:12.270 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:12.742 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:12.742 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:12.742 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:13.222 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:13.222 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:13.222 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:13.726 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:13.726 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:13.726 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:14.214 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:14.214 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:14.214 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:14.743 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:14.743 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:03:14.743 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 02:03:15.286 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:03:15.286 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:03:15.286 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:16.812 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:16.826 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:16.831 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:17.718 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:17.718 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:17.728 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 198
+2023-02-22 02:05:19.886 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:19.886 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:19.886 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:20.494 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:20.494 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:20.494 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:20.974 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:20.974 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:20.974 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:21.447 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:21.447 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:21.447 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:21.885 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:21.885 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:21.885 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:22.415 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:22.415 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:22.415 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:22.944 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:22.944 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:22.944 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:23.495 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:23.495 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:23.495 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:23.942 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:23.942 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:23.942 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:24.446 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:24.446 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:24.446 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:25.014 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:25.014 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:25.014 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:25.478 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:25.478 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:25.478 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:26.446 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:26.446 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:26.446 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:27.334 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:27.334 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:27.334 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:28.127 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:28.127 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:28.127 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:30.767 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:30.767 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:30.767 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:31.444 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:31.444 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:31.444 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:32.182 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:32.182 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:32.182 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:33.558 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:33.558 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:33.558 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:36.854 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:36.854 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:36.856 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 02:05:49.156 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:49.156 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:49.156 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:49.732 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:49.732 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:49.732 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:50.198 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:50.198 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:50.198 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 104
+2023-02-22 02:05:50.678 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:50.678 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:50.678 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:54.502 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:54.502 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:54.502 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:55.046 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:55.046 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:55.046 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:55.646 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:55.646 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:55.646 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:56.111 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:56.111 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:56.111 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:56.646 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:56.646 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:56.646 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:57.127 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:57.127 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:57.127 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:57.589 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:57.589 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:57.589 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:58.078 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:58.078 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:58.078 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:58.567 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:58.567 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:58.567 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:59.038 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:59.038 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:05:59.038 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:59.583 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:05:59.583 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:05:59.583 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:06:00.182 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:06:00.182 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:06:00.182 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:06.854 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:06.870 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:06.876 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:07.742 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:07.742 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:08.309 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:08.309 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:08.309 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:08.766 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:08.766 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:08.766 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:09.199 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:09.199 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:09.199 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:09.662 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:09.662 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:09.662 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:10.143 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:10.143 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:10.143 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:10.588 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:10.588 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:10.588 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:11.015 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:11.015 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:11.015 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:11.512 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:11.512 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:11.512 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:11.925 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:11.925 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:12.407 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:12.407 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:12.407 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:12.854 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:12.854 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:12.854 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:13.327 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:13.327 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:13.327 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:13.759 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:13.759 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:13.759 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:13.974 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:13.974 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:13.974 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:14.127 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:14.127 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:14.127 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:14.286 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:14.286 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:14.286 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:14.455 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:14.455 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:14.455 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:14.820 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:14.820 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:14.820 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:15.214 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:15.214 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:15.214 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:15.357 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:15.357 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:15.357 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:15.529 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:15.529 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:15.529 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:15.865 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:15.865 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:15.865 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:16.030 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:16.030 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:16.030 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:16.189 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:16.189 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:16.189 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:16.358 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:16.359 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:16.359 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:16.534 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:16.534 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:16.534 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:16.717 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:16.717 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:16.717 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:16.912 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:16.912 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:16.912 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:17.101 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:17.101 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:17.101 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:17.302 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:17.302 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:17.302 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:17.512 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:17.512 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:17.512 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:17.736 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:17.736 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:17.736 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:17.934 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:17.934 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:17.934 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:18.132 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:18.132 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:18.132 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:18.344 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:18.344 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:18.344 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:18.551 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:18.551 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:18.551 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:18.766 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:18.766 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:18.766 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:18.997 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:18.997 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:19.216 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:19.216 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:19.216 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:19.487 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:19.487 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:19.487 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:19.737 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:19.737 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:19.737 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:19.974 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:19.974 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:19.974 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:20.198 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:20.198 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:20.198 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:20.439 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:20.440 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:20.439 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:20.646 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:20.646 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:20.646 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:20.854 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:20.854 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:20.854 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:21.063 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:21.063 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:21.063 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:21.285 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:21.285 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:21.502 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:21.502 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:21.502 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:21.727 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:21.727 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:21.727 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:21.936 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:21.936 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:21.936 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:22.126 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:22.126 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:22.126 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:22.340 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:22.340 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:22.340 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:22.511 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:22.511 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:22.511 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:22.696 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:22.696 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:22.696 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:22.846 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:22.846 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:22.846 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:23.030 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:23.030 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:23.030 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:23.174 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:23.174 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:23.174 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:23.324 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:23.324 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:23.324 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:23.470 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:23.470 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:23.470 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:23.773 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:23.773 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:23.773 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:24.094 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:24.094 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:24.094 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:24.245 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:24.245 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:24.245 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:24.557 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:24.557 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:24.557 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:24.751 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:24.751 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:24.751 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:24.902 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:24.902 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:24.902 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:25.079 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:25.079 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:25.079 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:25.239 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:25.239 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:25.239 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:25.414 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:25.414 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:25.414 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:25.598 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:25.598 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:25.598 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:26.607 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:26.607 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:26.607 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:27.366 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:27.366 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:27.366 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:35.645 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:35.645 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:35.645 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:39.958 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:39.958 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:45.070 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:45.070 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:46.878 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:46.878 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:46.878 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:47.998 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:47.998 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:47.998 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:53.854 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:53.854 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:53.854 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:54.934 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:54.934 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:54.934 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:56.319 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:56.319 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:57.119 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:57.119 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:57.119 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:57.862 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:57.862 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:57.862 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:58.583 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:58.583 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:58.583 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:08:59.270 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:08:59.270 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:08:59.270 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:09:00.046 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 02:09:00.046 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:09:00.046 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:11:49.205 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:11:49.216 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:11:49.220 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:11:50.583 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:11:50.583 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:11:50.598 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.get_RemoteEndPoint()
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 110
+2023-02-22 02:11:52.070 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:11:52.070 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:11:52.070 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:11:54.509 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:11:54.509 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:11:54.509 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:11:57.143 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:11:57.143 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:11:57.143 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:11:58.303 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:11:58.303 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:11:58.303 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:01.382 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:01.382 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:01.382 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:02.351 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:02.351 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:02.351 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:03.375 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:03.375 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:03.375 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:04.071 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:04.071 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:04.071 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:04.999 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:04.999 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:04.999 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:05.743 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:05.743 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:05.743 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:06.511 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:06.511 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:06.511 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:07.392 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:07.392 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:07.392 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:08.262 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:08.262 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:08.262 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:08.983 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:08.983 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:08.983 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:11.398 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:11.398 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:11.398 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:12.263 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:12.263 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:12.263 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:33.335 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:33.335 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 02:12:33.336 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.get_RemoteEndPoint()
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 110
+2023-02-22 02:12:36.312 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 02:12:36.312 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 02:12:36.312 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:16.916 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:16.924 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:16.928 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:16.928 +02:00 [ERR] hhhhhhhhhhhhhhhhhhhhhhhhhh
+2023-02-22 08:36:16.928 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:17.831 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:17.831 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:17.831 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:17.894 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:17.895 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:18.368 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:18.368 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:18.368 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:18.368 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:18.368 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:20.919 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:20.919 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:20.919 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:20.919 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:20.919 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:21.567 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:21.567 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:21.567 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:21.568 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:21.568 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:22.392 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:22.392 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:22.392 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:22.392 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:22.392 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:23.047 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:23.047 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:23.047 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:23.056 +02:00 [INF] System.Net.Sockets.SocketException (0x80004005): A request to send or receive data was disallowed because the socket had already been shut down in that direction with a previous shutdown call
+   at System.Net.Sockets.Socket.BeginReceive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, AsyncCallback callback, Object state)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 160
+2023-02-22 08:36:23.056 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:24.048 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:24.048 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:24.048 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:24.048 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:24.048 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:24.783 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:24.783 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:24.783 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:24.783 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:24.783 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:25.431 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:25.431 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:25.431 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:25.432 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:25.432 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:26.095 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:26.095 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:26.095 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:26.095 +02:00 [INF] System.Net.Sockets.SocketException (0x80004005): A request to send or receive data was disallowed because the socket had already been shut down in that direction with a previous shutdown call
+   at System.Net.Sockets.Socket.BeginReceive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, AsyncCallback callback, Object state)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 160
+2023-02-22 08:36:26.095 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:26.751 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:26.751 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:26.751 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:26.752 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:26.752 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:27.487 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:27.487 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:27.487 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:27.488 +02:00 [INF] System.Net.Sockets.SocketException (0x80004005): A request to send or receive data was disallowed because the socket had already been shut down in that direction with a previous shutdown call
+   at System.Net.Sockets.Socket.BeginReceive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, AsyncCallback callback, Object state)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 160
+2023-02-22 08:36:27.488 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:28.192 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:28.192 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:28.192 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:28.192 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:28.192 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:28.920 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:28.920 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:28.920 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:28.920 +02:00 [INF] System.Net.Sockets.SocketException (0x80004005): A request to send or receive data was disallowed because the socket had already been shut down in that direction with a previous shutdown call
+   at System.Net.Sockets.Socket.BeginReceive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, AsyncCallback callback, Object state)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 160
+2023-02-22 08:36:28.920 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:32.295 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:32.295 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:32.295 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:32.296 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:32.296 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:32.959 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:32.959 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:32.960 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:32.960 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:32.969 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.get_RemoteEndPoint()
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 110
+2023-02-22 08:36:33.480 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:33.480 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:33.480 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:33.480 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:33.480 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:34.288 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:34.288 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:34.288 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:34.288 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:34.288 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:34.735 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:34.735 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:34.735 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:34.736 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:34.736 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:35.207 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:35.207 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:35.207 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:35.207 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:35.207 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:35.799 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:35.799 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:35.799 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:35.799 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:35.799 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:36.335 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:36.335 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:36.335 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:36.336 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:36.336 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:36.887 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:36.887 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:36.887 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:36.888 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:36.888 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:37.376 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:37.376 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:37.376 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:37.376 +02:00 [INF] System.Net.Sockets.SocketException (0x80004005): A request to send or receive data was disallowed because the socket had already been shut down in that direction with a previous shutdown call
+   at System.Net.Sockets.Socket.BeginReceive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags, AsyncCallback callback, Object state)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 160
+2023-02-22 08:36:37.376 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:37.871 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:37.871 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:37.871 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:37.871 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:37.871 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:38.417 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:38.417 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:38.417 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:38.417 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:38.417 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:38.887 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:38.887 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:38.887 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:38.887 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:38.887 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:39.367 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:39.367 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:39.367 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:39.367 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:39.367 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:39.872 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:39.872 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:39.872 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:39.872 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:39.872 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:40.303 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:40.303 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:40.303 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:40.303 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:40.303 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:40.767 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:40.767 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:40.767 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:40.767 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:40.767 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:41.287 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:41.287 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:41.287 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:41.287 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:41.287 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:41.720 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:41.720 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:41.720 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:41.720 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:41.720 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:42.223 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:42.223 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:42.223 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:42.223 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:42.223 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:42.719 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:42.719 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:42.719 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:42.719 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:42.719 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:43.208 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:43.208 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:43.208 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:43.209 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:43.209 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:45.568 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:45.568 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:45.568 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:45.568 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:45.568 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:49.880 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:49.880 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:49.880 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.get_RemoteEndPoint()
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 110
+2023-02-22 08:36:49.881 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:49.881 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:50.488 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:50.488 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:50.488 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:50.488 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:50.488 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:36:51.127 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:36:51.127 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:36:51.127 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 08:36:51.128 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ReceiveCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 151
+2023-02-22 08:36:51.128 +02:00 [ERR] dddddddddddddddddddddddddddddd
+2023-02-22 08:42:37.052 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:37.062 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:37.062 +02:00 [INF] Response received : 
+2023-02-22 08:42:38.176 +02:00 [INF] Response received : 
+2023-02-22 08:42:38.176 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:38.187 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.get_RemoteEndPoint()
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 110
+2023-02-22 08:42:43.632 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:43.632 +02:00 [INF] Response received : 
+2023-02-22 08:42:43.632 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:44.512 +02:00 [INF] Response received : 
+2023-02-22 08:42:44.512 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:44.512 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:45.320 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:45.320 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:45.320 +02:00 [INF] Response received : 
+2023-02-22 08:42:45.944 +02:00 [INF] Response received : 
+2023-02-22 08:42:45.944 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:45.944 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:46.448 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:46.448 +02:00 [INF] Response received : 
+2023-02-22 08:42:46.448 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:46.960 +02:00 [INF] Response received : 
+2023-02-22 08:42:46.960 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:46.960 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:47.376 +02:00 [INF] Response received : 
+2023-02-22 08:42:47.376 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:47.376 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:47.792 +02:00 [INF] Response received : 
+2023-02-22 08:42:47.792 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:47.792 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:48.225 +02:00 [INF] Response received : 
+2023-02-22 08:42:48.225 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:48.225 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:48.663 +02:00 [INF] Response received : 
+2023-02-22 08:42:48.663 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:48.663 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:49.072 +02:00 [INF] Response received : 
+2023-02-22 08:42:49.072 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:49.072 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:49.351 +02:00 [INF] Response received : 
+2023-02-22 08:42:49.351 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:49.351 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.get_RemoteEndPoint()
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 110
+2023-02-22 08:42:49.543 +02:00 [INF] Response received : 
+2023-02-22 08:42:49.543 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:49.543 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:49.767 +02:00 [INF] Response received : 
+2023-02-22 08:42:49.767 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:49.767 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.get_RemoteEndPoint()
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 110
+2023-02-22 08:42:50.016 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:50.016 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:42:50.016 +02:00 [INF] Response received : 
+2023-02-22 08:42:59.712 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:42:59.712 +02:00 [INF] Response received : 
+2023-02-22 08:42:59.712 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:43:00.360 +02:00 [INF] Response received : 
+2023-02-22 08:43:00.360 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:43:00.360 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.get_RemoteEndPoint()
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 110
+2023-02-22 08:51:54.975 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:51:54.983 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:51:54.983 +02:00 [INF] Response received : 
+2023-02-22 08:51:59.825 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:51:59.825 +02:00 [INF] Response received : 
+2023-02-22 08:51:59.825 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:52:02.881 +02:00 [INF] Response received : 
+2023-02-22 08:52:02.881 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:52:02.900 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 105
+2023-02-22 08:52:10.489 +02:00 [INF] Response received : 
+2023-02-22 08:52:10.489 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:52:10.489 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:52:11.425 +02:00 [INF] Response received : 
+2023-02-22 08:52:11.425 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:52:11.425 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:52:12.098 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:52:12.098 +02:00 [INF] Response received : 
+2023-02-22 08:52:12.098 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:52:32.161 +02:00 [INF] Response received : 
+2023-02-22 08:52:32.162 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 105
+2023-02-22 08:52:32.162 +02:00 [ERR] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 203
+2023-02-22 08:53:59.575 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:53:59.589 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:53:59.589 +02:00 [INF] Response received : 
+2023-02-22 08:54:00.697 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:00.697 +02:00 [INF] Response received : 
+2023-02-22 08:54:00.697 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:03.353 +02:00 [INF] Response received : 
+2023-02-22 08:54:03.353 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:03.353 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:04.979 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:04.979 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:04.979 +02:00 [INF] Response received : 
+2023-02-22 08:54:05.585 +02:00 [INF] Response received : 
+2023-02-22 08:54:05.585 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:05.585 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:06.297 +02:00 [INF] Response received : 
+2023-02-22 08:54:06.297 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:06.297 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:06.777 +02:00 [INF] Response received : 
+2023-02-22 08:54:06.777 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:06.777 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:07.209 +02:00 [INF] Response received : 
+2023-02-22 08:54:07.209 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:07.209 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:07.744 +02:00 [INF] Response received : 
+2023-02-22 08:54:07.744 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:07.744 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:08.834 +02:00 [INF] Response received : 
+2023-02-22 08:54:08.834 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:08.834 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:13.522 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:13.522 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:13.522 +02:00 [INF] Response received : 
+2023-02-22 08:54:14.009 +02:00 [INF] Response received : 
+2023-02-22 08:54:14.009 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:14.009 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:14.369 +02:00 [INF] Response received : 
+2023-02-22 08:54:14.369 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:14.369 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:14.560 +02:00 [INF] Response received : 
+2023-02-22 08:54:14.560 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:14.560 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:14.856 +02:00 [INF] Response received : 
+2023-02-22 08:54:14.856 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:14.864 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 105
+2023-02-22 08:54:15.043 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:15.043 +02:00 [INF] Response received : 
+2023-02-22 08:54:15.043 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:15.242 +02:00 [INF] Response received : 
+2023-02-22 08:54:15.242 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:15.242 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:15.425 +02:00 [INF] Response received : 
+2023-02-22 08:54:15.425 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:15.425 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:18.705 +02:00 [INF] Response received : 
+2023-02-22 08:54:18.705 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:18.705 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:19.385 +02:00 [INF] Response received : 
+2023-02-22 08:54:19.385 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:19.386 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 105
+2023-02-22 08:54:20.883 +02:00 [INF] Response received : 
+2023-02-22 08:54:20.883 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:20.883 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:22.682 +02:00 [INF] Response received : 
+2023-02-22 08:54:22.682 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:22.682 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:23.393 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:23.393 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:23.393 +02:00 [INF] Response received : 
+2023-02-22 08:54:24.033 +02:00 [INF] Response received : 
+2023-02-22 08:54:24.033 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:24.033 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:24.617 +02:00 [INF] Response received : 
+2023-02-22 08:54:24.617 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:24.617 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:25.329 +02:00 [INF] Response received : 
+2023-02-22 08:54:25.329 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:25.329 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:54:25.881 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:54:25.881 +02:00 [INF] Response received : 
+2023-02-22 08:54:25.881 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:30.402 +02:00 [INF] Response received : 
+2023-02-22 08:55:30.403 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 105
+2023-02-22 08:55:30.403 +02:00 [ERR] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar3) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 203
+2023-02-22 08:55:32.730 +02:00 [INF] Response received : 
+2023-02-22 08:55:32.730 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:32.730 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:33.658 +02:00 [INF] Response received : 
+2023-02-22 08:55:33.658 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:33.658 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:34.706 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:34.706 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:34.706 +02:00 [INF] Response received : 
+2023-02-22 08:55:35.849 +02:00 [INF] Response received : 
+2023-02-22 08:55:35.849 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:35.849 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:37.322 +02:00 [INF] Response received : 
+2023-02-22 08:55:37.322 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:37.322 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:38.866 +02:00 [INF] Response received : 
+2023-02-22 08:55:38.866 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:38.866 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:40.234 +02:00 [INF] Response received : 
+2023-02-22 08:55:40.234 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:40.234 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:41.706 +02:00 [INF] Response received : 
+2023-02-22 08:55:41.706 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:41.706 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:43.138 +02:00 [INF] Response received : 
+2023-02-22 08:55:43.138 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:43.138 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:44.554 +02:00 [INF] Response received : 
+2023-02-22 08:55:44.554 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:44.554 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:45.770 +02:00 [INF] Response received : 
+2023-02-22 08:55:45.770 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:45.770 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 105
+2023-02-22 08:55:47.546 +02:00 [INF] Response received : 
+2023-02-22 08:55:47.546 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:55:47.546 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:49.938 +02:00 [INF] Response received : 
+2023-02-22 08:55:49.938 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:55:49.938 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:01.462 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:01.473 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:01.473 +02:00 [INF] Response received : 
+2023-02-22 08:57:04.082 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:04.082 +02:00 [INF] Response received : 
+2023-02-22 08:57:04.083 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:05.690 +02:00 [INF] Response received : 
+2023-02-22 08:57:05.690 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:05.700 +02:00 [ERR] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult, SocketError& errorCode)
+   at System.Net.Sockets.Socket.EndSend(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.SendCallback(IAsyncResult ar3) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 203
+2023-02-22 08:57:07.163 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:07.163 +02:00 [INF] Response received : 
+2023-02-22 08:57:07.163 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:08.186 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:08.186 +02:00 [INF] Response received : 
+2023-02-22 08:57:08.186 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:08.834 +02:00 [INF] Response received : 
+2023-02-22 08:57:08.834 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:08.834 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:09.298 +02:00 [INF] Response received : 
+2023-02-22 08:57:09.298 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:09.298 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:09.786 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:09.786 +02:00 [INF] Response received : 
+2023-02-22 08:57:09.786 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:10.298 +02:00 [INF] Response received : 
+2023-02-22 08:57:10.298 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:10.298 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:10.809 +02:00 [INF] Response received : 
+2023-02-22 08:57:10.809 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:10.809 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:11.218 +02:00 [INF] Response received : 
+2023-02-22 08:57:11.218 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:11.218 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:12.314 +02:00 [INF] Response received : 
+2023-02-22 08:57:12.314 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:12.314 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:13.010 +02:00 [INF] Response received : 
+2023-02-22 08:57:13.010 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:13.010 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:13.810 +02:00 [INF] Response received : 
+2023-02-22 08:57:13.810 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:13.810 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:14.538 +02:00 [INF] Response received : 
+2023-02-22 08:57:14.538 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:14.538 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:15.226 +02:00 [INF] Response received : 
+2023-02-22 08:57:15.226 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:15.226 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:15.850 +02:00 [INF] Response received : 
+2023-02-22 08:57:15.850 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:15.850 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:16.594 +02:00 [INF] Response received : 
+2023-02-22 08:57:16.594 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:16.594 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:17.138 +02:00 [INF] Response received : 
+2023-02-22 08:57:17.138 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:17.138 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:17.610 +02:00 [INF] Response received : 
+2023-02-22 08:57:17.610 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:17.610 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:18.090 +02:00 [INF] Response received : 
+2023-02-22 08:57:18.090 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 08:57:18.090 +02:00 [INF] System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.Socket'.
+   at System.Net.Sockets.Socket.InternalEndConnect(IAsyncResult asyncResult)
+   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
+   at rpaSlayerRobot.rpaSlayerRobotForm.ConnectCallback(IAsyncResult ar) in D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaSlayerRobot\rpaSlayerRobotForm.cs:line 105
+2023-02-22 08:57:18.529 +02:00 [INF] Response received : 
+2023-02-22 08:57:18.529 +02:00 [INF] Socket connected to 192.168.1.2:11000
+2023-02-22 08:57:18.529 +02:00 [INF] Sent {0} bytes to server.
+2023-02-22 18:35:14.498 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:35:14.508 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:35:14.512 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:35:21.609 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:35:21.609 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:35:21.610 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:35:32.503 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:35:32.512 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:35:32.514 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:35:33.865 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:35:33.865 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:35:33.865 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:09.757 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:09.773 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:09.776 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:11.081 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:11.081 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:11.881 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:11.881 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:11.881 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:12.737 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:12.737 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:12.737 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:13.497 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:13.497 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:13.497 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:14.337 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:14.337 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:14.337 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:14.857 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:14.857 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:14.857 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:15.376 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:15.376 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:15.376 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:15.946 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:15.946 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:15.946 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:16.537 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:16.537 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:16.537 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:17.025 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:17.025 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:17.025 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:17.505 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:17.505 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:17.505 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:18.001 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:18.001 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:18.001 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:18.433 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:18.433 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:18.433 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:19.113 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:19.113 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:19.113 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:19.682 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:19.682 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:19.682 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:20.722 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:20.722 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:20.722 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:21.514 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:21.514 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:21.514 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:22.249 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:22.249 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:22.249 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:22.777 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:22.777 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:22.777 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:23.345 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:23.345 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:23.345 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:23.810 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:23.810 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:23.810 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:24.361 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:24.361 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:24.361 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:24.865 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:24.865 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:24.865 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:25.393 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:25.393 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:25.393 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:25.889 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:25.889 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:25.889 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:26.401 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:26.401 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:26.402 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:26.889 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:26.889 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:27.417 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:27.417 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:27.417 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:27.905 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:27.905 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:27.905 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:28.442 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:28.442 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:28.442 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:29.417 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:29.417 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:29.417 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:29.946 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:29.946 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:29.946 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:30.393 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:30.393 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:30.393 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:30.954 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:30.954 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:30.954 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:31.682 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:31.682 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:31.682 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:32.241 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:32.241 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:32.241 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:32.737 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:32.737 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:32.737 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:33.226 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:33.226 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:33.226 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:33.793 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:33.793 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:33.793 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:34.281 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:34.281 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:34.281 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:34.809 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:34.809 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:34.809 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:35.281 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:35.281 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:35.281 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:35.818 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:35.818 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:35.818 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:36.329 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:36.329 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:36.329 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:36.881 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:36.881 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:36.881 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:37.354 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:37.354 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:37.354 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:38.297 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:38.297 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:38.297 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:39.009 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:39.009 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:39.009 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:39.482 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:39.482 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:39.482 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:44.041 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:44.041 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:44.041 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:47.474 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:47.474 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:47.474 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:57.042 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:57.042 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:58.145 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:58.145 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:58.145 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:58.769 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:58.769 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:58.769 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:59.289 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:37:59.289 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:59.289 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:59.730 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:37:59.730 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:37:59.730 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:38:00.202 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:38:00.202 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:38:00.633 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:38:00.633 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:38:00.633 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:38:01.146 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:38:01.146 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:38:01.146 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:38:01.601 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:38:01.601 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:38:01.601 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:38:03.587 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:38:03.587 +02:00 [INF] Sent 19 bytes to server.
+2023-02-22 18:38:03.587 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:38:03.986 +02:00 [INF] Response received : This is a test<EOF>
+2023-02-22 18:38:03.986 +02:00 [INF] Socket connected to 127.0.0.1:11001
+2023-02-22 18:38:03.986 +02:00 [INF] Sent 19 bytes to server.

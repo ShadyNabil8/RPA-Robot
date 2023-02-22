@@ -15,7 +15,8 @@ namespace rpaSlayerRobot
 {
     public partial class rpaSlayerRobotForm : Form
     {
-        private TcpSocket service;
+        private AsynchronousSocketListener serviceAsServer;
+        private AsynchronousClient serviceAsClient;
 
         public rpaSlayerRobotForm()
         {
@@ -35,48 +36,14 @@ namespace rpaSlayerRobot
                 .WriteTo.File(@"D:\New folder\CSE\grad.Proj\logs\RobotLog.log")
                 .CreateLogger();
 
-            service=new TcpSocket();
+            serviceAsServer = new AsynchronousSocketListener();
+            serviceAsClient = new AsynchronousClient();
 
         }
 
         private void tcpWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            try
-            {
-                service.ReciveByTCP(service.RobotListeningIP, 9001);
-                Log.Information("ROBOT IS READY TO LISTEN FROM SERVICE!");
-                while (true)
-                {
-                    Log.Information("ROBOT IS LISTENING FROM SERVICE!");
-                    Socket handler = service.RobotListener.Accept();
-                    Log.Information("CONNEDTED TO SERVICE!");
-                    try
-                    {
-                        byte[] buffer = new byte[255];
-                        int rec = handler.Receive(buffer);
-                        if (rec > 0)
-                        {
-                            Array.Resize(ref buffer, rec);
-                            Log.Information("ROBOT RECEIVED : " + Encoding.ASCII.GetString(buffer, 0, rec));
-                        }
-                        else
-                        {
-                            throw new SocketException();
-                        }
-                    }
-                    catch
-                    {
-                        Log.Error("CONNECTION WITH SERVICE FAILED");
-                    }
-
-                    handler.Shutdown(SocketShutdown.Both);
-                    handler.Close();
-                }
-            }
-            catch
-            {
-                Log.Error("ROBOT CANNOT CONNECT TO SERVICE");
-            }
+            serviceAsServer.StartListening();
 
         }
 
@@ -128,8 +95,7 @@ namespace rpaSlayerRobot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TcpSocket Service = new TcpSocket();
-            Service.SendByTCP(Service.ServiceListeningIP, 9000, "I AM ROBOT");
+            serviceAsClient.StartClient();
         }
     }
 }
