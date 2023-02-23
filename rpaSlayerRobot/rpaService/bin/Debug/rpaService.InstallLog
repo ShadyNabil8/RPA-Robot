@@ -1,0 +1,923 @@
+﻿Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Creating EventLog source rpaService in log Application...
+Rolling back assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Restoring event log to previous state for source rpaService.
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe
+Installing service rpaService...
+Service rpaService has been successfully installed.
+Creating EventLog source rpaService in log Application...
+Committing assembly 'D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.InstallLog
+   assemblypath = D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe

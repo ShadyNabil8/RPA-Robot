@@ -12,6 +12,8 @@ namespace rpaService
 {
     public class AsynchronousSocketListener
     {
+        
+
         // Thread signal.
         public static ManualResetEvent allDone = new ManualResetEvent(false);
 
@@ -61,9 +63,6 @@ namespace rpaService
             {
                 Log.Information(e.ToString());
             }
-
-            
-            
 
         }
 

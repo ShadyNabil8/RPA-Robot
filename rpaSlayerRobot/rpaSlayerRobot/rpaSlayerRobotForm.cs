@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,10 +40,12 @@ namespace rpaSlayerRobot
             serviceAsServer = new AsynchronousSocketListener();
             serviceAsClient = new AsynchronousClient();
 
+            tcpWorker.RunWorkerAsync();
         }
 
         private void tcpWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            
             serviceAsServer.StartListening();
 
         }
@@ -95,7 +98,22 @@ namespace rpaSlayerRobot
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (w1.IsBusy)
+            {
+                MessageBox.Show("Robot In Progress");
+            }
+            else
+            {
+               w1.RunWorkerAsync();
+
+            }
+
+        }
+
+        private void w1_DoWork(object sender, DoWorkEventArgs e)
+        {
             serviceAsClient.StartClient();
         }
+
     }
 }

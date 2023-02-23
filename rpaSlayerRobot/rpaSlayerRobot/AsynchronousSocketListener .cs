@@ -28,8 +28,8 @@ namespace rpaSlayerRobot
             // The DNS name of the computer
             // running the listener is "host.contoso.com".
             IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost");
-            IPAddress ipAddress = ipHostInfo.AddressList[0];
-            IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
+            IPAddress ipAddress = ipHostInfo.AddressList[1];
+            IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 13000);
 
             // Create a TCP/IP socket.
             Socket listener = new Socket(AddressFamily.InterNetwork,

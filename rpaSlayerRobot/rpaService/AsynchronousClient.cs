@@ -7,13 +7,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Serilog;
+using System.Security.Cryptography.X509Certificates;
 
 namespace rpaService
 {
     public class AsynchronousClient
     {
         // The port number for the remote device.
-        private const int port = 11000;
+        private const int port = 11001;
 
         // ManualResetEvent instances signal completion.
         private static ManualResetEvent connectDone =
@@ -35,7 +36,7 @@ namespace rpaService
                 // The name of the 
                 // remote device is "host.contoso.com".
                 IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost");
-                IPAddress ipAddress = ipHostInfo.AddressList[0];
+                IPAddress ipAddress = ipHostInfo.AddressList[1];
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, port);
 
                 // Create a TCP/IP socket.
@@ -71,8 +72,8 @@ namespace rpaService
 
         private static void ConnectCallback(IAsyncResult ar)
         {
-            //try
-            //{
+            try
+            {
                 // Retrieve the socket from the state object.
                 Socket client = (Socket)ar.AsyncState;
 
@@ -84,11 +85,11 @@ namespace rpaService
 
                 // Signal that the connection has been made.
                 connectDone.Set();
-            //}
-            //catch (Exception e)
-            //{
+            }
+            catch
+            {
                 //Log.Information(e.ToString());
-            //}
+            }
         }
 
         private static void Receive(Socket client)
@@ -111,8 +112,8 @@ namespace rpaService
 
         private static void ReceiveCallback(IAsyncResult ar)
         {
-            //try
-            //{
+            try
+            {
                 // Retrieve the state object and the client socket 
                 // from the asynchronous state object.
                 StateObject state = (StateObject)ar.AsyncState;
@@ -140,11 +141,11 @@ namespace rpaService
                     // Signal that all bytes have been received.
                     receiveDone.Set();
                 }
-            //}
-            //catch (Exception e)
-            //{
-               // Log.Information(e.ToString());
-            //}
+            }
+            catch
+            {
+                // Log.Information(e.ToString());
+            }
         }
 
         private static void Send(Socket client, String data)
@@ -159,8 +160,8 @@ namespace rpaService
 
         private static void SendCallback(IAsyncResult ar)
         {
-            //try
-            //{
+            try
+            {
                 // Retrieve the socket from the state object.
                 Socket client = (Socket)ar.AsyncState;
 
@@ -170,11 +171,11 @@ namespace rpaService
 
                 // Signal that all bytes have been sent.
                 sendDone.Set();
-           // }
-            //catch (Exception e)
-            //{
-             //   Log.Information(e.ToString());
-           // }
+            }
+            catch
+            {
+                //   Log.Information(e.ToString());
+            }
         }
     }
 }
