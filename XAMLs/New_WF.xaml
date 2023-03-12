@@ -1,0 +1,24 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="Microsoft.Samples.Workflow" sap:VirtualizedContainerService.HintSize="262.4,561.6" mva:VisualBasic.Settings="Assembly references and imported namespaces for internal implementation"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:i="clr-namespace:IO_Modules;assembly=IO-Modules"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Sequence sap:VirtualizedContainerService.HintSize="222.4,521.6">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <i:MouseControl sap:VirtualizedContainerService.HintSize="200,22.4" LeftClick="False" RightClick="False" X="100" Y="800" />
+    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="200,22.4" />
+    <i:MouseControl sap:VirtualizedContainerService.HintSize="200,22.4" LeftClick="False" RightClick="False" X="1800" Y="200" />
+    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="200,22.4" />
+    <i:MouseControl sap:VirtualizedContainerService.HintSize="200,22.4" LeftClick="False" RightClick="False" X="100" Y="800" />
+    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="200,22.4" />
+    <i:MouseControl sap:VirtualizedContainerService.HintSize="200,22.4" LeftClick="False" RightClick="False" X="500" Y="800" />
+  </Sequence>
+</Activity>

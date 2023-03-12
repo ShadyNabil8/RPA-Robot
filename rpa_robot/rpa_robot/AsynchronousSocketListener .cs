@@ -7,22 +7,29 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Serilog;
+using System.Activities.Tracking;
+using System.Collections.Concurrent;
+using System.Collections;
+using System.Runtime.CompilerServices;
 
-namespace rpaService
+namespace rpa_robot
 {
     public class AsynchronousSocketListener
     {
-        
-
         // Thread signal.
         public static ManualResetEvent allDone = new ManualResetEvent(false);
 
         // A queue to store the commands
         public Queue<String> ProcessQueue;
+        
+        
+
+        // Handler to deal with the workflow execution
 
         public AsynchronousSocketListener()
         {
             this.ProcessQueue = new Queue<String>();
+            
         }
 
         public void StartListening()
@@ -35,7 +42,7 @@ namespace rpaService
             // running the listener is "host.contoso.com".
             IPHostEntry ipHostInfo = Dns.GetHostEntry("localhost");
             IPAddress ipAddress = ipHostInfo.AddressList[1];
-            IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11001);
+            IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
             // Create a TCP/IP socket.
             Socket listener = new Socket(AddressFamily.InterNetwork,
@@ -68,9 +75,12 @@ namespace rpaService
                 Log.Information(e.ToString());
             }
 
+            
+            
+
         }
 
-        public void AcceptCallback(IAsyncResult ar)
+        private void AcceptCallback(IAsyncResult ar)
         {
             // Signal the main thread to continue.
             allDone.Set();
@@ -86,7 +96,7 @@ namespace rpaService
                 new AsyncCallback(ReadCallback), state);
         }
 
-        public void ReadCallback(IAsyncResult ar)
+        private void ReadCallback(IAsyncResult ar)
         {
             String content = String.Empty;
 
@@ -113,9 +123,12 @@ namespace rpaService
                     // client. Display it on the console.
                     Log.Information("Read {0} bytes from socket. \n Data : {1}",
                         content.Length, content);
+                    //Handler.RunWorkFlow();
                     this.ProcessQueue.Enqueue(content);
+
                     // Echo the data back to the client.
                     Send(handler, "ACK");
+                    
                 }
                 else
                 {

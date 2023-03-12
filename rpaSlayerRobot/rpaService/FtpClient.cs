@@ -1,4 +1,5 @@
 ﻿using FluentFTP;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,29 @@ namespace rpaService
 {
     public class FtpClient
     {
-        public void DownloadFiles()
+        public static void DownloadFiles()
         {
             using (var ftp = new FluentFTP.FtpClient("192.168.1.4", "shady", "shady"))
             {
-                ftp.Connect();
-
-                // download many files, skip if they already exist on disk
-                ftp.DownloadFiles(@"D:\test\GET\",
-                    new[] {
+                try 
+                {
+                    ftp.Connect();
+                }
+                catch 
+                {
+                    Log.Information("Can not connet to the FTP server!!");
+                }
+                try 
+                {
+                    ftp.DownloadFiles(@"D:\test\GET\",
+                        new[] {
                         @"/ftp_fol/car.jpg"
-                    }, FtpLocalExists.Skip);
-
+                        });
+                }
+                catch 
+                {
+                    Log.Information("Error while downloading!");
+                }  
             }
         }
     }

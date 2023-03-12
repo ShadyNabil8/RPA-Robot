@@ -8,32 +8,28 @@ using System;
 using System.Text;
 using System.Runtime.CompilerServices;
 using System.Net;
+using FluentFTP;
 
 namespace rpaService
 {
     public partial class rpaService : ServiceBase
     {
         private AsynchronousSocketListener RobotAsClient;
-        //private AsynchronousClient RobotAsServer;
-        
-
+        private AsynchronousClient RobotAsServer;
         public rpaService()
         {
-            Log.Logger = new LoggerConfiguration()
-               .WriteTo.File(@"D:\New folder\CSE\grad.Proj\logs\ServiceLog.log")
-               .CreateLogger();
-
-            Log.Information("Service is started");
+            // Initialize the logging process
+            LogInit();
 
             RobotAsClient = new AsynchronousSocketListener();
-            //RobotAsServer = new AsynchronousClient();
-            
+            RobotAsServer = new AsynchronousClient();
+
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
-            
+            Log.Information("Service is started");
 
             new Thread(() =>
             {
@@ -44,71 +40,25 @@ namespace rpaService
 
             new Thread(() =>
             {
-                AsynchronousClient RobotAsServer = new AsynchronousClient();
-                FtpClient ftp = new FtpClient();
-                ftp.DownloadFiles();
-                
+
+                while (true)
+                {
+                    if(RobotAsClient.ProcessQueue.Count > 0) 
+                    {
+                        Log.Information(RobotAsClient.ProcessQueue.Dequeue() + "form Q");
+                    }
+                }
+            }).Start();
+
+            new Thread(() =>
+            {
                 while (true)
                 {
                     RobotAsServer.StartClient();
                     Thread.Sleep(3000);
                 }
-
-
-                }).Start();
-
-            
-
-
-
-
-
-
-                /*Thread OrchestratorThread = new Thread(() =>
-                {
-                    try
-                    {
-                        Orchestrator.ReciveByTCP(IPAddress.Parse(""), 9001);
-                        Log.Information("SERVICE IS READY TO LISTEN FROM ORCHESTRATOR!");
-                        while (true)
-                        {
-                            Log.Information("SERVICE IS LISTENING FROM ORCHESTRATOR!");
-                            Socket handler = Robot.ServiceListener.Accept();
-                            Log.Information("CONNEDTED TO ORCHESTRATOR!");
-                            try
-                            {
-                                byte[] buffer = new byte[255];
-                                int rec = handler.Receive(buffer);
-                                if (rec > 0)
-                                {
-                                    Array.Resize(ref buffer, rec);
-                                    Log.Information("SERVICE RECEIVED : " + Encoding.ASCII.GetString(buffer, 0, rec));
-                                }
-                                else
-                                {
-                                    throw new SocketException();
-                                }
-                            }
-                            catch
-                            {
-                                Log.Error("CONNECTION WITH ORCHESTRATOR FAILED");
-                            }
-
-                            handler.Shutdown(SocketShutdown.Both);
-                            handler.Close();
-                        }
-                    }
-                    catch
-                    {
-                        Log.Error("SERVICE CANNOT CONNECT TO ORCHESTRATOR");
-                    }
-
-
-                });
-                OrchestratorThread.Start();*/
-
-            }
-
+            }).Start();
+        }
         protected override void OnStop()
         {
             Log.Information("SERVICE IS STOPPED");
@@ -116,13 +66,20 @@ namespace rpaService
 
         protected override void OnContinue()
         {
-
+            Log.Information("SERVICE IS Continued");
         }
 
         protected override void OnShutdown()
         {
             Log.Information("SERVICE SHUT");
         }
-        
+
+        private void LogInit()
+        {
+            Log.Logger = new LoggerConfiguration()
+               .WriteTo.File(@"D:\New folder\CSE\grad.Proj\logs\ServiceLog.log")
+               .CreateLogger();
+        }
+
     }
 }

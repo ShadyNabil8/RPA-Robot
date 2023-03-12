@@ -7,14 +7,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Serilog;
-using System.Security.Cryptography.X509Certificates;
 
-namespace rpaService
+namespace rpa_robot
 {
     public class AsynchronousClient
     {
         // The port number for the remote device.
-        private const int port = 11000;
+        private const int port = 11001;
 
         // ManualResetEvent instances signal completion.
         private static ManualResetEvent connectDone =
@@ -144,7 +143,7 @@ namespace rpaService
             }
             catch
             {
-                // Log.Information(e.ToString());
+               // Log.Information(e.ToString());
             }
         }
 
@@ -174,7 +173,7 @@ namespace rpaService
             }
             catch
             {
-                //   Log.Information(e.ToString());
+             //   Log.Information(e.ToString());
             }
         }
     }
