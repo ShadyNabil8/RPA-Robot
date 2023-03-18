@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ActivitiesTestLipraries">
       <HintPath>F:\CSE\4th comp\aaaa\aaaa\ActivitiesTestLipraries.dll</HintPath>
@@ -41,6 +44,9 @@
     <Reference Include="IO-Modules, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\shady\Downloads\IO-Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
@@ -50,7 +56,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,11 +77,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AsynchronousClient.cs" />
-    <Compile Include="AsynchronousSocketListener .cs" />
-    <Compile Include="AsyncTrackingParticipant.cs" />
-    <Compile Include="Handler.cs" />
-    <Compile Include="StateObject.cs" />
+    <Compile Include="Classes\Activity.cs" />
+    <Compile Include="Classes\AsynchronousClient.cs" />
+    <Compile Include="Classes\AsynchronousSocketListener .cs" />
+    <Compile Include="Classes\AsyncTrackingParticipant.cs" />
+    <Compile Include="Classes\Handler.cs" />
+    <Compile Include="Classes\Info.cs" />
+    <Compile Include="Classes\Service.cs" />
+    <Compile Include="Classes\StateObject.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -105,6 +116,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

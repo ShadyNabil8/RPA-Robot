@@ -1,8 +1,11 @@
-﻿using Serilog;
+﻿using rpa_robot.Classes;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration.Install;
 using System.Linq;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,59 +26,70 @@ namespace rpa_robot
     /// </summary>
     public partial class MainWindow : Window
     {
-        private AsynchronousSocketListener serviceAsServer;
-        private AsynchronousClient serviceAsClient;
-        BackgroundWorker server = new BackgroundWorker();
-        BackgroundWorker client = new BackgroundWorker();
+        //======================= GLOGBALs =======================//
+        private AsynchronousSocketListener RobotAsyncListenerFromService;
+        private AsynchronousClient         RobotAsyncClientFromService;
+        private BackgroundWorker           RobotAsyncListenerFromServiceWorker = new BackgroundWorker();
+        private BackgroundWorker           Robot = new BackgroundWorker();
+        //======================= GLOGBALs =======================//
         public MainWindow()
         {
             InitializeComponent();
-            server.DoWork += serverJob;
-            client.DoWork += clientJob;
+            Service.Initialize();
+
+            RobotAsyncListenerFromServiceWorker.DoWork += RobotAsyncListenerFromServiceFun;
+            Robot.DoWork += RobotFun;
 
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.File(@"D:\New folder\CSE\grad.Proj\logs\RobotLog.log")
                 .CreateLogger();
 
-            serviceAsServer = new AsynchronousSocketListener();
-            serviceAsClient = new AsynchronousClient();
-            server.RunWorkerAsync();
-            client.RunWorkerAsync();
+            RobotAsyncListenerFromService = new AsynchronousSocketListener();
+            RobotAsyncClientFromService = new AsynchronousClient();
+            RobotAsyncListenerFromServiceWorker.RunWorkerAsync();
+            Robot.RunWorkerAsync();
         }
 
-        private void serverJob(object sender, DoWorkEventArgs e)
+        private void RobotAsyncListenerFromServiceFun(object sender, DoWorkEventArgs e)
         {
-            serviceAsServer.StartListening();
+            RobotAsyncListenerFromService.StartListening();
         }
-        private void clientJob(object sender, DoWorkEventArgs e)
+        private void RobotFun(object sender, DoWorkEventArgs e)
         {
-            //serviceAsClient.StartClient();
+
             while (true)
             {
-                if (serviceAsServer.ProcessQueue.Count > 0)
+                if (RobotAsyncListenerFromService.ProcessQueue.Count > 0)
                 {
-                    Log.Information(serviceAsServer.ProcessQueue.Dequeue() + "FROM q");
+                    Log.Information(RobotAsyncListenerFromService.ProcessQueue.Dequeue() + "FROM Q");
                 }
-                else 
+                else
                 {
-                    
+                    //== THIS LINE IS WRITTEN TO AVOID THE OVEDHEAD DUE TO THE WHILE LOOP, LOOPING ON NOTHING ==//
+                    Thread.Sleep(1000);
+                   
                 }
             }
         }
-
-        private void btn_Click(object sender, RoutedEventArgs e)
+        
+        private void OnStartServiceButtonClick(object sender, RoutedEventArgs e)
         {
-            //if (client.IsBusy)
-            //{
-            //    MessageBox.Show("Robot In Progress");
-            //}
-            //else
-            //{
-            //    client.RunWorkerAsync();
+            Service.Start();  
+        }
 
-            //}
-            //Handler.RunWorkFlow();
-            serviceAsClient.StartClient();
+        private void OnStopServiceButtonClick(object sender, RoutedEventArgs e)
+        {
+            Service.Stop();
+        }
+
+        private void OnInstallServiceButtonClick(object sender, RoutedEventArgs e)
+        {
+            Service.InstallAndStart();
+        }
+
+        private void OnUninstallServiceButtonClick(object sender, RoutedEventArgs e)
+        {
+            Service.UninstallAndStop();
         }
     }
 }
