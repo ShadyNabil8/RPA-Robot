@@ -4,6 +4,7 @@ using System.Configuration.Install;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Serilog;
@@ -12,120 +13,159 @@ namespace rpa_robot.Classes
 {
     public class Service
     {
-        private static string serviceName = "rpaService";
+        private static bool isInstalled      = false;
+        private static string serviceName    = "rpaService";
         private static string serviceExePath = @"D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe";
         private static TransactedInstaller transactedInstaller;
         private static ServiceProcessInstaller serviceProcessInstaller;
-        private static bool isInstalled = false;
+        private static ServiceInstaller serviceInstaller;
+
         public static void Initialize()
         {
-            ServiceController[] services = ServiceController.GetServices();
-            foreach (ServiceController service in services)
-            {
-                if (service.ServiceName == serviceName)
-                {
-                    isInstalled = true;
-                    break;
-                }
-            }
-            if (!isInstalled)
-            {
-                transactedInstaller = new TransactedInstaller();
+            // ==== TO CHECK IF THE SERVICE IS ALREADY INSTALLED OR NOT ====
+            ServiceController[] services = ServiceController.GetServices(); //
+            foreach (ServiceController service in services)                 //
+            {                                                               //
+                if (service.ServiceName == serviceName)                     //
+                {                                                           //
+                    isInstalled = true;                                     //
+                    break;                                                  //
+                }                                                           //
+            }                                                               //
+            // =============================================================
 
-                // Create a new instance of ServiceProcessInstaller
-                serviceProcessInstaller = new ServiceProcessInstaller();
-                serviceProcessInstaller.Account = ServiceAccount.LocalSystem;
+            // Create a new instance of ServiceProcessInstaller
+            serviceProcessInstaller = new ServiceProcessInstaller();
+            // RUN THE SERVICE IN THE LOCAL SYSTEM
+            serviceProcessInstaller.Account = ServiceAccount.LocalSystem;
 
-                // Create a new instance of ServiceInstaller
-                ServiceInstaller serviceInstaller = new ServiceInstaller();
-                serviceInstaller.StartType = ServiceStartMode.Manual;
-                serviceInstaller.ServiceName = serviceName;
-                serviceInstaller.DisplayName = serviceName;
-                serviceInstaller.Description = "My Windows Service";
-                serviceInstaller.DelayedAutoStart = true;
+            // Create a new instance of ServiceInstaller
+            serviceInstaller = new ServiceInstaller();
+            // StartType CAN BE AUTOMATIC
+            serviceInstaller.StartType = ServiceStartMode.Automatic;
+            serviceInstaller.ServiceName = serviceName;
+            serviceInstaller.DisplayName = serviceName;
+            serviceInstaller.Description = "RPA_Service";
+            serviceInstaller.DelayedAutoStart = true;
 
-                // Set the service executable path
-                serviceInstaller.Context = new InstallContext();
-                serviceInstaller.Context.Parameters["assemblypath"] = serviceExePath;
-                serviceInstaller.BeforeUninstall += new InstallEventHandler(MyInstaller_BeforeUninstall);
+            // Set the service executable path
+            serviceInstaller.Context = new InstallContext();
+            serviceInstaller.Context.Parameters["assemblypath"] = serviceExePath;
+            // DEFINE WHAT SHOULD BE HAPPEN BEFORE UNINSTALL THE SERVICE
+            serviceInstaller.BeforeUninstall += new InstallEventHandler(MyInstaller_BeforeUninstall);
 
-                // Install the service
-                transactedInstaller = new TransactedInstaller();
-                transactedInstaller.Installers.Add(serviceProcessInstaller);
-                transactedInstaller.Installers.Add(serviceInstaller);
-                transactedInstaller.Context = new InstallContext();
-                transactedInstaller.Context.Parameters["assemblypath"] = serviceExePath;
-            }
-            else 
+            // Install the service
+            transactedInstaller = new TransactedInstaller();
+            transactedInstaller.Installers.Add(serviceProcessInstaller);
+            transactedInstaller.Installers.Add(serviceInstaller);
+            transactedInstaller.Context = new InstallContext();
+            // PASS THE PATH OF THE .EXE SERVICE AS A PARAMETER FOR THE CMD COMMAND
+            transactedInstaller.Context.Parameters["assemblypath"] = serviceExePath;
+
+            if (isInstalled == true) 
             {
-                Log.Information(Info.SERVICE_INSTALLED);
-                isInstalled = true;
-            }
-            
-        }
-        private static void MyInstaller_BeforeUninstall(object sender, InstallEventArgs e)
-        {
-            ServiceController serviceController = new ServiceController(serviceName);
-            if (serviceController.Status != ServiceControllerStatus.Stopped)
-            {
-                serviceController.Stop();
-                serviceController.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30));
+                // START THE SERVICE ONCE THE ROBOT STARTS
+                // SERVICE IS SUPPOSED TO BE INSTALLES SO THAT IT RUNS AUTOMATIC
+                // THERE US AN ISSUI; WHEN THE ROBOT STARTS WHITH THE SERVICE INATALLED BUT IS STOPPED
+                    // THE SERVICE STARTS AGAIN BUT THEE IS NO LOG FOR THAT
+                Start();
             }
         }
-        public static void InstallAndStart() 
+        // =============================== STOP THE SERVICE BEFORE UNINSTALL ===============================
+        private static void MyInstaller_BeforeUninstall(object sender, InstallEventArgs e)                  //
+        {                                                                                                   //  
+            ServiceController serviceController = new ServiceController(serviceName);                       //
+            if (serviceController.Status != ServiceControllerStatus.Stopped)                                //
+            {                                                                                               //
+                serviceController.Stop();                                                                   //  
+                serviceController.WaitForStatus(ServiceControllerStatus.Stopped, TimeSpan.FromSeconds(30)); //  
+            }                                                                                               //
+        }                                                                                                   //
+        // =============================== STOP THE SERVICE BEFORE UNINSTALL ===============================
+        public static void InstallAndStart()
         {
             if (!isInstalled)
             {
                 transactedInstaller.Install(new System.Collections.Hashtable());
+                Thread.Sleep(500);
                 Log.Information(Info.SERVICE_INSTALLED);
-                Start();
+                Globals.List.Add(new RobotReport(Info.SERVICE_INSTALLED, Info.INFO));
                 isInstalled = true;
+                Start();
             }
-            
+            else
+            {
+                Log.Information(Info.SERVICE_IS_ALREADY_INSTALLED);
+                Globals.List.Add(new RobotReport(Info.SERVICE_IS_ALREADY_INSTALLED, Info.INFO));
+            }
+
         }
 
-        public static void UninstallAndStop() 
+        public static void UninstallAndStop()
         {
             if (isInstalled)
             {
                 transactedInstaller.Uninstall(null);
                 Log.Information(Info.SERVICE_UNINSTALLED);
+                Globals.List.Add(new RobotReport(Info.SERVICE_UNINSTALLED, Info.INFO));
                 isInstalled = false;
             }
-            else 
+            else
             {
                 Log.Information(Info.SERVICE_IS_ALREADY_UNINSTALLED);
+                Globals.List.Add(new RobotReport(Info.SERVICE_IS_ALREADY_UNINSTALLED, Info.INFO));
             }
         }
         public static void Start()
         {
-            ServiceController serviceController = new ServiceController(serviceName);
-            if (serviceController.Status == ServiceControllerStatus.Stopped)
+            if (isInstalled)
             {
-                serviceController.Start();
-                Log.Information(Info.SERVICE_STARTED);
+                ServiceController serviceController = new ServiceController(serviceName);
+                if (serviceController.Status == ServiceControllerStatus.Stopped)
+                {
+                    serviceController.Start();
+                    Thread.Sleep(500);
+                    Log.Information(Info.SERVICE_STARTED);
+                    Globals.List.Add(new RobotReport(Info.SERVICE_STARTED, Info.INFO));
+                }
+                else
+                {
+                    Log.Information(Info.SERVICE_IS_ALREADY_STARTED);
+                    Globals.List.Add(new RobotReport(Info.SERVICE_IS_ALREADY_STARTED, Info.INFO));
+                }
             }
             else 
             {
-                Log.Information(Info.SERVICE_IS_ALREADY_STARTED);
+                Log.Information(Info.SERVICE_NEED_TO_BE_INSTALLED);
+                Globals.List.Add(new RobotReport(Info.SERVICE_NEED_TO_BE_INSTALLED, Info.INFO));
             }
-            
-            
         }
 
         public static void Stop()
         {
-            ServiceController serviceController = new ServiceController(serviceName);
-            if (serviceController.Status == ServiceControllerStatus.Running)
+            if (isInstalled)
             {
-                serviceController.Stop();
-                Log.Information(Info.SERVICE_STOPED);
+                ServiceController serviceController = new ServiceController(serviceName);
+                if (serviceController.Status == ServiceControllerStatus.Running)
+                {
+                    serviceController.Stop();
+                    Thread.Sleep(500);
+                    Log.Information(Info.SERVICE_STOPED);
+                    Globals.List.Add(new RobotReport(Info.SERVICE_STOPED, Info.INFO));
+                }
+                else
+                {
+                    Log.Information(Info.SERVICE_IS_ALREADY_STOPED);
+                    Globals.List.Add(new RobotReport(Info.SERVICE_IS_ALREADY_STOPED, Info.INFO));
+                }
             }
-            else
+            else 
             {
-                Log.Information(Info.SERVICE_IS_ALREADY_STOPED);
-            }
+                Log.Information(Info.SERVICE_NEED_TO_BE_INSTALLED);
+                Globals.List.Add(new RobotReport(Info.SERVICE_NEED_TO_BE_INSTALLED, Info.INFO));
+            }   
         }
+
 
     }
 }

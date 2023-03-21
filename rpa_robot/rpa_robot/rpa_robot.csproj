@@ -81,8 +81,10 @@
     <Compile Include="Classes\AsynchronousClient.cs" />
     <Compile Include="Classes\AsynchronousSocketListener .cs" />
     <Compile Include="Classes\AsyncTrackingParticipant.cs" />
+    <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\Handler.cs" />
     <Compile Include="Classes\Info.cs" />
+    <Compile Include="Classes\RobotReport.cs" />
     <Compile Include="Classes\Service.cs" />
     <Compile Include="Classes\StateObject.cs" />
     <Page Include="MainWindow.xaml">

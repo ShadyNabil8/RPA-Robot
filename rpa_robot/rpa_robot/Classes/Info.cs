@@ -20,6 +20,14 @@ namespace rpa_robot.Classes
         public static string SERVICE_IS_ALREADY_UNINSTALLED = "SERVICE_IS_ALREADY_UNINSTALLED";
         public static string SERVICE_IS_ALREADY_STARTED = "SERVICE_IS_ALREADY_STARTED";
         public static string SERVICE_IS_ALREADY_STOPED = "SERVICE_IS_ALREADY_STOPED";
+        public static string SERVICE_NEED_TO_BE_INSTALLED = "SERVICE_NEED_TO_BE_INSTALLED";
+        public static string MAIN_WINDOW_IS_COLSED = "MAIN_WINDOW_IS_COLSED";
+        public static string INFO = "INFO";
+        public static string ERROR = "ERROR";
+
+
 
     }
+
 }
+

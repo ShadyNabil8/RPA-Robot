@@ -2,6 +2,7 @@
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Configuration.Install;
 using System.Linq;
@@ -35,17 +36,20 @@ namespace rpa_robot
         public MainWindow()
         {
             InitializeComponent();
-            Service.Initialize();
-
-            RobotAsyncListenerFromServiceWorker.DoWork += RobotAsyncListenerFromServiceFun;
-            Robot.DoWork += RobotFun;
 
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.File(@"D:\New folder\CSE\grad.Proj\logs\RobotLog.log")
                 .CreateLogger();
 
+            RobotReportList.ItemsSource = Globals.List;
+            
+
+            Service.Initialize();
+
+            RobotAsyncListenerFromServiceWorker.DoWork += RobotAsyncListenerFromServiceFun;
+            Robot.DoWork                               += RobotFun;
             RobotAsyncListenerFromService = new AsynchronousSocketListener();
-            RobotAsyncClientFromService = new AsynchronousClient();
+            RobotAsyncClientFromService   = new AsynchronousClient();
             RobotAsyncListenerFromServiceWorker.RunWorkerAsync();
             Robot.RunWorkerAsync();
         }
@@ -91,5 +95,11 @@ namespace rpa_robot
         {
             Service.UninstallAndStop();
         }
+        private void MainWindow_Closed(object sender, EventArgs e)
+        {
+            Log.Information(Info.MAIN_WINDOW_IS_COLSED);
+            Service.Stop(); 
+        }
+
     }
 }
