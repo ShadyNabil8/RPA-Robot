@@ -112,7 +112,10 @@ namespace rpaService
                     // client. Display it on the console.
                     //Log.Information("Read {0} bytes from socket. \n Data : {1}",
                     //    content.Length, content);
-                    this.ProcessQueue.Enqueue(content);
+                    lock (this.ProcessQueue)
+                    {
+                        this.ProcessQueue.Enqueue(content);
+                    }
                     // Echo the data back to the client.
                     //Send(handler, "ACK");
                 }

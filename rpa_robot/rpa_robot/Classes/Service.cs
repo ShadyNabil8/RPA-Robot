@@ -67,8 +67,13 @@ namespace rpa_robot.Classes
                 // START THE SERVICE ONCE THE ROBOT STARTS
                 // SERVICE IS SUPPOSED TO BE INSTALLES SO THAT IT RUNS AUTOMATIC
                 // THERE US AN ISSUI; WHEN THE ROBOT STARTS WHITH THE SERVICE INATALLED BUT IS STOPPED
-                    // THE SERVICE STARTS AGAIN BUT THEE IS NO LOG FOR THAT
+                // THE SERVICE STARTS AGAIN BUT THEE IS NO LOG FOR THAT
+                Globals.LogsTxtBox.AppendText(Info.SERVICE_IS_ALREADY_INSTALLED+"\n");
                 Start();
+            }
+            else 
+            {
+                Globals.LogsTxtBox.AppendText(Info.SERVICE_NEED_TO_BE_INSTALLED +"\n");
             }
         }
         // =============================== STOP THE SERVICE BEFORE UNINSTALL ===============================
@@ -89,14 +94,14 @@ namespace rpa_robot.Classes
                 transactedInstaller.Install(new System.Collections.Hashtable());
                 Thread.Sleep(500);
                 Log.Information(Info.SERVICE_INSTALLED);
-                Globals.List.Add(new RobotReport(Info.SERVICE_INSTALLED, Info.INFO));
+                Globals.LogsTxtBox.AppendText(Info.SERVICE_INSTALLED + "\n");
                 isInstalled = true;
                 Start();
             }
             else
             {
                 Log.Information(Info.SERVICE_IS_ALREADY_INSTALLED);
-                Globals.List.Add(new RobotReport(Info.SERVICE_IS_ALREADY_INSTALLED, Info.INFO));
+                Globals.LogsTxtBox.AppendText(Info.SERVICE_IS_ALREADY_INSTALLED + "\n");
             }
 
         }
@@ -107,13 +112,13 @@ namespace rpa_robot.Classes
             {
                 transactedInstaller.Uninstall(null);
                 Log.Information(Info.SERVICE_UNINSTALLED);
-                Globals.List.Add(new RobotReport(Info.SERVICE_UNINSTALLED, Info.INFO));
+                Globals.LogsTxtBox.AppendText(Info.SERVICE_UNINSTALLED + "\n");
                 isInstalled = false;
             }
             else
             {
                 Log.Information(Info.SERVICE_IS_ALREADY_UNINSTALLED);
-                Globals.List.Add(new RobotReport(Info.SERVICE_IS_ALREADY_UNINSTALLED, Info.INFO));
+                Globals.LogsTxtBox.AppendText(Info.SERVICE_IS_ALREADY_UNINSTALLED + "\n");
             }
         }
         public static void Start()
@@ -126,18 +131,18 @@ namespace rpa_robot.Classes
                     serviceController.Start();
                     Thread.Sleep(500);
                     Log.Information(Info.SERVICE_STARTED);
-                    Globals.List.Add(new RobotReport(Info.SERVICE_STARTED, Info.INFO));
+                    Globals.LogsTxtBox.AppendText(Info.SERVICE_STARTED + "\n");
                 }
                 else
                 {
                     Log.Information(Info.SERVICE_IS_ALREADY_STARTED);
-                    Globals.List.Add(new RobotReport(Info.SERVICE_IS_ALREADY_STARTED, Info.INFO));
+                    Globals.LogsTxtBox.AppendText(Info.SERVICE_IS_ALREADY_STARTED + "\n");
                 }
             }
             else 
             {
                 Log.Information(Info.SERVICE_NEED_TO_BE_INSTALLED);
-                Globals.List.Add(new RobotReport(Info.SERVICE_NEED_TO_BE_INSTALLED, Info.INFO));
+                Globals.LogsTxtBox.AppendText(Info.SERVICE_NEED_TO_BE_INSTALLED + "\n");
             }
         }
 
@@ -151,21 +156,47 @@ namespace rpa_robot.Classes
                     serviceController.Stop();
                     Thread.Sleep(500);
                     Log.Information(Info.SERVICE_STOPED);
-                    Globals.List.Add(new RobotReport(Info.SERVICE_STOPED, Info.INFO));
+                    Globals.LogsTxtBox.AppendText(Info.SERVICE_STOPED + "\n");
+
+
                 }
                 else
                 {
                     Log.Information(Info.SERVICE_IS_ALREADY_STOPED);
-                    Globals.List.Add(new RobotReport(Info.SERVICE_IS_ALREADY_STOPED, Info.INFO));
+                    Globals.LogsTxtBox.AppendText(Info.SERVICE_IS_ALREADY_STOPED + "\n");
+
+
                 }
             }
             else 
             {
                 Log.Information(Info.SERVICE_NEED_TO_BE_INSTALLED);
-                Globals.List.Add(new RobotReport(Info.SERVICE_NEED_TO_BE_INSTALLED, Info.INFO));
+                Globals.LogsTxtBox.AppendText(Info.SERVICE_NEED_TO_BE_INSTALLED + "\n");
             }   
         }
-
-
+        public static bool IsInstalled() 
+        {
+            if (isInstalled)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+            
+        }
+        public static bool IsStarted()
+        {
+            ServiceController serviceController = new ServiceController(serviceName);
+            if (serviceController.Status == ServiceControllerStatus.Running)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
     }
 }

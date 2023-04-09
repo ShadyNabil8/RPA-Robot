@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using Serilog;
+using rpa_robot.Classes;
 
 namespace rpa_robot
 {
@@ -26,7 +24,25 @@ namespace rpa_robot
         // The response from the remote device.
         private static String response = String.Empty;
 
-        public void StartClient()
+        public void SendToSocket(string mgs) 
+        {
+            if (Service.IsInstalled())
+            {
+                if (Service.IsStarted())
+                {
+                    StartClient(mgs);
+                }
+                else 
+                {
+                    Log.Information(Info.SERVICE_IS_ALREADY_STOPED);
+                }
+            }
+            else 
+            {
+                Log.Information(Info.SERVICE_NEED_TO_BE_INSTALLED);
+            }
+        }
+        public void StartClient(string mgs)
         {
             // Connect to a remote device.
             try
@@ -48,7 +64,7 @@ namespace rpa_robot
                 connectDone.WaitOne();
 
                 // Send test data to the remote device.
-                Send(client, "This is a test<EOF>");
+                Send(client, mgs+"<EOF>");
                 sendDone.WaitOne();
 
                 //================= IN CASE WE WANT TO GET RESPONSE =================//

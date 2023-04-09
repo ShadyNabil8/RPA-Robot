@@ -27,7 +27,7 @@ namespace rpaService
         // The response from the remote device.
         private static String response = String.Empty;
 
-        public void StartClient()
+        public void StartClient(string msg)
         {
             // Connect to a remote device.
             try
@@ -49,7 +49,7 @@ namespace rpaService
                 connectDone.WaitOne();
 
                 // Send test data to the remote device.
-                Send(client, "This is a test<EOF>");
+                Send(client, msg+"<EOF>");
                 sendDone.WaitOne();
 
                 //================= IN CASE WE WANT TO GET RESPONSE =================//

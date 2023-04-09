@@ -118,8 +118,11 @@ namespace rpa_robot
                 content = state.sb.ToString();
                 if (content.IndexOf("<EOF>") > -1)
                 {
-                    // All the data has been read from the 
-                    this.ProcessQueue.Enqueue(content);
+                    // All the data has been read from the
+                    lock (this.ProcessQueue)
+                    {
+                        this.ProcessQueue.Enqueue(content);
+                    }
                     // Echo the data back to the client.
                     //Send(handler, "ACK");
                     

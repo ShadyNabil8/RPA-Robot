@@ -36,9 +36,6 @@
     <StartupObject>rpaService.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentFTP, Version=45.1.0.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentFTP.45.1.0\lib\net472\FluentFTP.dll</HintPath>
-    </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
@@ -63,6 +60,9 @@
   <ItemGroup>
     <Compile Include="Classes\AsynchronousClient.cs" />
     <Compile Include="Classes\AsynchronousSocketListener .cs" />
+    <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Classes\Handler.cs" />
+    <Compile Include="Classes\Info.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
