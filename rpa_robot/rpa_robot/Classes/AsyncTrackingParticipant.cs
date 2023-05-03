@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using rpa_robot.Classes;
+using rpa_robot.Formats;
 using Serilog;
 using System;
 using System.Activities.Tracking;
@@ -62,49 +64,50 @@ namespace rpa_robot
                 // Dequeue a record if any
                 if (queue.TryDequeue(out TrackingRecord record))
                 {
-                    // Process the record (for example, write it to console)
-                    // ActivityInfo activityInfo = record.ToString();
-
-                    // Get its name
-                    //string activityName = activityInfo.Name;
-                    //Log.Information("============");
-                    //Log.Information(record.ToString());
-                    //Log.Information(record.ToString());
+                    
                     if (record is ActivityStateRecord activityStateRecord)
                     {
 
 
                         if (!activityStateRecord.Activity.Name.Equals("DynamicActivity"))
                         {
-                            //Log.Information("Instance ID: " + activityStateRecord.InstanceId);
-                            //Log.Information("New Activity \nActivity: " + activityStateRecord.Activity.Name + "\n"
-                            //    + "Instance ID: " + activityStateRecord.State + "\n"
-                            //    + "Time: " + activityStateRecord.EventTime + "\n"
-                            //    + "************************\n");
-                            Log.Information(JsonConvert.SerializeObject(new Activity 
+                           
+                            //Globals.uiDispatcher.Invoke(() => {
+                            //    Globals.StatusTxtBox.AppendText(JsonConvert.SerializeObject(new Activity
+                            //    {
+                            //        Type = "LogType",
+                            //        Name = activityStateRecord.Activity.Name,
+                            //        Status = activityStateRecord.State,
+                            //        Time = activityStateRecord.EventTime.ToString()
+                            //    })+"\n");
+                            //});
+
+                            var log = JsonConvert.SerializeObject(new RpaLog
                             {
-                                Name = activityStateRecord.Activity.Name,
-                                Status = activityStateRecord.State,
-                                Time = activityStateRecord.EventTime.ToString()
-                            }));
-                            //Log.Information("Instance ID: " + activityStateRecord.State);
-                            //Log.Information("Time: " + activityStateRecord.EventTime);
-                            //Log.Information("************************\n");
+                                eventType = "logEmitEvent",
+                                payload = new Payload { logType = "ERROR", name = activityStateRecord.Activity.Name, status = activityStateRecord.State, timestamp = activityStateRecord.EventTime.ToString(), message = "this is a log entry", robotId = 1 }
+                            });
+                            //Globals.RobotAsyncClientFromService.SendToSocket(log);
+                            lock (Globals.LogQueue) 
+                            {
+                                Globals.LogQueue.Enqueue(log);
+                                Log.Information("LOGGED");
+                            }
+                            
+
                         }
                         //Thread.Sleep(1000);
                     }
 
 
-                    //Log.Information("============");
-                    //Thread.Sleep(1000);
-                    //Log.Information(record.ToString());
+
 
 
                 }
                 else
                 {
                     // Wait for some time before trying again
-                    System.Threading.Thread.Sleep(100);
+                    Thread.Sleep(100);
                 }
             }
         }

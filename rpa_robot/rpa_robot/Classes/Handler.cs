@@ -10,6 +10,9 @@ using rpa_robot.Classes;
 using Serilog;
 using System.Threading;
 using System.ComponentModel;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using rpa_robot.Formats;
 
 namespace rpa_robot
 {
@@ -43,20 +46,42 @@ namespace rpa_robot
         {
             while (true)
             {
-                if (Globals.RobotAsyncListenerFromService.ProcessQueue.Count > 0)
-                {
-                    lock (Globals.RobotAsyncListenerFromService.ProcessQueue)
-                    {
 
-                        Log.Information(Globals.RobotAsyncListenerFromService.ProcessQueue.Dequeue() + "FROM Q");
-                        //Globals.List.Add(new RobotReport("hi", Info.INFO));
-                        //Globals.AddToList("hi", Info.INFO);
+                if ((Globals.RobotAsyncListenerFromService.ProcessQueue.Count > 0) || (Globals.LogQueue.Count > 0))
+                {
+                    if ((Globals.RobotAsyncListenerFromService.ProcessQueue.Count > 0)) 
+                    {
+                        lock (Globals.RobotAsyncListenerFromService.ProcessQueue)
+                        {
+
+                            //Log.Information(Globals.RobotAsyncListenerFromService.ProcessQueue.Dequeue() + "FROM Q");
+                            //Globals.List.Add(new RobotReport("hi", Info.INFO));
+                            //Globals.AddToList("hi", Info.INFO);
+                            var CommandFromService = Globals.RobotAsyncListenerFromService.ProcessQueue.Dequeue();
+                            ServiceRobotCMD CMD = JsonConvert.DeserializeObject<ServiceRobotCMD>(CommandFromService);
+                            if (CMD.Command.Equals("print"))
+                            {
+                                Globals.LogsTxtBox.AppendText(CMD.Data + "\n");
+                            }
+
+                        }
                     }
+                    if ((Globals.LogQueue.Count > 0)) 
+                    {
+                        string log = "";
+                        lock (Globals.LogQueue)
+                        {
+                             log = Globals.LogQueue.Dequeue();
+                            
+                        }
+                        Globals.RobotAsyncClientFromService.SendToSocket(log);
+                    }
+                    
                 }
                 else
                 {
                     //== THIS LINE IS WRITTEN TO AVOID THE OVEDHEAD DUE TO THE WHILE LOOP, LOOPING ON NOTHING ==//
-                    Thread.Sleep(1000);
+                    Thread.Sleep(100);
                 }
             }
 

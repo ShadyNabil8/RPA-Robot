@@ -12,13 +12,14 @@ namespace rpa_robot
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
 
             InitializeComponent();
             Service.Initialize();
-            
-            //================== LOGGING =================
+
+            //================== LOGGING AND NOTIFICATION =================
             Log.Logger = new LoggerConfiguration()        //
                 .WriteTo.File(Globals.LogPath)            //
                 .CreateLogger();                          //
@@ -27,26 +28,32 @@ namespace rpa_robot
             Grid.SetRow(Globals.StatusTxtBox, 1);
             logs.Children.Add(Globals.LogsTxtBox);
             status.Children.Add(Globals.StatusTxtBox);
-            //RobotReportList.ItemsSource = Globals.List; //
+
+            StateChanged += MainWindow_StateChanged;
+            Globals.notifyIcon.Icon = new System.Drawing.Icon(Globals.ImagePath);
+            Globals.notifyIcon.Text = "rpa_robot";
+            Globals.notifyIcon.MouseClick += notifyIcon_MouseClick;
             //================== LOGGING =================  
 
             //=======================================================================================
-            Globals.RobotAsyncListenerFromServiceWorker.DoWork += Handler.RobotAsyncListenerFromServiceFun;   
-            Globals.Robot.DoWork                               += Handler.RobotFun;                          
-            Globals.RobotAsyncListenerFromServiceWorker.RunWorkerAsync();                            
-            Globals.Robot.RunWorkerAsync();                                                          
+            Globals.RobotAsyncListenerFromServiceWorker.DoWork += Handler.RobotAsyncListenerFromServiceFun;
+            Globals.Robot.DoWork += Handler.RobotFun;
+            Globals.RobotAsyncListenerFromServiceWorker.RunWorkerAsync();
+            Globals.Robot.RunWorkerAsync();
             //=======================================================================================
         }
 
         private void OnStartServiceButtonClick(object sender, RoutedEventArgs e)
         {
-            Service.Start();  
+            Service.Start();
         }
 
         private void OnStopServiceButtonClick(object sender, RoutedEventArgs e)
         {
-            Service.Stop();
+            //Service.Stop();
             //Globals.RobotAsyncClientFromService.SendToSocket("Welcome");
+            //Log.Information("HERE");
+            Handler.RunWorkFlow();
         }
 
         private void OnInstallServiceButtonClick(object sender, RoutedEventArgs e)
@@ -63,10 +70,26 @@ namespace rpa_robot
             Log.Information(Info.MAIN_WINDOW_IS_COLSED);
             //Service.Stop(); 
         }
-        public static void AppendTxt(string text)
-        {
-            Globals.LogsTxtBox.AppendText(text);
-        }
 
+        private void MainWindow_StateChanged(object sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Minimized)
+            {
+                // Hide the main window and show the NotifyIcon
+                Visibility = Visibility.Hidden;
+                Globals.notifyIcon.Visible = true;
+            }
+            else
+            {
+                // Show the main window and hide the NotifyIcon
+                Visibility = Visibility.Visible;
+                Globals.notifyIcon.Visible = false;
+            }
+        }
+        private void notifyIcon_MouseClick(object sender, EventArgs e)
+        {
+            // Show or hide the main window when the user clicks on the NotifyIcon
+            Visibility = Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
+        }
     }
 }

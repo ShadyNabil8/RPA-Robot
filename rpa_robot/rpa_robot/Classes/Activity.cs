@@ -8,6 +8,7 @@ namespace rpa_robot
 {
     public class Activity
     {
+        public string Type { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }
         public string Time { get; set; }

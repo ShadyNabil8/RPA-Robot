@@ -15,7 +15,7 @@ namespace rpa_robot.Classes
     {
         private static bool isInstalled      = false;
         private static string serviceName    = "rpaService";
-        private static string serviceExePath = @"D:\New folder\CSE\grad.Proj\rpaSlayerRobot\rpaService\bin\Debug\rpaService.exe";
+        private static string serviceExePath = @"D:\New folder\CSE\grad.Proj\rpa_robot\rpaService\bin\Debug\rpaService.exe";
         private static TransactedInstaller transactedInstaller;
         private static ServiceProcessInstaller serviceProcessInstaller;
         private static ServiceInstaller serviceInstaller;
@@ -37,7 +37,7 @@ namespace rpa_robot.Classes
             // Create a new instance of ServiceProcessInstaller
             serviceProcessInstaller = new ServiceProcessInstaller();
             // RUN THE SERVICE IN THE LOCAL SYSTEM
-            serviceProcessInstaller.Account = ServiceAccount.LocalSystem;
+            serviceProcessInstaller.Account = ServiceAccount.NetworkService;
 
             // Create a new instance of ServiceInstaller
             serviceInstaller = new ServiceInstaller();
@@ -46,7 +46,7 @@ namespace rpa_robot.Classes
             serviceInstaller.ServiceName = serviceName;
             serviceInstaller.DisplayName = serviceName;
             serviceInstaller.Description = "RPA_Service";
-            serviceInstaller.DelayedAutoStart = true;
+            serviceInstaller.DelayedAutoStart = false;
 
             // Set the service executable path
             serviceInstaller.Context = new InstallContext();
