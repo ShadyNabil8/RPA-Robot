@@ -17,7 +17,7 @@ namespace rpa_robot
         {
 
             InitializeComponent();
-            Service.Initialize();
+            //Service.Initialize();
 
             //================== LOGGING AND NOTIFICATION =================
             Log.Logger = new LoggerConfiguration()        //
@@ -36,35 +36,19 @@ namespace rpa_robot
             //================== LOGGING =================  
 
             //=======================================================================================
-            Globals.RobotAsyncListenerFromServiceWorker.DoWork += Handler.RobotAsyncListenerFromServiceFun;
-            Globals.Robot.DoWork += Handler.RobotFun;
-            Globals.RobotAsyncListenerFromServiceWorker.RunWorkerAsync();
-            Globals.Robot.RunWorkerAsync();
+            //Globals.SharedFolderWorker.DoWork += Handler.SharedFolderProcess;
+            Globals.LogWorker.DoWork += Handler.LoggingProcess;
+            //Globals.SharedFolderWorker.RunWorkerAsync();
+            Globals.LogWorker.RunWorkerAsync();
+            Globals.watcher.Path = Globals.watcherPath;
+            Globals.watcher.Created += Handler.OnFileCreated;
+            // Enable the watcher
+            Globals.watcher.EnableRaisingEvents = true;
             //=======================================================================================
+            Orchestrator.MakeAuthentication();
         }
 
-        private void OnStartServiceButtonClick(object sender, RoutedEventArgs e)
-        {
-            Service.Start();
-        }
-
-        private void OnStopServiceButtonClick(object sender, RoutedEventArgs e)
-        {
-            //Service.Stop();
-            //Globals.RobotAsyncClientFromService.SendToSocket("Welcome");
-            //Log.Information("HERE");
-            Handler.RunWorkFlow();
-        }
-
-        private void OnInstallServiceButtonClick(object sender, RoutedEventArgs e)
-        {
-            Service.InstallAndStart();
-        }
-
-        private void OnUninstallServiceButtonClick(object sender, RoutedEventArgs e)
-        {
-            Service.UninstallAndStop();
-        }
+        
         private void MainWindow_Closed(object sender, EventArgs e)
         {
             Log.Information(Info.MAIN_WINDOW_IS_COLSED);

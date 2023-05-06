@@ -2,97 +2,134 @@
 using System.Activities.XamlIntegration;
 using System.Activities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using rpa_robot.Classes;
 using Serilog;
 using System.Threading;
 using System.ComponentModel;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using rpa_robot.Formats;
+using System.IO;
+
 
 namespace rpa_robot
 {
     public class Handler
     {
-        /*
-         * RunWorkFlow()
-         * MainLoop() 
-         * RobotAsyncListenerFromServiceFun()
-         * RobotFun()
-         */
-        
+        public static Queue<string> LogQueue = new Queue<string>();
+        private static bool WorkFlowCreated = false;
+        private static bool LastWorkFlowDone = true;
         public static void RunWorkFlow()
         {
-            if (!string.IsNullOrEmpty(Globals.WorkflowFilePath))
+            try
             {
-                try
-                {
-                    var workflow = ActivityXamlServices.Load(Globals.WorkflowFilePath);
-                    var wa = new WorkflowApplication(workflow);
-                    wa.Extensions.Add(new AsyncTrackingParticipant());
-                    wa.Run();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                var workflow = ActivityXamlServices.Load(Globals.WorkflowFilePath);
+                var wa = new WorkflowApplication(workflow);
+                wa.Extensions.Add(new AsyncTrackingParticipant());
+                wa.Run();
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Error while running the Workflow!");
+            }
+
         }
-        public static void RobotFun(object sender, DoWorkEventArgs e)
+        public static void LoggingProcess(object sender, DoWorkEventArgs e)
         {
             while (true)
             {
-
-                if ((Globals.RobotAsyncListenerFromService.ProcessQueue.Count > 0) || (Globals.LogQueue.Count > 0))
+                if (WorkFlowCreated && LastWorkFlowDone) 
                 {
-                    if ((Globals.RobotAsyncListenerFromService.ProcessQueue.Count > 0)) 
+                    WorkFlowCreated = false;
+                    StartWorkFlowThread();
+                }
+                if ((LogQueue.Count > 0) || (Orchestrator.OrchestratorProcessQueue.Count > 0))
+                {
+                    string log = "";
+                    lock (LogQueue)
                     {
-                        lock (Globals.RobotAsyncListenerFromService.ProcessQueue)
-                        {
+                        log = LogQueue.Dequeue();
 
-                            //Log.Information(Globals.RobotAsyncListenerFromService.ProcessQueue.Dequeue() + "FROM Q");
-                            //Globals.List.Add(new RobotReport("hi", Info.INFO));
-                            //Globals.AddToList("hi", Info.INFO);
-                            var CommandFromService = Globals.RobotAsyncListenerFromService.ProcessQueue.Dequeue();
-                            ServiceRobotCMD CMD = JsonConvert.DeserializeObject<ServiceRobotCMD>(CommandFromService);
-                            if (CMD.Command.Equals("print"))
-                            {
-                                Globals.LogsTxtBox.AppendText(CMD.Data + "\n");
-                            }
-
-                        }
                     }
-                    if ((Globals.LogQueue.Count > 0)) 
+                    Orchestrator.ws.SendAsync(log, (completed) =>
                     {
-                        string log = "";
-                        lock (Globals.LogQueue)
+                        if (completed)
                         {
-                             log = Globals.LogQueue.Dequeue();
-                            
+                            Log.Information("Data sent successfully!");
                         }
-                        Globals.RobotAsyncClientFromService.SendToSocket(log);
+                        else
+                        {
+                            Log.Information("Failed to send data.");
+                        }
+                    });
+
+                    Thread.Sleep(500);
+
+                    if (Orchestrator.OrchestratorProcessQueue.Count > 0)
+                    {
+                        Log.Information(Orchestrator.OrchestratorProcessQueue.Dequeue());
                     }
-                    
                 }
                 else
                 {
                     //== THIS LINE IS WRITTEN TO AVOID THE OVEDHEAD DUE TO THE WHILE LOOP, LOOPING ON NOTHING ==//
-                    Thread.Sleep(100);
+                    Thread.Sleep(500);
                 }
             }
 
         }
-        public static void RobotAsyncListenerFromServiceFun(object sender, DoWorkEventArgs e)
+
+        internal static void OnFileCreated(object sender, FileSystemEventArgs e)
         {
-            Globals.RobotAsyncListenerFromService.StartListening();
+            Log.Information($"FileCreated: {e.FullPath}");
+            CpyWorkFlow();
+            DeleteeWorkFlow(Globals.sourceFilePath);
+            WorkFlowCreated = true;
         }
-        //public static void RobotFun(object sender, DoWorkEventArgs e)
-        //{
-        //    MainLoop();
-        //}
+        private static void CpyWorkFlow() 
+        {
+            try
+            {
+                // Copy the file
+                File.Copy(Globals.sourceFilePath, Globals.destinationFilePath,true);
+                Log.Information("File copied successfully.");
+            }
+            catch (IOException er)
+            {
+                Log.Information($"An error occurred while copying the file: {er.Message}");
+            }
+            catch (Exception ex)
+            {
+                Log.Information($"An error occurred: {ex.Message}");
+            }
+        }
+
+        private static void DeleteeWorkFlow(string Path) 
+        {
+            try
+            {
+                // Delete the file
+                File.Delete(Path);
+                Log.Information("File deleted successfully.");
+            }
+            catch (IOException er)
+            {
+                Log.Information($"An error occurred while deleting the file: {er.Message}");
+            }
+            catch (Exception ex)
+            {
+                Log.Information($"An error occurred: {ex.Message}");
+            }
+        }
+        private static void StartWorkFlowThread()
+        {
+            Thread thread = new Thread(ThreadMethod);
+            thread.Start();
+        }
+
+        private static void ThreadMethod()
+        {
+            LastWorkFlowDone = false;
+            RunWorkFlow();   
+            LastWorkFlowDone = true;
+        }
     }
 }

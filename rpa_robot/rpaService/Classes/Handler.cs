@@ -35,7 +35,18 @@ namespace rpaService.Classes
                             //Log.Information(Globals.ServiceAsyncListenerFromRobot.ProcessQueue.Dequeue() + "form Q");
                         }
                         Log.Information(log);
-                        Orchestrator.ws.Send(log);
+                        //Orchestrator.ws.Send(log);
+                        Orchestrator.ws.SendAsync(log, (completed) =>
+                        {
+                            if (completed)
+                            {
+                                Log.Information("Data sent successfully!");
+                            }
+                            else
+                            {
+                                Log.Information("Failed to send data.");
+                            }
+                        });
                         //Log.Information(Orchestrator.Transaction.ToString());
                         //while (Orchestrator.Transaction) ;
                         //Log.Information(Orchestrator.Transaction.ToString());
@@ -77,14 +88,6 @@ namespace rpaService.Classes
         {
             MainLoop();
         }
-        public static void WebSocketISR(object sender, MessageEventArgs e)
-        {
-            Log.Information(e.Data.ToString());
-            lock (Orchestrator.OrchestratorProcessQueue)
-            {
-                Orchestrator.OrchestratorProcessQueue.Enqueue(e.Data);
-            }
-            Orchestrator.Transaction = false;
-        }
+        
     }
 }

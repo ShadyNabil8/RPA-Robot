@@ -85,13 +85,20 @@ namespace rpa_robot
                             var log = JsonConvert.SerializeObject(new RpaLog
                             {
                                 eventType = "logEmitEvent",
-                                payload = new Payload { logType = "ERROR", name = activityStateRecord.Activity.Name, status = activityStateRecord.State, timestamp = activityStateRecord.EventTime.ToString(), message = "this is a log entry", robotId = 1 }
+                                payload = new Payload
+                                { 
+                                    logType = "ERROR",
+                                    name = activityStateRecord.Activity.Name,
+                                    status = activityStateRecord.State,
+                                    timestamp = activityStateRecord.EventTime.ToString(),
+                                    message = "this is a log entry",
+                                    robotId = 1
+                                }
                             });
                             //Globals.RobotAsyncClientFromService.SendToSocket(log);
-                            lock (Globals.LogQueue) 
+                            lock (Handler.LogQueue) 
                             {
-                                Globals.LogQueue.Enqueue(log);
-                                Log.Information("LOGGED");
+                                Handler.LogQueue.Enqueue(log);
                             }
                             
 

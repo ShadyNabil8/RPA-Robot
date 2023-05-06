@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace rpa_robot.Formats
 {
-    internal class ServiceRobotCMD
+    internal class Token
     {
-        public string Command { get; set; }
-        public string Data { get; set; }
+        public string token { get; set; }
     }
 }

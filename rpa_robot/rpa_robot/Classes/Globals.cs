@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.IO;
 
 namespace rpa_robot.Classes
 {
@@ -12,16 +12,20 @@ namespace rpa_robot.Classes
     internal class Globals
     {
         //============================================== GLOGBALs ==============================================//
-        public static AsynchronousSocketListener RobotAsyncListenerFromService       = new AsynchronousSocketListener();
-        public static AsynchronousClient         RobotAsyncClientFromService         = new AsynchronousClient();
-        public static BackgroundWorker           RobotAsyncListenerFromServiceWorker = new BackgroundWorker();    
-        public static BackgroundWorker           Robot                               = new BackgroundWorker();
+        //public static AsynchronousSocketListener RobotAsyncListenerFromService       = new AsynchronousSocketListener();
+        //public static AsynchronousClient         RobotAsyncClientFromService         = new AsynchronousClient();
+        //public static BackgroundWorker SharedFolderWorker = new BackgroundWorker();    
+        public static BackgroundWorker LogWorker = new BackgroundWorker();
+        public static FileSystemWatcher watcher  = new FileSystemWatcher();
         //============================================== GLOGBALs ==============================================//
 
         //============================================== GLOGBALs ==============================================//
         public static string LogPath = @".\log\RobotLog.log";
-        public static string WorkflowFilePath = "D:\\New folder\\CSE\\grad.Proj\\XAMLs\\ShowMB.xaml";
-        public static string ImagePath = "D:\\New folder\\CSE\\grad.Proj\\img\\robot.ico";
+        public static string WorkflowFilePath = @"D:\MY TESTS\SharedFloder\SharedFolder\dst\Workflow.xaml";
+        public static string ImagePath = @"D:\New folder\CSE\grad.Proj\img\robot.ico";
+        public static string watcherPath = @"D:\MY TESTS\SharedFloder\SharedFolder\src\";
+        public static string sourceFilePath = @"D:\MY TESTS\SharedFloder\SharedFolder\src\Workflow.xaml";
+        public static string destinationFilePath = @"D:\MY TESTS\SharedFloder\SharedFolder\dst\Workflow.xaml";
         public static TextBox LogsTxtBox   = new TextBox();
         public static TextBox StatusTxtBox = new TextBox();
         public static System.Windows.Threading.Dispatcher uiDispatcher = Application.Current.Dispatcher;
@@ -29,9 +33,14 @@ namespace rpa_robot.Classes
         //============================================== GLOGBALs ==============================================//
 
         //============================================== GLOGBALs ==============================================//
-        public static string RobotUsername = "Shady";
-        public static string RobotPassword = "Nabil";
+        public static string RobotUsername = "we";
+        public static string RobotPassword = "we";
+        public static string AuthenticationEndPoint = "http://35.242.197.187/api/robot/login/";
         //============================================== GLOGBALs ==============================================//
-        public static Queue<string> LogQueue = new Queue<string>();
+
+        //============================================== GLOGBALs ==============================================//
+
+        //============================================== GLOGBALs ==============================================//
+
     }
 }

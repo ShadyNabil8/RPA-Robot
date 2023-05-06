@@ -73,6 +73,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="websocket-sharp, Version=1.0.2.32519, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharp-NonPreRelease.1.0.0\lib\net35\websocket-sharp.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -83,14 +86,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Activity.cs" />
-    <Compile Include="Classes\AsynchronousClient.cs" />
-    <Compile Include="Classes\AsynchronousSocketListener .cs" />
     <Compile Include="Classes\AsyncTrackingParticipant.cs" />
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\Handler.cs" />
     <Compile Include="Classes\Info.cs" />
-    <Compile Include="Classes\Service.cs" />
-    <Compile Include="Classes\StateObject.cs" />
+    <Compile Include="Classes\Orchestrator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,8 +100,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Formats\Payload.cs" />
+    <Compile Include="Formats\RobotInfo.cs" />
     <Compile Include="Formats\RpaLog.cs" />
-    <Compile Include="Formats\ServiceRobotCMD.cs" />
+    <Compile Include="Formats\Token.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

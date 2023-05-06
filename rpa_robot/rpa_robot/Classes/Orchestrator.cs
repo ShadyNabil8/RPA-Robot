@@ -1,16 +1,19 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
-using Newtonsoft.Json;
-using rpaService.Formats;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using WebSocketSharp;
-using Serilog;
+using rpa_robot.Formats;
 using System.Threading;
-using System.Data.Common;
 
-namespace rpaService.Classes
+namespace rpa_robot.Classes
 {
     internal class Orchestrator
     {
@@ -20,29 +23,22 @@ namespace rpaService.Classes
         public static void MakeAuthentication()
         {
             Log.Information("Service is tring to connect to the Orchestrator");
-            //Globals.ServiceAsyncClientFromRobot.StartClient("Service is tring to connect to the Orchestrator");
-            /*{
-                var CMD = JsonConvert.SerializeObject(new ServiceRobotCMD
-                {
-                    Command = "print",
-                    Data = "Service is tring to connect to the Orchestrator"
-                });
-                Globals.ServiceAsyncClientFromRobot.StartClient(CMD);
-            }*/
-
-            var RobotInormation = JsonConvert.SerializeObject(new RobotInfo {
-                username = Globals.RobotUserName, password = Globals.RobotPassword
+            Globals.LogsTxtBox.AppendText("Service is tring to connect to the Orchestrator\n");
+            var RobotInormation = JsonConvert.SerializeObject(new RobotInfo
+            {
+                username = Globals.RobotUsername,
+                password = Globals.RobotPassword
             });
 
-            var content = new StringContent(RobotInormation, System.Text.Encoding.UTF8, "application/json");
-            while (!Connected) 
+            var content = new StringContent(RobotInormation,Encoding.UTF8, "application/json");
+            while (!Connected)
             {
                 try
                 {
                     using (var client = new HttpClient())
                     {
                         // Send a POST request to the specified URL with the content and get the response
-                        var response = client.PostAsync("http://35.242.197.187/api/robot/login/", content).Result;
+                        var response = client.PostAsync(Globals.AuthenticationEndPoint, content).Result;
 
                         // Read the response content as a string
                         var responseContent = response.Content.ReadAsStringAsync().Result;
@@ -51,21 +47,28 @@ namespace rpaService.Classes
                         HttpStatusCode StatusCode = response.StatusCode;
                         if (StatusCode == HttpStatusCode.OK)
                         {
-                            
                             Log.Information("StatusCode 200[OK] is received!");
+                            Globals.LogsTxtBox.AppendText("StatusCode 200[OK] is received!\n");
 
                             Token Tok = JsonConvert.DeserializeObject<Token>(responseContent);
                             ws = new WebSocket($"ws://35.242.197.187/rtlogs?token={Tok.token}");
+
                             Log.Information($"The Token: {Tok.token}");
+                            Globals.LogsTxtBox.AppendText($"The Token: {Tok.token}\n");
 
                             ws.OnMessage += WebSocketISR;
                             ws.OnClose += WSOnClose;
                             ws.OnError += WSOnError;
                             ws.OnOpen += WSOnOpen;
+
                             Log.Information("Service is tring to connect to the Web socket!");
+                            Globals.LogsTxtBox.AppendText("Service is tring to connect to the Web socket!\n");
 
                             ws.Connect();
+
                             Log.Information("Service connected to the Web socket!");
+                            Globals.LogsTxtBox.AppendText("Service connected to the Web socket!\n");
+
                             Connected = true;
                         }
                         else
@@ -80,14 +83,15 @@ namespace rpaService.Classes
                     Log.Information("Service cannot connect to the orchestrator!");
 
                 }
+                Thread.Sleep(500);
             }
-            
-            
+
+
         }
 
         private static void WSOnOpen(object sender, EventArgs e)
         {
-            Log.Information("OPEND");
+            Log.Information("Websocket is open");
         }
 
         private static void WSOnError(object sender, ErrorEventArgs e)
@@ -102,13 +106,10 @@ namespace rpaService.Classes
 
         private static void WebSocketISR(object sender, MessageEventArgs e)
         {
-            Log.Information("HI IAM HERE");
-            Log.Information(e.Data);
             lock (OrchestratorProcessQueue)
             {
                 OrchestratorProcessQueue.Enqueue(e.Data);
             }
         }
     }
-    
 }
