@@ -45,7 +45,7 @@ namespace rpa_robot
             // Enable the watcher
             Globals.watcher.EnableRaisingEvents = true;
             //=======================================================================================
-            Orchestrator.MakeAuthentication();
+            //Orchestrator.MakeAuthentication();
         }
 
         
