@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rpa_robot", "rpa_robot\rpa_robot.csproj", "{2B8256C2-F238-48B0-9652-8BC283836930}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UI_robot", "UI_robot\UI_robot.vdproj", "{CDAB7BCD-BB4F-47CE-8B7B-2E5A05D495CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{2B8256C2-F238-48B0-9652-8BC283836930}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B8256C2-F238-48B0-9652-8BC283836930}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B8256C2-F238-48B0-9652-8BC283836930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDAB7BCD-BB4F-47CE-8B7B-2E5A05D495CD}.Debug|Any CPU.ActiveCfg = Debug
+		{CDAB7BCD-BB4F-47CE-8B7B-2E5A05D495CD}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

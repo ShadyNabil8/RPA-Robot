@@ -95,7 +95,6 @@ namespace rpa_robot
                                     robotId = 1
                                 }
                             });
-                            //Globals.RobotAsyncClientFromService.SendToSocket(log);
                             lock (Handler.LogQueue) 
                             {
                                 Handler.LogQueue.Enqueue(log);
@@ -103,13 +102,7 @@ namespace rpa_robot
                             
 
                         }
-                        //Thread.Sleep(1000);
                     }
-
-
-
-
-
                 }
                 else
                 {

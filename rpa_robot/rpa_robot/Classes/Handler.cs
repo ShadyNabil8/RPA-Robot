@@ -73,8 +73,12 @@ namespace rpa_robot
             if (obj.CompletionState == ActivityInstanceState.Closed)
             {
                 // Workflow execution completed successfully
-                Log.Information("Workflow completed successfully!");
                 LastWorkFlowDone = true;
+                Log.Information("Workflow completed successfully!");
+                Globals.uiDispatcher.Invoke(() =>
+                {
+                    Globals.LogsTxtBox.AppendText("Workflow completed successfully!\n");
+                });
             }
             else if (obj.CompletionState == ActivityInstanceState.Canceled)
             {
@@ -105,21 +109,32 @@ namespace rpa_robot
         {
             while (true)
             {
+                // Check if a workflow has been created and the last workflow is done
                 if (WorkFlowCreated && LastWorkFlowDone)
                 {
+                    // Reset the flag for workflow creation and perform necessary actions
                     WorkFlowCreated = false;
+
+                    // Copy the work flow from the source path to the destination path to be ready for another workflow.
                     CpyWorkFlow();
+
+                    // Delete the work flow from the source path to be ready for another workflow.
                     DeleteeWorkFlow(Globals.sourceFilePath);
+
+                    // Create a thread to run the workflow.
                     StartWorkFlowThread();
                 }
+                // Check if there are logs in the log queue or orchestrator events in the process queue
                 if ((LogQueue.Count > 0) || (Orchestrator.OrchestratorProcessQueue.Count > 0))
                 {
                     string log = "";
                     lock (LogQueue)
                     {
+                        // Dequeue a log from the log queue
                         log = LogQueue.Dequeue();
 
                     }
+                    // Send the log asynchronously to the orchestrator WebSocket
                     Orchestrator.ws.SendAsync(log, (completed) =>
                     {
                         if (completed)
@@ -132,16 +147,21 @@ namespace rpa_robot
                         }
                     });
 
+                    // Pause the thread for a short period to prevent excessive loading on the server
                     Thread.Sleep(500);
+
+                    // Check if there are orchestrator events in the process queue
 
                     if (Orchestrator.OrchestratorProcessQueue.Count > 0)
                     {
+                        // Dequeue an orchestrator event from the process queue and log it
                         Log.Information(Orchestrator.OrchestratorProcessQueue.Dequeue());
                     }
                 }
                 else
                 {
-                    //== THIS LINE IS WRITTEN TO AVOID THE OVEDHEAD DUE TO THE WHILE LOOP, LOOPING ON NOTHING ==//
+                    // No logs or orchestrator events to process
+                    // Pause the thread for a short period to prevent excessive looping
                     Thread.Sleep(500);
                 }
             }
@@ -251,7 +271,6 @@ namespace rpa_robot
         {
             LastWorkFlowDone = false;
             RunWorkFlow();
-            //LastWorkFlowDone = true;
         }
     }
 }
