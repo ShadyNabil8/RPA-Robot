@@ -109,53 +109,53 @@ namespace rpa_robot.Classes
                         Token token = JsonConvert.DeserializeObject<Token>(responseContent);
 
                         // Create a WebSocket connection URL with the obtained token
-                        using (var ws = new WebSocket($"{Globals.WebSocketCreationEndPoint}{token.token}"))
+                        ws = new WebSocket($"{Globals.WebSocketCreationEndPoint}{token.token}");
+
+                        // Log the obtained token
+                        Log.Information($"The Token: {token.token}");
+                        Globals.uiDispatcher.Invoke(() =>
                         {
-                            // Log the obtained token
-                            Log.Information($"The Token: {token.token}");
-                            Globals.uiDispatcher.Invoke(() =>
-                            {
-                                Globals.LogsTxtBox.AppendText($"The Token: {token.token}\n");
-                            });
+                            Globals.LogsTxtBox.AppendText($"The Token: {token.token}\n");
+                        });
 
-                            // Subscribe to WebSocket events
-                            ws.OnMessage += WebSocketISR;
-                            ws.OnClose += WSOnClose;
-                            ws.OnError += WSOnError;
-                            //ws.OnOpen += WSOnOpen;
+                        // Subscribe to WebSocket events
+                        ws.OnMessage += WebSocketISR;
+                        ws.OnClose += WSOnClose;
+                        ws.OnError += WSOnError;
+                        //ws.OnOpen += WSOnOpen;
 
-                            // Create a task completion source to track the completion of the connection
-                            var connectionTaskCompletionSource = new TaskCompletionSource<bool>();
+                        // Create a task completion source to track the completion of the connection
+                        var connectionTaskCompletionSource = new TaskCompletionSource<bool>();
 
-                            // Handle the Open event to complete the task when the connection is established
-                            ws.OnOpen += (sender, e) =>
-                            {
-                                connectionTaskCompletionSource.SetResult(true);
-                                Log.Information("Websocket is open");
-                            };
+                        // Handle the Open event to complete the task when the connection is established
+                        ws.OnOpen += (sender, e) =>
+                        {
+                            connectionTaskCompletionSource.SetResult(true);
+                            Log.Information("Websocket is open");
+                        };
 
-                            // Log the initiation of the WebSocket connection
-                            Log.Information("Robot is trying to connect to the WebSocket!");
-                            Globals.uiDispatcher.Invoke(() =>
-                            {
-                                Globals.LogsTxtBox.AppendText("Robot is trying to connect to the WebSocket!\n");
-                            });
+                        // Log the initiation of the WebSocket connection
+                        Log.Information("Robot is trying to connect to the WebSocket!");
+                        Globals.uiDispatcher.Invoke(() =>
+                        {
+                            Globals.LogsTxtBox.AppendText("Robot is trying to connect to the WebSocket!\n");
+                        });
 
-                            // Connect to the WebSocket asynchronously
-                            await Task.Run(() => ws.Connect());
+                        // Connect to the WebSocket asynchronously
+                        await Task.Run(() => ws.Connect());
 
-                            // Wait for the connection task to complete
-                            await connectionTaskCompletionSource.Task;
+                        // Wait for the connection task to complete
+                        await connectionTaskCompletionSource.Task;
 
 
-                            // Log the successful WebSocket connection
-                            Log.Information("Robot connected to the WebSocket!");
-                            Globals.uiDispatcher.Invoke(() =>
-                            {
-                                Globals.LogsTxtBox.AppendText("Robot connected to the WebSocket!\n");
-                            });
-                        }
+                        // Log the successful WebSocket connection
+                        Log.Information("Robot connected to the WebSocket!");
+                        Globals.uiDispatcher.Invoke(() =>
+                        {
+                            Globals.LogsTxtBox.AppendText("Robot connected to the WebSocket!\n");
+                        });
                     }
+
                     else
                     {
                         // Authentication unsuccessful (status code other than 200 [OK])

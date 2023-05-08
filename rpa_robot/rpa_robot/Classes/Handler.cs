@@ -105,6 +105,7 @@ namespace rpa_robot
         /// Sends log data from the LogQueue to the orchestrator using an asynchronous method.
         /// Sleeps for a specified interval before checking the conditions again.
         /// </remarks>
+        /// 
         public static void LoggingProcess(object sender, DoWorkEventArgs e)
         {
             while (true)
@@ -134,19 +135,28 @@ namespace rpa_robot
                         log = LogQueue.Dequeue();
 
                     }
-                    // Send the log asynchronously to the orchestrator WebSocket
-                    Orchestrator.ws.SendAsync(log, (completed) =>
-                    {
-                        if (completed)
-                        {
-                            Log.Information("Data sent successfully!");
-                        }
-                        else
-                        {
-                            Log.Information("Failed to send data.");
-                        }
-                    });
 
+                    // Send the log asynchronously to the orchestrator WebSocket
+                    try
+                    {
+                        Orchestrator.ws.SendAsync(log, (completed) =>
+                        {
+                            if (completed)
+                            {
+                                Log.Information("Data sent successfully!");
+                            }
+                            else
+                            {
+                                Log.Information("Failed to send data.");
+                            }
+                        });
+                    }
+                    catch   (Exception ex) 
+                    {
+                        // Log the exception
+                        Log.Error($"An error occurred during the SendAsync : {ex}");
+                    }
+                   
                     // Pause the thread for a short period to prevent excessive loading on the server
                     Thread.Sleep(500);
 
@@ -165,8 +175,8 @@ namespace rpa_robot
                     Thread.Sleep(500);
                 }
             }
-
         }
+
         /*====================================================================================================================*/
 
         /// <summary>
