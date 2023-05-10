@@ -22,9 +22,9 @@ namespace rpa_robot
             new ManualResetEvent(false);
 
         // The response from the remote device.
-        private static String response = String.Empty;
+        private static string response = string.Empty;
 
-        public void SendToSocket(string mgs) 
+        public static void SendToSocket(string mgs) 
         {
             if (Service.IsInstalled())
             {
@@ -42,7 +42,7 @@ namespace rpa_robot
                 Log.Information(Info.SERVICE_NEED_TO_BE_INSTALLED);
             }
         }
-        public void StartClient(string mgs)
+        public static void StartClient(string mgs)
         {
             // Connect to a remote device.
             try

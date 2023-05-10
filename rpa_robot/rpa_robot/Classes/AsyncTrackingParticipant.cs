@@ -1,16 +1,12 @@
 ﻿using Newtonsoft.Json;
 using rpa_robot.Classes;
 using rpa_robot.Formats;
-using Serilog;
 using System;
 using System.Activities.Tracking;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace rpa_robot
 {
@@ -54,7 +50,7 @@ namespace rpa_robot
             throw new NotImplementedException();
         }
 
-        
+
 
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -64,14 +60,14 @@ namespace rpa_robot
                 // Dequeue a record if any
                 if (queue.TryDequeue(out TrackingRecord record))
                 {
-                    
+
                     if (record is ActivityStateRecord activityStateRecord)
                     {
 
 
                         if (!activityStateRecord.Activity.Name.Equals("DynamicActivity"))
                         {
-                           
+
                             //Globals.uiDispatcher.Invoke(() => {
                             //    Globals.StatusTxtBox.AppendText(JsonConvert.SerializeObject(new Activity
                             //    {
@@ -85,24 +81,24 @@ namespace rpa_robot
                             var log = JsonConvert.SerializeObject(new RpaLog
                             {
                                 eventType = "logEmitEvent",
-                                payload = new Payload { logType = "ERROR", name = activityStateRecord.Activity.Name, status = activityStateRecord.State, timestamp = activityStateRecord.EventTime.ToString(), message = "this is a log entry", robotId = 1 }
+                                payload = new Payload
+                                {
+                                    logType = "ERROR",
+                                    name = activityStateRecord.Activity.Name,
+                                    status = activityStateRecord.State,
+                                    timestamp = activityStateRecord.EventTime.ToString(),
+                                    message = "this is a log entry",
+                                    robotId = 1
+                                }
                             });
-                            //Globals.RobotAsyncClientFromService.SendToSocket(log);
-                            lock (Globals.LogQueue) 
+                            lock (Handler.LogQueue)
                             {
-                                Globals.LogQueue.Enqueue(log);
-                                Log.Information("LOGGED");
+                                Handler.LogQueue.Enqueue(log);
                             }
-                            
+
 
                         }
-                        //Thread.Sleep(1000);
                     }
-
-
-
-
-
                 }
                 else
                 {

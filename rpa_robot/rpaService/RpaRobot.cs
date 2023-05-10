@@ -2,6 +2,7 @@
 using Serilog;
 using rpaService.Classes;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace rpaService
 {
@@ -20,14 +21,13 @@ namespace rpaService
         protected override void OnStart(string[] args)
         {
             Log.Information(Info.SERVICE_STARTED);
-            Globals.ServiceAsyncListenerFromRobotThread.Start();
-            Globals.ServiceAsyncListenerFromRobotThreadHnadler.Start();
-            Orchestrator.MakeAuthentication();
+            Globals.ListenerFromRobot.Start();
+            Globals.LoggingProcess.Start();
+            Orchestrator.MakeAuthenticationAsync();
         }
         protected override void OnStop()
         {
             Log.Information(Info.SERVICE_STOPED);
-            //Orchestrator.ws.Close();
         }
 
         protected override void OnContinue()

@@ -36,9 +36,12 @@ namespace rpa_robot
             //================== LOGGING =================  
 
             //=======================================================================================
-            Globals.RobotAsyncListenerFromServiceWorker.DoWork += Handler.RobotAsyncListenerFromServiceFun;
-            Globals.Robot.DoWork += Handler.RobotFun;
-            Globals.RobotAsyncListenerFromServiceWorker.RunWorkerAsync();
+            Globals.watcher.Path = Globals.watcherPath;
+            Globals.watcher.Created += Handler.OnFileCreated;
+            // Enable the watcher
+            Globals.watcher.EnableRaisingEvents = true;
+
+            Globals.Robot.DoWork += Handler.RobotProcess;
             Globals.Robot.RunWorkerAsync();
             //=======================================================================================
         }

@@ -15,7 +15,6 @@ namespace rpa_robot.Classes
     {
         private static bool isInstalled      = false;
         private static string serviceName    = "rpaService";
-        private static string serviceExePath = @"D:\New folder\CSE\grad.Proj\rpa_robot\rpaService\bin\Debug\rpaService.exe";
         private static TransactedInstaller transactedInstaller;
         private static ServiceProcessInstaller serviceProcessInstaller;
         private static ServiceInstaller serviceInstaller;
@@ -50,7 +49,7 @@ namespace rpa_robot.Classes
 
             // Set the service executable path
             serviceInstaller.Context = new InstallContext();
-            serviceInstaller.Context.Parameters["assemblypath"] = serviceExePath;
+            serviceInstaller.Context.Parameters["assemblypath"] = Globals.serviceExePath;
             // DEFINE WHAT SHOULD BE HAPPEN BEFORE UNINSTALL THE SERVICE
             serviceInstaller.BeforeUninstall += new InstallEventHandler(MyInstaller_BeforeUninstall);
 
@@ -60,7 +59,7 @@ namespace rpa_robot.Classes
             transactedInstaller.Installers.Add(serviceInstaller);
             transactedInstaller.Context = new InstallContext();
             // PASS THE PATH OF THE .EXE SERVICE AS A PARAMETER FOR THE CMD COMMAND
-            transactedInstaller.Context.Parameters["assemblypath"] = serviceExePath;
+            transactedInstaller.Context.Parameters["assemblypath"] = Globals.serviceExePath;
 
             if (isInstalled == true) 
             {

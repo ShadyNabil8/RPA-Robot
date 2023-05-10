@@ -13,78 +13,103 @@ namespace rpaService.Classes
 {
     internal class Handler
     {
-        /*
-         * MainLoop()
-         * ServiceAsyncListenerFromRobotFun()
-         * ServiceAsyncListenerFromRobotThreadHnadlerFun()
-         */
+   
+        public static Queue<string> LogQueue = new Queue<string>();
+        public static int waitTime = 500;
+        public static int ExpBakeOffDelay = 1000;
+        public static int Factor = 1;
 
-        public static void MainLoop() 
+        /// <summary>
+        /// The `LoggingProcessHandler` function handles the logging process by sending logs and orchestrator events to a WebSocket and processing the log queue and orchestrator process queue.
+        /// </summary>
+        public static void LoggingProcessHandler()
         {
             while (true)
             {
-                if ((Globals.ServiceAsyncListenerFromRobot.ProcessQueue.Count > 0) || (Orchestrator.OrchestratorProcessQueue.Count > 0))
-                { 
-                    if (Globals.ServiceAsyncListenerFromRobot.ProcessQueue.Count > 0)
+                // Check if there are logs in the log queue or orchestrator events in the process queue
+                if ((LogQueue.Count > 0) || (Orchestrator.OrchestratorProcessQueue.Count > 0))
+                {
+                    // Check if there are logs in the log queue
+                    if (LogQueue.Count > 0)
                     {
-                        string log = "";
-                        lock (Globals.ServiceAsyncListenerFromRobot.ProcessQueue)
+                        string log;
+                        lock (LogQueue)
                         {
-                            log = Globals.ServiceAsyncListenerFromRobot.ProcessQueue.Dequeue();
-                            //Log.Information(Globals.ServiceAsyncListenerFromRobot.ProcessQueue.Dequeue());
-                            //Log.Information(Globals.ServiceAsyncListenerFromRobot.ProcessQueue.Dequeue() + "form Q");
+                            // Dequeue a log from the log queue
+                            log = LogQueue.Dequeue();
                         }
-                        Log.Information(log);
-                        Orchestrator.ws.Send(log);
-                        //Log.Information(Orchestrator.Transaction.ToString());
-                        //while (Orchestrator.Transaction) ;
-                        //Log.Information(Orchestrator.Transaction.ToString());
-                        //Orchestrator.Transaction = true;
-                        //Globals.ServiceAsyncClientFromRobot.StartClient("HISHADY");
+
+                        try
+                        {
+                            // Check if the WebSocket connection is alive
+                            if (Orchestrator.ws.IsAlive)
+                            {
+                                // Send the log asynchronously using the WebSocket's SendAsync method and handle the completion callback
+                                Orchestrator.ws.SendAsync(log, (completed) =>
+                                {
+                                    if (completed)
+                                    {
+                                        Log.Information("Data sent successfully!");
+                                    }
+                                    else
+                                    {
+                                        Log.Information("Failed to send data.");
+                                    }
+                                });
+                            }
+                            else
+                            {
+                                // Log an error indicating that the WebSocket is not alive
+                                Log.Error("Web socket is not Alive!");
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            // Log the exception that occurred during the sending process
+                            Log.Error($"An error occurred during the SendAsync : {ex}");
+                        }
                     }
+
+                    // Pause the thread for a short period to prevent excessive loading on the server
+                    Thread.Sleep(waitTime);
+
+                    // Check if there are orchestrator events in the process queue
+
                     if (Orchestrator.OrchestratorProcessQueue.Count > 0)
                     {
-                        lock (Globals.ServiceAsyncListenerFromRobot.ProcessQueue)
-                        {
-                            Log.Information(Orchestrator.OrchestratorProcessQueue.Dequeue());
-                            //Orchestrator.ws.Send(Orchestrator.OrchestratorProcessQueue.Dequeue());
-                        }
+                        // Dequeue an orchestrator event from the process queue and log it
+                        Log.Information(Orchestrator.OrchestratorProcessQueue.Dequeue());
                     }
                 }
                 else
                 {
-                    /*if(Orchestrator.Connected)
+                    // No logs or orchestrator events to process
+                    // Adjust the factor for exponential backoff
+                    if (Factor < 8)
                     {
-                        var log = JsonConvert.SerializeObject(new RpaLog
-                        {
-                            eventType = "logEmitEvent",
-                            payload = new Payload { logType = "ERROR", name = "MessageBox", status = "Running", timestamp = "12345", message = "this is a log entry", robotId = 1 }
-                        });
-                        Orchestrator.ws.Send(log);
-                    }*/
-                    
-                    //== THIS LINE IS WRITTEN TO AVOID THE OVEDHEAD DUE TO THE WHILE LOOP, LOOPING ON NOTHING ==//
-                    Thread.Sleep(100);
+                        Factor *= 2;
+                    }
+                    else
+                    {
+                        Factor = 1;
+                    }
+                    // No logs or orchestrator events to process
+                    // Pause the thread for a short period to prevent excessive looping
+                    Thread.Sleep(ExpBakeOffDelay);
                 }
             }
         }
-        public static void ServiceAsyncListenerFromRobotFun()
-        {
-            Globals.ServiceAsyncListenerFromRobot.StartListening();
-        }
 
-        public static void ServiceAsyncListenerFromRobotThreadHnadlerFun()
+        /// <summary>
+        /// The ListenerFromRobothHandler function serves as an entry point for starting the asynchronous socket listener.
+        /// It simply calls the StartListening method from the AsynchronousSocketListener class to initiate the listening process and handle communication with the robot.
+        /// The details of the socket listening and communication logic are encapsulated within the AsynchronousSocketListener class, allowing for modularity and separation of concerns.
+        /// </summary>
+        public static void ListenerFromRobothHandler()
         {
-            MainLoop();
-        }
-        public static void WebSocketISR(object sender, MessageEventArgs e)
-        {
-            Log.Information(e.Data.ToString());
-            lock (Orchestrator.OrchestratorProcessQueue)
-            {
-                Orchestrator.OrchestratorProcessQueue.Enqueue(e.Data);
-            }
-            Orchestrator.Transaction = false;
+            // Start the asynchronous socket listener
+            AsynchronousSocketListener.StartListening();
         }
     }
 }

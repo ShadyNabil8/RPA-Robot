@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Serilog;
+using rpaService.Classes;
 
 namespace rpaService
 {
@@ -17,15 +18,11 @@ namespace rpaService
         // Thread signal.
         public static ManualResetEvent allDone = new ManualResetEvent(false);
 
-        // A queue to store the commands
-        public Queue<String> ProcessQueue;
-
         public AsynchronousSocketListener()
         {
-            this.ProcessQueue = new Queue<String>();
         }
 
-        public void StartListening()
+        public static void StartListening()
         {
             // Data buffer for incoming data.
             byte[] bytes = new Byte[1024];
@@ -69,7 +66,7 @@ namespace rpaService
 
         }
 
-        public void AcceptCallback(IAsyncResult ar)
+        public static void AcceptCallback(IAsyncResult ar)
         {
             // Signal the main thread to continue.
             allDone.Set();
@@ -85,7 +82,7 @@ namespace rpaService
                 new AsyncCallback(ReadCallback), state);
         }
 
-        public void ReadCallback(IAsyncResult ar)
+        public static void ReadCallback(IAsyncResult ar)
         {
             String content = String.Empty;
 
@@ -112,9 +109,9 @@ namespace rpaService
                     // client. Display it on the console.
                     //Log.Information("Read {0} bytes from socket. \n Data : {1}",
                     //    content.Length, content);
-                    lock (this.ProcessQueue)
+                    lock (Handler.LogQueue)
                     {
-                        this.ProcessQueue.Enqueue(content);
+                        Handler.LogQueue.Enqueue(content.Replace("<EOF>", string.Empty));
                     }
                     // Echo the data back to the client.
                     //Send(handler, "ACK");
@@ -128,7 +125,7 @@ namespace rpaService
             }
         }
 
-        private void Send(Socket handler, String data)
+        private static void Send(Socket handler, String data)
         {
             // Convert the string data to byte data using ASCII encoding.
             byte[] byteData = Encoding.ASCII.GetBytes(data);
@@ -138,7 +135,7 @@ namespace rpaService
                 new AsyncCallback(SendCallback), handler);
         }
 
-        private void SendCallback(IAsyncResult ar)
+        private static void SendCallback(IAsyncResult ar)
         {
             try
             {

@@ -9,17 +9,20 @@ namespace rpaService.Classes
 {
     internal class Globals
     {
-        public static AsynchronousSocketListener ServiceAsyncListenerFromRobot = new AsynchronousSocketListener();
-        public static AsynchronousClient ServiceAsyncClientFromRobot           = new AsynchronousClient();
-        public static Thread ServiceAsyncListenerFromRobotThread               = new Thread(Handler.ServiceAsyncListenerFromRobotFun);
-        public static Thread ServiceAsyncListenerFromRobotThreadHnadler        = new Thread(Handler.ServiceAsyncListenerFromRobotThreadHnadlerFun);
+        //public static AsynchronousSocketListener ServiceAsyncListenerFromRobot = new AsynchronousSocketListener();
+        //public static AsynchronousClient ServiceAsyncClientFromRobot           = new AsynchronousClient();
+        public static Thread ListenerFromRobot = new Thread(Handler.ListenerFromRobothHandler);
+        public static Thread LoggingProcess    = new Thread(Handler.LoggingProcessHandler);
 
 
-        public static string LogPath = @"D:\New folder\CSE\grad.Proj\logs\ServiceLog.log";
 
-        public static string RobotUserName = "we";
+        public static string LogPath = @"D:\New folder\CSE\grad.Proj\rpa_robot\rpaService\bin\Debug\log\ServiceLog.log";
+        //============================================== GLOGBALs ==============================================//
+        public static string RobotUsername = "we";
         public static string RobotPassword = "we";
         public static string AuthenticationEndPoint = "http://35.242.197.187/api/robot/login/";
+        public static string WebSocketCreationEndPoint = "ws://35.242.197.187/rtlogs?token=";
+        //============================================== GLOGBALs ==============================================//
 
     }
 
