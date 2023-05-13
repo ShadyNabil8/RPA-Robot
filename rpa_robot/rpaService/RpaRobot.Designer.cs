@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            // 
-            // rpaService
-            // 
-            this.ServiceName = "Service1";
 
         }
 

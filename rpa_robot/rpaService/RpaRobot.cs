@@ -14,8 +14,10 @@ namespace rpaService
             InitializeComponent();
 
             // Initialize the logging process
-            LogInit();
-  
+            Log.Logger = new LoggerConfiguration()
+               .WriteTo.File(Globals.LogPath)
+               .CreateLogger();
+
         }
 
         protected override void OnStart(string[] args)
@@ -23,7 +25,10 @@ namespace rpaService
             Log.Information(Info.SERVICE_STARTED);
             Globals.ListenerFromRobot.Start();
             Globals.LoggingProcess.Start();
-            Orchestrator.MakeAuthenticationAsync();
+            Task.Run(async () =>
+            {
+                await Orchestrator.MakeAuthenticationAsync();
+            });
         }
         protected override void OnStop()
         {
@@ -39,12 +44,7 @@ namespace rpaService
         {
             Log.Information(Info.SERVICE_SHUTDOWN);
         }
-        private void LogInit()
-        {
-            Log.Logger = new LoggerConfiguration()
-               .WriteTo.File(Globals.LogPath)
-               .CreateLogger();
-        }
+        
 
         
     }

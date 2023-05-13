@@ -29,31 +29,34 @@
         private void InitializeComponent()
         {
             this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
-            this.rpaService = new System.ServiceProcess.ServiceInstaller();
+            this.serviceInstaller2 = new System.ServiceProcess.ServiceInstaller();
             // 
             // serviceProcessInstaller1
             // 
             this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
+            this.serviceProcessInstaller1.Installers.AddRange(new System.Configuration.Install.Installer[] {
+            this.serviceInstaller2});
             this.serviceProcessInstaller1.Password = null;
             this.serviceProcessInstaller1.Username = null;
             // 
-            // rpaService
+            // serviceInstaller2
             // 
-            this.rpaService.DisplayName = "rpaService";
-            this.rpaService.ServiceName = "rpaService";
-            this.rpaService.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.rpaService_AfterInstall);
+            this.serviceInstaller2.Description = "rpaService";
+            this.serviceInstaller2.DisplayName = "rpaService";
+            this.serviceInstaller2.ServiceName = "rpaService";
+            this.serviceInstaller2.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
             this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.serviceProcessInstaller1,
-            this.rpaService});
+            this.serviceProcessInstaller1});
 
         }
 
         #endregion
-
-        private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
         private System.ServiceProcess.ServiceInstaller rpaService;
+        private System.ServiceProcess.ServiceInstaller serviceInstaller1;
+        private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
+        public System.ServiceProcess.ServiceInstaller serviceInstaller2;
     }
 }

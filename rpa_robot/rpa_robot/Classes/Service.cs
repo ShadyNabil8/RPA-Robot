@@ -36,7 +36,7 @@ namespace rpa_robot.Classes
             // Create a new instance of ServiceProcessInstaller
             serviceProcessInstaller = new ServiceProcessInstaller();
             // RUN THE SERVICE IN THE LOCAL SYSTEM
-            serviceProcessInstaller.Account = ServiceAccount.NetworkService;
+            serviceProcessInstaller.Account = ServiceAccount.LocalSystem;
 
             // Create a new instance of ServiceInstaller
             serviceInstaller = new ServiceInstaller();

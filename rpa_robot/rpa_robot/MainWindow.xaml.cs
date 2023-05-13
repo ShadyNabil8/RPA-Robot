@@ -17,7 +17,7 @@ namespace rpa_robot
         {
 
             InitializeComponent();
-            Service.Initialize();
+            //Service.Initialize();
 
             //================== LOGGING AND NOTIFICATION =================
             Log.Logger = new LoggerConfiguration()        //

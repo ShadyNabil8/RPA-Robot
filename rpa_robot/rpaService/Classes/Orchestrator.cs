@@ -78,7 +78,7 @@ namespace rpaService.Classes
                     catch (Exception ex)
                     {
                         // Log the exception
-                        Log.Error($"An error occurred during the POST request: {ex}");
+                        Log.Error("An error occurred during the POST request: Internet issue");
                         // Handle the exception or rethrow it to trigger a retry
                         throw;
                     }
@@ -108,6 +108,7 @@ namespace rpaService.Classes
                         ws.OnMessage += WebSocketISR;
                         ws.OnClose += WSOnClose;
                         ws.OnError += WSOnError;
+                        ws.EmitOnPing = true;
 
                         // Create a task completion source to track the completion of the connection
                         var connectionTaskCompletionSource = new TaskCompletionSource<bool>();
@@ -174,11 +175,19 @@ namespace rpaService.Classes
         /// <param name="e">The MessageEventArgs containing the incoming message data.</param>
         private static void WebSocketISR(object sender, MessageEventArgs e)
         {
-            lock (OrchestratorProcessQueue)
+            if (e.IsPing)
             {
-                // Enqueue the incoming message data into the OrchestratorProcessQueue for further processing
-                OrchestratorProcessQueue.Enqueue(e.Data);
+                Log.Information("Ping Received!");
             }
+            else 
+            {
+                lock (OrchestratorProcessQueue)
+                {
+                    // Enqueue the incoming message data into the OrchestratorProcessQueue for further processing
+                    OrchestratorProcessQueue.Enqueue(e.Data);
+                }
+            }
+            
         }
 
 

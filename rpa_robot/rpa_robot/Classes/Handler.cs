@@ -142,7 +142,7 @@ namespace rpa_robot
                     {
                         // Dequeue a log from the log queue
                         // Send the log to the socket using the AsynchronousClient
-                        AsynchronousClient.SendToSocket(LogQueue.Dequeue());
+                        AsynchronousClient.StartClient(LogQueue.Dequeue());
                     }
                     Thread.Sleep(100);
                 }

@@ -16,7 +16,7 @@ namespace rpaService.Classes
 
 
 
-        public static string LogPath = @"D:\New folder\CSE\grad.Proj\rpa_robot\rpaService\bin\Debug\log\ServiceLog.log";
+        public static string LogPath = @"C:\Users\shady\Desktop\log\ServiceLog.log";
         //============================================== GLOGBALs ==============================================//
         public static string RobotUsername = "we";
         public static string RobotPassword = "we";
