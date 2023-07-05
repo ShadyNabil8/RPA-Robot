@@ -18,10 +18,10 @@ namespace rpaService.Classes
 
         public static string LogPath = @"C:\Users\shady\Desktop\log\ServiceLog.log";
         //============================================== GLOGBALs ==============================================//
-        public static string RobotUsername = "we";
-        public static string RobotPassword = "we";
-        public static string AuthenticationEndPoint = "http://35.242.197.187/api/robot/login/";
-        public static string WebSocketCreationEndPoint = "ws://35.242.197.187/rtlogs?token=";
+        public static string RobotUsername = "kz";
+        public static string RobotPassword = "pw";
+        public static string AuthenticationEndPoint = "http://34.155.103.216/api/robot/login/";
+        public static string WebSocketCreationEndPoint = "ws://34.155.103.216/rtlogs?token=";
         //============================================== GLOGBALs ==============================================//
 
     }

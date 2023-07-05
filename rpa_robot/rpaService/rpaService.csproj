@@ -52,6 +52,7 @@
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,11 +84,11 @@
     <Compile Include="ProjectInstaller.Designer.cs">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
-    <Compile Include="RpaRobot.cs">
+    <Compile Include="rpaService.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RpaRobot.Designer.cs">
-      <DependentUpon>RpaRobot.cs</DependentUpon>
+    <Compile Include="rpaService.Designer.cs">
+      <DependentUpon>rpaService.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,8 +102,8 @@
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RpaRobot.resx">
-      <DependentUpon>RpaRobot.cs</DependentUpon>
+    <EmbeddedResource Include="rpaService.resx">
+      <DependentUpon>rpaService.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

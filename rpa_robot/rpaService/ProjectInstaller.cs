@@ -16,7 +16,7 @@ namespace rpaService
             InitializeComponent();
         }
 
-        private void rpaService_AfterInstall(object sender, InstallEventArgs e)
+        private void serviceInstaller1_AfterInstall(object sender, InstallEventArgs e)
         {
 
         }

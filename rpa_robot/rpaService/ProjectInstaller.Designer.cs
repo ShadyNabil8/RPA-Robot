@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
-            this.serviceInstaller2 = new System.ServiceProcess.ServiceInstaller();
+            this.serviceInstaller1 = new System.ServiceProcess.ServiceInstaller();
             // 
             // serviceProcessInstaller1
             // 
-            this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
-            this.serviceProcessInstaller1.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.serviceInstaller2});
+            this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalService;
             this.serviceProcessInstaller1.Password = null;
             this.serviceProcessInstaller1.Username = null;
+            this.serviceProcessInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceProcessInstaller1_AfterInstall);
             // 
-            // serviceInstaller2
+            // serviceInstaller1
             // 
-            this.serviceInstaller2.Description = "rpaService";
-            this.serviceInstaller2.DisplayName = "rpaService";
-            this.serviceInstaller2.ServiceName = "rpaService";
-            this.serviceInstaller2.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
+            this.serviceInstaller1.DelayedAutoStart = true;
+            this.serviceInstaller1.Description = "rpaService";
+            this.serviceInstaller1.DisplayName = "rpaService";
+            this.serviceInstaller1.ServiceName = "rpaService";
+            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
+            this.serviceInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller1_AfterInstall);
             // 
             // ProjectInstaller
             // 
             this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.serviceProcessInstaller1});
+            this.serviceProcessInstaller1,
+            this.serviceInstaller1});
 
         }
 
         #endregion
-        private System.ServiceProcess.ServiceInstaller rpaService;
-        private System.ServiceProcess.ServiceInstaller serviceInstaller1;
+
         private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
-        public System.ServiceProcess.ServiceInstaller serviceInstaller2;
+        private System.ServiceProcess.ServiceInstaller serviceInstaller1;
     }
 }

@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            // 
+            // rpaService
+            // 
+            this.CanShutdown = true;
+            this.ServiceName = "rpaService";
 
         }
 

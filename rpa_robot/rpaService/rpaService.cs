@@ -25,10 +25,10 @@ namespace rpaService
             Log.Information(Info.SERVICE_STARTED);
             Globals.ListenerFromRobot.Start();
             Globals.LoggingProcess.Start();
-            Task.Run(async () =>
-            {
-                await Orchestrator.MakeAuthenticationAsync();
-            });
+            //Task.Run(async () =>
+            //{
+               // await Orchestrator.MakeAuthenticationAsync();
+            //});
         }
         protected override void OnStop()
         {

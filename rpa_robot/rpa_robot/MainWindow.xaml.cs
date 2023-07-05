@@ -1,6 +1,7 @@
 ﻿using rpa_robot.Classes;
 using Serilog;
 using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -17,12 +18,14 @@ namespace rpa_robot
         {
 
             InitializeComponent();
-            //Service.Initialize();
-
-            //================== LOGGING AND NOTIFICATION =================
             Log.Logger = new LoggerConfiguration()        //
                 .WriteTo.File(Globals.LogPath)            //
                 .CreateLogger();                          //
+            //Service.Initialize();
+            CreateWorkflowFolders();
+
+            //================== LOGGING AND NOTIFICATION =================
+            
 
             Grid.SetRow(Globals.LogsTxtBox, 1);
             Grid.SetRow(Globals.StatusTxtBox, 1);
@@ -44,6 +47,7 @@ namespace rpa_robot
             Globals.Robot.DoWork += Handler.RobotProcess;
             Globals.Robot.RunWorkerAsync();
             //=======================================================================================
+            
         }
 
         private void OnStartServiceButtonClick(object sender, RoutedEventArgs e)
@@ -93,6 +97,19 @@ namespace rpa_robot
         {
             // Show or hide the main window when the user clicks on the NotifyIcon
             Visibility = Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
+        }
+        private void CreateWorkflowFolders()
+        {
+            try
+            {
+                Directory.CreateDirectory(@".\WfSource");
+                Directory.CreateDirectory(@".\WfDest");
+                Log.Information("Folder created successfully.");
+            }
+            catch (Exception ex)
+            {
+                Log.Information("Error creating folder: " + ex.Message);
+            }
         }
     }
 }

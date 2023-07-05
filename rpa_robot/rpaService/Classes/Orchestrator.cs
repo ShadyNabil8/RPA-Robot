@@ -22,6 +22,7 @@ namespace rpaService.Classes
         public static WebSocket ws;
         public static bool Connected = false;
         private static int MaxRetryCount = 10;
+        public static bool tryToConnect = true;
 
         /// <summary>
         /// Initiates the authentication process by connecting the robot to the Orchestrator and establishing a WebSocket connection.
@@ -58,7 +59,7 @@ namespace rpaService.Classes
                     {
                         // Log the retry attempt
                         Log.Information($"Retry attempt {retryCount}. Retrying in {timespan.TotalSeconds} seconds.");
-                        
+
                     });
 
             await retryPolicy.ExecuteAsync(async () =>
@@ -90,7 +91,7 @@ namespace rpaService.Classes
                         // Authentication successful (status code 200 [OK])
                         // Log the successful status code
                         Log.Information("StatusCode 200[OK] is received!");
-                        
+
 
                         // Read the response content as a string
                         var responseContent = await response.Content.ReadAsStringAsync();
@@ -106,7 +107,7 @@ namespace rpaService.Classes
 
                         // Subscribe to WebSocket events
                         ws.OnMessage += WebSocketISR;
-                        ws.OnClose += WSOnClose;
+                        ws.OnClose += WSOnCloseAsync;
                         ws.OnError += WSOnError;
                         ws.EmitOnPing = true;
 
@@ -122,7 +123,7 @@ namespace rpaService.Classes
 
                         // Log the initiation of the WebSocket connection
                         Log.Information("Service is trying to connect to the WebSocket!");
-                       
+
                         // Connect to the WebSocket asynchronously
                         await Task.Run(() => ws.Connect());
 
@@ -143,6 +144,8 @@ namespace rpaService.Classes
                     }
                 }
             });
+            Connected = true;
+            tryToConnect = true;
         }
 
 
@@ -162,10 +165,11 @@ namespace rpaService.Classes
         /// </summary>
         /// <param name="sender">The sender object.</param>
         /// <param name="e">The CloseEventArgs containing close event information.</param>
-        private static void WSOnClose(object sender, CloseEventArgs e)
+        private static void WSOnCloseAsync(object sender, CloseEventArgs e)
         {
             // Log that the WebSocket is closed and provide the reason
             Log.Error($"WebSocket is closed: : {e.Reason}");
+
         }
 
         /// <summary>
@@ -179,7 +183,7 @@ namespace rpaService.Classes
             {
                 Log.Information("Ping Received!");
             }
-            else 
+            else
             {
                 lock (OrchestratorProcessQueue)
                 {
@@ -187,10 +191,10 @@ namespace rpaService.Classes
                     OrchestratorProcessQueue.Enqueue(e.Data);
                 }
             }
-            
+
         }
 
 
     }
-    
+
 }
