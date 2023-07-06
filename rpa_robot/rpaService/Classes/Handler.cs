@@ -1,13 +1,10 @@
-﻿using Newtonsoft.Json;
-using rpaService.Formats;
-using Serilog;
+﻿using Serilog;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using WebSocketSharp;
+using Timer = System.Timers.Timer;
 
 namespace rpaService.Classes
 {
@@ -49,7 +46,7 @@ namespace rpaService.Classes
                         try
                         {
                             // Check if the WebSocket connection is alive
-                            if (Orchestrator.ws.IsAlive)
+                            if ((Orchestrator.ws != null) && (Orchestrator.ws.IsAlive)) /* May cause errors */
                             {
                                 //Send the log asynchronously using the WebSocket's SendAsync method and handle the completion callback
                                 Orchestrator.ws.SendAsync(log, (completed) =>

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Polly;
 using System.Text;
 using System.Threading;
+using System.Net.NetworkInformation;
 
 namespace rpaService.Classes
 {
@@ -18,7 +19,7 @@ namespace rpaService.Classes
     {
 
         public static Queue<string> OrchestratorProcessQueue = new Queue<string>();
-        public static WebSocket ws; /* Authentication and logging ws */
+        public static WebSocket ws = null; /* Authentication and logging ws */
         public static int userID = 0;
         private static int MaxRetryCount = 10;
 
@@ -63,87 +64,8 @@ namespace rpaService.Classes
 
             await retryPolicy.ExecuteAsync(async () =>
             {
-                Log.Information("Service is trying to connect to the Orchestrator");
-                using (var client = new HttpClient())
-                {
-                    HttpResponseMessage response;
-                    try
-                    {
-                        // Create the content for the POST request with the serialized robot information
-                        var content = new StringContent(robotInformation, Encoding.UTF8, "application/json");
-
-                        // Send a POST request to the specified URL with the content and get the response
-                        response = await client.PostAsync(Globals.AuthenticationEndPoint, content);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Log the exception
-                        Log.Error("An error occurred during the POST request: Internet issue");
-                        // Handle the exception or rethrow it to trigger a retry
-                        throw;
-                    }
-
-                    // Get the status code
-                    HttpStatusCode statusCode = response.StatusCode;
-                    if (statusCode == HttpStatusCode.OK)
-                    {
-                        // Authentication successful (status code 200 [OK])
-                        // Log the successful status code
-                        Log.Information("StatusCode 200[OK] is received!");
-
-
-                        // Read the response content as a string
-                        var responseContent = await response.Content.ReadAsStringAsync();
-
-                        // Deserialize the response content into a Token object
-                        Token token = JsonConvert.DeserializeObject<Token>(responseContent);
-
-                        // Log the obtained token
-                        Log.Information($"The Token: {token.token}");
-                        //Log.Information($"userID: {token.userID}");
-                        //userID = token.userID;
-
-                        // Create a WebSocket connection URL with the obtained token
-                        ws = new WebSocket($"{Globals.WebSocketCreationEndPoint}{token.token}");
-
-                        // Subscribe to WebSocket events
-                        ws.OnMessage += WebSocketISR;
-                        ws.OnClose += WSOnCloseAsync;
-                        ws.OnError += WSOnError;
-                        ws.EmitOnPing = true;
-
-                        // Create a task completion source to track the completion of the connection
-                        var connectionTaskCompletionSource = new TaskCompletionSource<bool>();
-
-                        // Handle the Open event to complete the task when the connection is established
-                        ws.OnOpen += (sender, e) =>
-                        {
-                            connectionTaskCompletionSource.SetResult(true);
-                            Log.Information("logging Websocket is open");
-                        };
-
-                        // Log the initiation of the WebSocket connection
-                        Log.Information("Service is trying to connect to the logging WebSocket!");
-
-                        // Connect to the WebSocket asynchronously
-                        await Task.Run(() => ws.Connect());
-
-                        // Wait for the connection task to complete
-                        await connectionTaskCompletionSource.Task;
-
-
-                        // Log the successful WebSocket connection
-                        Log.Information("Service connected to the logging WebSocket!");
-                    }
-
-                    else
-                    {
-                        // Authentication unsuccessful (status code other than 200 [OK])
-                        // Deserialize the response content into a Message object
-                        var responseContent = await response.Content.ReadAsStringAsync();
-                        Message msg = JsonConvert.DeserializeObject<Message>(responseContent);
-                    }
-                }
+                Token token = await GetToken();
+                await ConnectToWs(token);
             });
         }
 
@@ -164,19 +86,24 @@ namespace rpaService.Classes
         /// </summary>
         /// <param name="sender">The sender object.</param>
         /// <param name="e">The CloseEventArgs containing close event information.</param>
-        private static void WSOnCloseAsync(object sender, CloseEventArgs e)
+        private static void WSOnClose(object sender, CloseEventArgs e)
         {
             // Log that the WebSocket is closed and provide the reason
             Log.Error($"WebSocket is closed: : {e.Reason}");
             //Reconnect(); // Attempt reconnection
-            if (!e.WasClean)
-            {
-                if (!ws.IsAlive)
-                {
-                    Thread.Sleep(10000);
-                    ws.Connect();
-                }
-            }
+            //while (!CheckInternetConnection())
+            //{
+            //    Thread.Sleep(TimeSpan.FromSeconds(5));
+            //}
+            //if (!e.WasClean)
+            //{
+            //    if (!ws.IsAlive)
+            //    {
+            //        //Thread.Sleep(10000);
+            //        //ws.Connect();
+            //        await MakeAuthenticationAsync();
+            //    }
+            //}
 
         }
 
@@ -190,6 +117,9 @@ namespace rpaService.Classes
             if (e.IsPing)
             {
                 Log.Information("Ping Received!");
+                // Restart the timer
+                Reconnect.timer.Change(Reconnect.timeoutDuration, Timeout.Infinite);
+                Reconnect.loggingWspingReceived = true;
             }
             else
             {
@@ -199,8 +129,8 @@ namespace rpaService.Classes
                     OrchestratorProcessQueue.Enqueue(e.Data);
                 }
             }
-
         }
+        
         //private static void Reconnect()
         //{
         //    while (!ws.IsAlive)
@@ -220,6 +150,99 @@ namespace rpaService.Classes
 
 
         //}
+        static async Task<Token> GetToken()
+        {
+            Token token = null;
+            var robotInformation = JsonConvert.SerializeObject(new RobotInfo
+            {
+                username = Globals.RobotUsername,
+                password = Globals.RobotPassword
+            });
+            Log.Information("Service is trying to connect to the Orchestrator");
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage response;
+                try
+                {
+                    // Create the content for the POST request with the serialized robot information
+                    var content = new StringContent(robotInformation, Encoding.UTF8, "application/json");
+
+                    // Send a POST request to the specified URL with the content and get the response
+                    response = await client.PostAsync(Globals.AuthenticationEndPoint, content);
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception
+                    Log.Error("An error occurred during the POST request: Internet issue");
+                    // Handle the exception or rethrow it to trigger a retry
+                    throw;
+                }
+
+                // Get the status code
+                HttpStatusCode statusCode = response.StatusCode;
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    // Authentication successful (status code 200 [OK])
+                    // Log the successful status code
+                    Log.Information("StatusCode 200[OK] is received!");
+
+
+                    // Read the response content as a string
+                    var responseContent = await response.Content.ReadAsStringAsync();
+
+                    // Deserialize the response content into a Token object
+                    token = JsonConvert.DeserializeObject<Token>(responseContent);
+
+                    // Log the obtained token
+                    Log.Information($"The Token: {token.token}");
+                    //Log.Information($"userID: {token.userID}");
+                    //userID = token.userID;
+                }
+
+                else
+                {
+                    // Authentication unsuccessful (status code other than 200 [OK])
+                    // Deserialize the response content into a Message object
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    Message msg = JsonConvert.DeserializeObject<Message>(responseContent);
+                }
+            }
+            return token;
+        }
+        static async Task ConnectToWs(Token token)
+        {
+            ws = new WebSocket($"{Globals.WebSocketCreationEndPoint}{token.token}");
+
+            // Subscribe to WebSocket events
+            ws.OnMessage += WebSocketISR;
+            ws.OnClose += WSOnClose;
+            ws.OnError += WSOnError;
+            ws.EmitOnPing = true;
+
+            // Create a task completion source to track the completion of the connection
+            var connectionTaskCompletionSource = new TaskCompletionSource<bool>();
+
+            // Handle the Open event to complete the task when the connection is established
+            ws.OnOpen += (sender, e) =>
+            {
+                connectionTaskCompletionSource.SetResult(true);
+                Log.Information("logging Websocket is open");
+            };
+
+            // Log the initiation of the WebSocket connection
+            Log.Information("Service is trying to connect to the logging WebSocket!");
+
+            // Connect to the WebSocket asynchronously
+            await Task.Run(() => ws.Connect());
+
+            // Wait for the connection task to complete
+            await connectionTaskCompletionSource.Task;
+
+
+            // Log the successful WebSocket connection
+            Log.Information("Service connected to the logging WebSocket!");
+
+        }
     }
 
 }
