@@ -70,10 +70,13 @@
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\Handler.cs" />
     <Compile Include="Classes\Info.cs" />
+    <Compile Include="Classes\job.cs" />
     <Compile Include="Classes\Orchestrator.cs" />
     <Compile Include="Classes\WebSocketClient.cs" />
+    <Compile Include="Formats\Data.cs" />
     <Compile Include="Formats\Error.cs" />
     <Compile Include="Formats\Message.cs" />
+    <Compile Include="Formats\Package.cs" />
     <Compile Include="Formats\Payload.cs" />
     <Compile Include="Formats\RobotInfo.cs" />
     <Compile Include="Formats\RpaLog.cs" />

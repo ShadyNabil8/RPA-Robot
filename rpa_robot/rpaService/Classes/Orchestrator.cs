@@ -7,11 +7,10 @@ using Newtonsoft.Json;
 using rpaService.Formats;
 using WebSocketSharp;
 using Serilog;
-using System.Threading;
-using System.Data.Common;
 using System.Threading.Tasks;
 using Polly;
 using System.Text;
+using System.Threading;
 
 namespace rpaService.Classes
 {
@@ -19,10 +18,10 @@ namespace rpaService.Classes
     {
 
         public static Queue<string> OrchestratorProcessQueue = new Queue<string>();
-        public static WebSocket ws;
-        public static bool Connected = false;
+        public static WebSocket ws; /* Authentication and logging ws */
+        public static int userID = 0;
         private static int MaxRetryCount = 10;
-        public static bool tryToConnect = true;
+
 
         /// <summary>
         /// Initiates the authentication process by connecting the robot to the Orchestrator and establishing a WebSocket connection.
@@ -58,7 +57,7 @@ namespace rpaService.Classes
                     onRetry: (exception, timespan, retryCount, context) =>
                     {
                         // Log the retry attempt
-                        Log.Information($"Retry attempt {retryCount}. Retrying in {timespan.TotalSeconds} seconds.");
+                        Log.Information($"Authentication Ws:Retry attempt {retryCount}. Retrying in {timespan.TotalSeconds} seconds.");
 
                     });
 
@@ -101,6 +100,8 @@ namespace rpaService.Classes
 
                         // Log the obtained token
                         Log.Information($"The Token: {token.token}");
+                        //Log.Information($"userID: {token.userID}");
+                        //userID = token.userID;
 
                         // Create a WebSocket connection URL with the obtained token
                         ws = new WebSocket($"{Globals.WebSocketCreationEndPoint}{token.token}");
@@ -118,11 +119,11 @@ namespace rpaService.Classes
                         ws.OnOpen += (sender, e) =>
                         {
                             connectionTaskCompletionSource.SetResult(true);
-                            Log.Information("Websocket is open");
+                            Log.Information("logging Websocket is open");
                         };
 
                         // Log the initiation of the WebSocket connection
-                        Log.Information("Service is trying to connect to the WebSocket!");
+                        Log.Information("Service is trying to connect to the logging WebSocket!");
 
                         // Connect to the WebSocket asynchronously
                         await Task.Run(() => ws.Connect());
@@ -132,7 +133,7 @@ namespace rpaService.Classes
 
 
                         // Log the successful WebSocket connection
-                        Log.Information("Service connected to the WebSocket!");
+                        Log.Information("Service connected to the logging WebSocket!");
                     }
 
                     else
@@ -144,8 +145,6 @@ namespace rpaService.Classes
                     }
                 }
             });
-            Connected = true;
-            tryToConnect = true;
         }
 
 
@@ -169,6 +168,15 @@ namespace rpaService.Classes
         {
             // Log that the WebSocket is closed and provide the reason
             Log.Error($"WebSocket is closed: : {e.Reason}");
+            //Reconnect(); // Attempt reconnection
+            if (!e.WasClean)
+            {
+                if (!ws.IsAlive)
+                {
+                    Thread.Sleep(10000);
+                    ws.Connect();
+                }
+            }
 
         }
 
@@ -193,8 +201,25 @@ namespace rpaService.Classes
             }
 
         }
+        //private static void Reconnect()
+        //{
+        //    while (!ws.IsAlive)
+        //    {
+        //        try
+        //        {
+        //            Log.Information("Orchestrator ws tring to reconnect!");
+        //            ws.Connect();
+        //        }
+        //        catch (Exception)
+        //        {
+        //            Log.Information("Orchestrator ws failed to reconnect!");
+        //            Thread.Sleep(TimeSpan.FromSeconds(5)); // Wait for 5 seconds before reconnecting
+        //        }
+
+        //    }
 
 
+        //}
     }
 
 }

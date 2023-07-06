@@ -22,6 +22,7 @@ namespace rpaService.Classes
         public static string RobotPassword = "pw";
         public static string AuthenticationEndPoint = "http://34.155.103.216/api/robot/login/";
         public static string WebSocketCreationEndPoint = "ws://34.155.103.216/rtlogs?token=";
+        public static string watcherSrcPath = @"D:\New folder\CSE\grad.Proj\rpa_robot\rpa_robot\bin\Debug\WfSource\workflow.xaml";
         //============================================== GLOGBALs ==============================================//
 
     }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace rpaService.Formats
 {
-    internal class Token
+    internal class Data
     {
-        public string token { get; set; }
-        //public int userID { get; set; }
+        public string event_ { get; set; }
+        public Package package { get; set; }
     }
 }

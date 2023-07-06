@@ -3,21 +3,22 @@ using Serilog;
 using rpaService.Classes;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
+using System;
+using WebSocketSharp;
 
 namespace rpaService
 {
     public partial class rpaService : ServiceBase
     {
-        
+
         public rpaService()
         {
             InitializeComponent();
-
-            // Initialize the logging process
+            checkLogFileSize();
             Log.Logger = new LoggerConfiguration()
                .WriteTo.File(Globals.LogPath)
                .CreateLogger();
-
         }
 
         protected override void OnStart(string[] args)
@@ -25,10 +26,6 @@ namespace rpaService
             Log.Information(Info.SERVICE_STARTED);
             Globals.ListenerFromRobot.Start();
             Globals.LoggingProcess.Start();
-            //Task.Run(async () =>
-            //{
-               // await Orchestrator.MakeAuthenticationAsync();
-            //});
         }
         protected override void OnStop()
         {
@@ -44,8 +41,24 @@ namespace rpaService
         {
             Log.Information(Info.SERVICE_SHUTDOWN);
         }
-        
 
-        
+        private static void checkLogFileSize()
+        {
+            FileInfo fileInfo = new FileInfo(Globals.LogPath);
+            long fileSizeInBytes = fileInfo.Length;
+
+            const long bytesInMegabyte = 1024 * 1024;
+            long fileSizeInMegabytes = fileSizeInBytes / bytesInMegabyte;
+
+            if (fileSizeInMegabytes > 100)
+            {
+                // Delete the file
+                File.Delete(Globals.LogPath);
+                Log.Information("Log File deleted successfully.");
+            }
+        }
+
+
+
     }
 }

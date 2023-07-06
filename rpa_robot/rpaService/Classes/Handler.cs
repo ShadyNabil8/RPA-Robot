@@ -28,87 +28,80 @@ namespace rpaService.Classes
             Task.Run(async () =>
             {
                 await Orchestrator.MakeAuthenticationAsync();
+                await job.JobWsInit();
             });
+
             while (true)
             {
-                if (Orchestrator.Connected)
+                // Check if there are logs in the log queue or orchestrator events in the process queue
+                if ((LogQueue.Count > 0) || (Orchestrator.OrchestratorProcessQueue.Count > 0))
                 {
-                    // Check if there are logs in the log queue or orchestrator events in the process queue
-                    if ((LogQueue.Count > 0) || (Orchestrator.OrchestratorProcessQueue.Count > 0))
+                    // Check if there are logs in the log queue
+                    if (LogQueue.Count > 0)
                     {
-                        // Check if there are logs in the log queue
-                        if (LogQueue.Count > 0)
+                        string log;
+                        lock (LogQueue)
                         {
-                            string log;
-                            lock (LogQueue)
-                            {
-                                // Dequeue a log from the log queue
-                                log = LogQueue.Dequeue();
-                            }
+                            // Dequeue a log from the log queue
+                            log = LogQueue.Dequeue();
+                        }
 
-                            try
+                        try
+                        {
+                            // Check if the WebSocket connection is alive
+                            if (Orchestrator.ws.IsAlive)
                             {
-                                // Check if the WebSocket connection is alive
-                                if (Orchestrator.ws.IsAlive)
+                                //Send the log asynchronously using the WebSocket's SendAsync method and handle the completion callback
+                                Orchestrator.ws.SendAsync(log, (completed) =>
                                 {
-                                    //Send the log asynchronously using the WebSocket's SendAsync method and handle the completion callback
-                                    Orchestrator.ws.SendAsync(log, (completed) =>
+                                    if (completed)
                                     {
-                                        if (completed)
-                                        {
-                                            Log.Information("Data sent successfully!");
-                                        }
-                                        else
-                                        {
-                                            Log.Information("Failed to send data.");
-                                        }
-                                    });
-                                }
-                                else
-                                {
-                                    // Log an error indicating that the WebSocket is not alive
-                                    Log.Error("Web socket is not Alive!");
-                                }
+                                        Log.Information("Data sent successfully!");
+                                    }
+                                    else
+                                    {
+                                        Log.Information("Failed to send data.");
+                                    }
+                                });
 
-                            }
-                            catch (Exception ex)
-                            {
-                                // Log the exception that occurred during the sending process
-                                Log.Error($"An error occurred during the SendAsync : {ex}");
                             }
                         }
-
-                        // Pause the thread for a short period to prevent excessive loading on the server
-                        Thread.Sleep(waitTime);
-
-                        // Check if there are orchestrator events in the process queue
-
-                        if (Orchestrator.OrchestratorProcessQueue.Count > 0)
+                        catch (Exception ex)
                         {
-                            // Dequeue an orchestrator event from the process queue and log it
-                            Log.Information(Orchestrator.OrchestratorProcessQueue.Dequeue());
+                            // Log the exception that occurred during the sending process
+                            Log.Error($"An error occurred during the SendAsync : {ex}");
                         }
+                    }
+                    // Pause the thread for a short period to prevent excessive loading on the server
+                    Thread.Sleep(waitTime);
+
+                    // Check if there are orchestrator events in the process queue
+                    if (Orchestrator.OrchestratorProcessQueue.Count > 0)
+                    {
+                        // Dequeue an orchestrator event from the process queue and log it
+                        Log.Information(Orchestrator.OrchestratorProcessQueue.Dequeue());
+                    }
+                }
+                else
+                {
+                    // No logs or orchestrator events to process
+                    // Adjust the factor for exponential backoff
+                    if (Factor < 8)
+                    {
+                        Factor *= 2;
                     }
                     else
                     {
-                        // No logs or orchestrator events to process
-                        // Adjust the factor for exponential backoff
-                        if (Factor < 8)
-                        {
-                            Factor *= 2;
-                        }
-                        else
-                        {
-                            Factor = 1;
-                        }
-                        // No logs or orchestrator events to process
-                        // Pause the thread for a short period to prevent excessive looping
-                        Thread.Sleep(ExpBakeOffDelay);
+                        Factor = 1;
                     }
+                    // No logs or orchestrator events to process
+                    // Pause the thread for a short period to prevent excessive looping
+                    Thread.Sleep(ExpBakeOffDelay);
                 }
             }
-
         }
+
+
 
         /// <summary>
         /// The ListenerFromRobothHandler function serves as an entry point for starting the asynchronous socket listener.
@@ -121,4 +114,6 @@ namespace rpaService.Classes
             AsynchronousSocketListener.StartListening();
         }
     }
+
 }
+
