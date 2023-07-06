@@ -11,14 +11,15 @@ using Newtonsoft.Json.Linq;
 using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft;
+using System.Threading;
 
 namespace rpaService.Classes
 {
     internal class job
     {
-        public static WebSocket jobws; /* workflow ws */
+        public static WebSocket jobws = null; /* workflow ws */
         private static int MaxRetryCount = 10;
-        public static async Task JobWsInit()
+        public static async void JobWsInit()
         {
             var jobWsretryPolicy = Policy
                 .Handle<Exception>()
@@ -62,8 +63,7 @@ namespace rpaService.Classes
 
                 // Log the successful WebSocket connection
                 Log.Information("Service connected to the job WebSocket!");
-
-
+                //await SendMetaData();
             });
         }
 
@@ -84,8 +84,12 @@ namespace rpaService.Classes
             {
                 try
                 {
-                    webClient.DownloadFile(data.package.path, Globals.watcherSrcPath);
-                    Log.Information("File downloaded successfully.");
+                    Task.Run(async () =>
+                    {
+                        await webClient.DownloadFileTaskAsync(data.package.path, Globals.watcherSrcPath);
+                        Log.Information("File downloaded successfully.");
+                    });
+
                 }
                 catch (Exception ex)
                 {
@@ -93,6 +97,23 @@ namespace rpaService.Classes
                 }
             }
 
+        }
+        private static async Task SendMetaData()
+        {
+            var MetaData = JsonConvert.SerializeObject(new RobotMetaData
+            {
+                _event = "client robot metaData",
+                _machine = new MachineInfo
+                {
+                    robotName = "LAPTOP-TAUNF8FD",
+                    robotAddress = "001AFFDB45C2",
+                    userID = 25
+                }
+            });
+            await Task.Run(() =>
+            {
+                jobws.Send(MetaData);
+            });
         }
     }
 }

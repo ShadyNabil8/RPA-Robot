@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace rpaService.Formats
 {
-    internal class Data
+    internal class RobotMetaData
     {
         public string _event { get; set; }
-        public Package package { get; set; }
+        public MachineInfo _machine { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace rpaService.Classes
         /// The method waits for the WebSocket connection to be established before logging the successful connection.
         /// If the authentication is unsuccessful (status code other than 200 [OK]), it deserializes the response content into a Message object.
         /// </remarks> 
-        public static async Task MakeAuthenticationAsync()
+        public static async void MakeAuthenticationAsync()
         {
             // Serialize the robot information (username and password) into JSON format
             var robotInformation = JsonConvert.SerializeObject(new RobotInfo

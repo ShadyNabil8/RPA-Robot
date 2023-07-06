@@ -24,9 +24,9 @@ namespace rpaService.Classes
             {
                 if (CheckInternetConnection())
                 {
-                    Task.Run(async () =>
+                    Task.Run(() =>
                     {
-                        await Orchestrator.MakeAuthenticationAsync();
+                        Orchestrator.MakeAuthenticationAsync();
                     });
                 }
             }

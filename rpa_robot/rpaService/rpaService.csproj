@@ -76,10 +76,12 @@
     <Compile Include="Classes\WebSocketClient.cs" />
     <Compile Include="Formats\Data.cs" />
     <Compile Include="Formats\Error.cs" />
+    <Compile Include="Formats\MachineInfo.cs" />
     <Compile Include="Formats\Message.cs" />
     <Compile Include="Formats\Package.cs" />
     <Compile Include="Formats\Payload.cs" />
     <Compile Include="Formats\RobotInfo.cs" />
+    <Compile Include="Formats\RobotMetaData.cs" />
     <Compile Include="Formats\RpaLog.cs" />
     <Compile Include="Formats\Token.cs" />
     <Compile Include="ProjectInstaller.cs">
