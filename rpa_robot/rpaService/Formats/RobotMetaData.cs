@@ -9,6 +9,6 @@ namespace rpaService.Formats
     internal class RobotMetaData
     {
         public string _event { get; set; }
-        public MachineInfo _machine { get; set; }
+        public MachineInfo value { get; set; }
     }
 }

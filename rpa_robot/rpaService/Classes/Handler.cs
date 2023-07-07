@@ -1,6 +1,7 @@
 ﻿using Serilog;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using WebSocketSharp;
@@ -98,7 +99,40 @@ namespace rpaService.Classes
                 }
             }
         }
+        public static void checkLogFileSize()
+        {
+            FileInfo fileInfo = new FileInfo(Globals.LogFilePath);
+            long fileSizeInBytes = fileInfo.Length;
 
+            const long bytesInMegabyte = 1024 * 1024;
+            long fileSizeInMegabytes = fileSizeInBytes / bytesInMegabyte;
+
+            if (fileSizeInMegabytes > 100)
+            {
+                // Delete the file
+                File.Delete(Globals.LogFilePath);
+                Log.Information("Log File deleted successfully.");
+            }
+        }
+        public static void CreateWorkflowFolders()
+        {
+            if (!Directory.Exists(Globals.LogDirectoryPath))
+            {
+                Directory.CreateDirectory(Globals.LogDirectoryPath);
+            }
+            if (!Directory.Exists(Globals.watcherPath))
+            {
+                Directory.CreateDirectory(Globals.watcherPath);
+            }
+            if (!File.Exists(Globals.LogFilePath))
+            {
+                using (File.Create(Globals.LogFilePath))
+                {
+                    //Log.Information("Log file created.");
+                }
+            }
+            //Log.Information("Folder created successfully.");
+        }
 
 
         /// <summary>

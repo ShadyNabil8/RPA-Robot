@@ -73,7 +73,6 @@
     <Compile Include="Classes\job.cs" />
     <Compile Include="Classes\Orchestrator.cs" />
     <Compile Include="Classes\Reconnect.cs" />
-    <Compile Include="Classes\WebSocketClient.cs" />
     <Compile Include="Formats\Data.cs" />
     <Compile Include="Formats\Error.cs" />
     <Compile Include="Formats\MachineInfo.cs" />

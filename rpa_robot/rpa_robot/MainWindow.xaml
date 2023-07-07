@@ -1,7 +1,7 @@
 ﻿<Window x:Class="rpa_robot.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="rpa_robot" Height="350" Width="430"
+        Title="rpa_robot" Height="350" Width="250"
         Closed="MainWindow_Closed">
     <Grid>
         <Grid.RowDefinitions>
@@ -9,14 +9,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <GroupBox Header="Service Management">
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Start Service" Click="OnStartServiceButtonClick" Height="35" Width="100" Background="#FFA9BFD9"/>
-                <Button Content="Stop Service" Click="OnStopServiceButtonClick" Height="35" Width="100" Background="#FFA9BFD9"/>
-                <Button Content="Install Service" Click="OnInstallServiceButtonClick" Height="35" Width="100" Background="#FFA9BFD9"/>
-                <Button Content="Uninstall Service" Click="OnUninstallServiceButtonClick" Height="35" Width="100" Background="#FFA9BFD9"/>
-            </StackPanel>
-        </GroupBox>
         <Border Grid.Row="2" Background="#F5F5F5" BorderBrush="#ECECEC" BorderThickness="1" CornerRadius="5" Padding="10">
             <TabControl Margin="0,0,5,0" Grid.Column="0" Grid.Row="1">
                 <TabItem Header="Logs"  >

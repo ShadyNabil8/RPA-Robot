@@ -10,6 +10,6 @@ namespace rpaService.Formats
     {
         public string robotName { get; set; }
         public string robotAddress { get; set; }
-        public int userID { get; set; }
+        public string uuid { get; set; }
     }
 }

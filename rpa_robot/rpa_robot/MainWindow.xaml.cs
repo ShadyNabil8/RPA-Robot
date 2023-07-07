@@ -18,14 +18,23 @@ namespace rpa_robot
         {
 
             InitializeComponent();
-            Log.Logger = new LoggerConfiguration()        //
-                .WriteTo.File(Globals.LogPath)            //
-                .CreateLogger();                          //
-            //Service.Initialize();
-            CreateWorkflowFolders();
+            try
+            {
+                CreateWorkflowFolders();
+            }
+            catch (Exception ex)
+            {
+                //Log.Information("Error creating folder: " + ex.Message);
+            }
+            try
+            {
+                Log.Logger = new LoggerConfiguration()
+                .WriteTo.File(Globals.LogFilePath)
+                .CreateLogger();
+            }
+            catch (Exception)
+            { throw; }
 
-            //================== LOGGING AND NOTIFICATION =================
-            
 
             Grid.SetRow(Globals.LogsTxtBox, 1);
             Grid.SetRow(Globals.StatusTxtBox, 1);
@@ -36,7 +45,6 @@ namespace rpa_robot
             Globals.notifyIcon.Icon = new System.Drawing.Icon(Globals.ImagePath);
             Globals.notifyIcon.Text = "rpa_robot";
             Globals.notifyIcon.MouseClick += notifyIcon_MouseClick;
-            //================== LOGGING =================  
 
             //=======================================================================================
             Globals.watcher.Path = Globals.watcherPath;
@@ -47,35 +55,12 @@ namespace rpa_robot
             Globals.Robot.DoWork += Handler.RobotProcess;
             Globals.Robot.RunWorkerAsync();
             //=======================================================================================
-            
+
         }
 
-        private void OnStartServiceButtonClick(object sender, RoutedEventArgs e)
-        {
-            Service.Start();
-        }
-
-        private void OnStopServiceButtonClick(object sender, RoutedEventArgs e)
-        {
-            //Service.Stop();
-            //Globals.RobotAsyncClientFromService.SendToSocket("Welcome");
-            //Log.Information("HERE");
-            Handler.RunWorkFlow();
-        }
-
-        private void OnInstallServiceButtonClick(object sender, RoutedEventArgs e)
-        {
-            Service.InstallAndStart();
-        }
-
-        private void OnUninstallServiceButtonClick(object sender, RoutedEventArgs e)
-        {
-            Service.UninstallAndStop();
-        }
         private void MainWindow_Closed(object sender, EventArgs e)
         {
             Log.Information(Info.MAIN_WINDOW_IS_COLSED);
-            //Service.Stop(); 
         }
 
         private void MainWindow_StateChanged(object sender, EventArgs e)
@@ -100,16 +85,26 @@ namespace rpa_robot
         }
         private void CreateWorkflowFolders()
         {
-            try
+            if (!Directory.Exists(Globals.watcherPath))
             {
-                Directory.CreateDirectory(@".\WfSource");
-                Directory.CreateDirectory(@".\WfDest");
-                Log.Information("Folder created successfully.");
+                Directory.CreateDirectory(Globals.watcherPath);
             }
-            catch (Exception ex)
+            if (!Directory.Exists(Globals.destinationPath))
             {
-                Log.Information("Error creating folder: " + ex.Message);
+                Directory.CreateDirectory(Globals.destinationPath);
             }
+            if (!Directory.Exists(Globals.LogDirectoryPath))
+            {
+                Directory.CreateDirectory(Globals.LogDirectoryPath);
+            }
+            if (!File.Exists(Globals.LogFilePath))
+            {
+                using (File.Create(Globals.LogFilePath))
+                {
+                    //Log.Information("Log file created.");
+                }
+            }
+            //Log.Information("Folder created successfully.");
         }
     }
 }

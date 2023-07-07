@@ -9,6 +9,6 @@ namespace rpaService.Formats
     internal class Data
     {
         public string _event { get; set; }
-        public Package package { get; set; }
+        public Package value { get; set; }
     }
 }

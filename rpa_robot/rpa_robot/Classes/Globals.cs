@@ -19,12 +19,18 @@ namespace rpa_robot.Classes
         //============================================== GLOGBALs ==============================================//
 
         //============================================== GLOGBALs ==============================================//
-        public static string LogPath = @".\log\RobotLog.log";
-        public static string WorkflowFilePath = @".\WfDest\Workflow.xaml";
+        public static string LogFilePath = @"C:\rboHive\RobotLog\RobotLog.log";
+        public static string LogDirectoryPath = @"C:\rboHive\RobotLog\";
+        //public static string WorkflowFilePath = @".\WfDest\Workflow.xaml";
+        public static string WorkflowFilePath = @"C:\rboHive\WfDest\Workflow.xaml";
         public static string ImagePath = @"D:\New folder\CSE\grad.Proj\img\robot.ico";
-        public static string watcherPath = @".\WfSource\";
-        public static string sourceFilePath = @".\WfSource\Workflow.xaml";
-        public static string destinationFilePath = @".\WfDest\Workflow.xaml";
+        //public static string watcherPath = @".\WfSource\";
+        public static string watcherPath = @"C:\rboHive\WfSource\";
+        public static string destinationPath = @"C:\rboHive\WfDest\";
+        //public static string sourceFilePath = @".\WfSource\Workflow.xaml";
+        public static string sourceFilePath = @"C:\rboHive\WfSource\Workflow.xaml";
+        //public static string destinationFilePath = @".\WfDest\Workflow.xaml";
+        public static string destinationFilePath = @"C:\rboHive\WfDest\Workflow.xaml";
         public static string serviceExePath = @"D:\New folder\CSE\grad.Proj\rpa_robot\rpaService\bin\Debug\rpaService.exe";
         public static TextBox LogsTxtBox   = new TextBox();
         public static TextBox StatusTxtBox = new TextBox();

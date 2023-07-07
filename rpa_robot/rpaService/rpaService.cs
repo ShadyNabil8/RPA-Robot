@@ -15,10 +15,32 @@ namespace rpaService
         public rpaService()
         {
             InitializeComponent();
-            checkLogFileSize();
-            Log.Logger = new LoggerConfiguration()
-               .WriteTo.File(Globals.LogPath)
+            
+            try
+            {
+                Handler.CreateWorkflowFolders();
+            }
+            catch (Exception ex)
+            {
+                //Log.Information("Error creating folder: " + ex.Message);
+            }
+            try
+            {
+                Log.Logger = new LoggerConfiguration()
+               .WriteTo.File(Globals.LogFilePath)
                .CreateLogger();
+            }
+            catch (Exception)
+            { throw; }
+
+            try
+            {
+                Handler.checkLogFileSize();
+            }
+            catch (Exception)
+            {
+                Log.Information("Error while checking the log file size!");
+            }
         }
 
         protected override void OnStart(string[] args)
@@ -41,24 +63,6 @@ namespace rpaService
         {
             Log.Information(Info.SERVICE_SHUTDOWN);
         }
-
-        private static void checkLogFileSize()
-        {
-            FileInfo fileInfo = new FileInfo(Globals.LogPath);
-            long fileSizeInBytes = fileInfo.Length;
-
-            const long bytesInMegabyte = 1024 * 1024;
-            long fileSizeInMegabytes = fileSizeInBytes / bytesInMegabyte;
-
-            if (fileSizeInMegabytes > 100)
-            {
-                // Delete the file
-                File.Delete(Globals.LogPath);
-                Log.Information("Log File deleted successfully.");
-            }
-        }
-
-
-
+        
     }
 }

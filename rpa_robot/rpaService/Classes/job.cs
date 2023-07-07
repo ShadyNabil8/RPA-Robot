@@ -79,41 +79,104 @@ namespace rpaService.Classes
 
         private static void jobWebSocketISR(object sender, MessageEventArgs e)
         {
-            Data data = JsonConvert.DeserializeObject<Data>(e.Data);
-            using (WebClient webClient = new WebClient())
+            if (e.IsPing)
             {
+                Log.Information("jobws => Ping");
+                Reconnect.jobWspingReceived = true;
+            }
+            else
+            {
+                Data data = null;
+                bool DeserializeObjectDone = false;
+                Log.Information(e.Data.ToString());
                 try
                 {
-                    Task.Run(async () =>
-                    {
-                        await webClient.DownloadFileTaskAsync(data.package.path, Globals.watcherSrcPath);
-                        Log.Information("File downloaded successfully.");
-                    });
-
+                    data = JsonConvert.DeserializeObject<Data>(e.Data.ToString());
+                    DeserializeObjectDone = true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Log.Information("An error occurred while downloading the file: " + ex.Message);
-                }
-            }
 
+                    Log.Information("jobws => Error in Deserializing the Object");
+                }
+                if (DeserializeObjectDone)
+                {
+                    if (!data._event.Equals("Decline metaData reception"))
+                    {
+                        using (WebClient webClient = new WebClient())
+                        {
+                            try
+                            {
+                                Task.Run(async () =>
+                                {
+                                    await webClient.DownloadFileTaskAsync(data.value.path, Globals.watcherSrcPath);
+                                    Log.Information("File downloaded successfully.");
+                                });
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Log.Information("jobws => An error occurred while downloading the file: " + ex.Message);
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        Log.Information("jobws => Mete data sent with error");
+
+                        Task.Run(async () =>
+                        {
+                            await SendMetaData();
+                        });
+                    }
+                }
+                else
+                {
+                    Log.Information("jobws => Deserializing failled");
+
+                    jobws.SendAsync("Decline pkg reception", (completed) =>
+                    {
+                        if (completed)
+                        {
+                            Log.Information("Decline pkg reception sent successfully!");
+                        }
+                        else
+                        {
+                            Log.Information("Failed to send Decline pkg reception.");
+                        }
+                    });
+                }
+
+            }
         }
         private static async Task SendMetaData()
         {
             var MetaData = JsonConvert.SerializeObject(new RobotMetaData
             {
                 _event = "client robot metaData",
-                _machine = new MachineInfo
+                value = new MachineInfo
                 {
                     robotName = "LAPTOP-TAUNF8FD",
                     robotAddress = "001AFFDB45C2",
-                    userID = 25
+                    uuid = "BUT THE TRE STRING" /* NOOOOOOOOOOOTE HERE*/
                 }
             });
-            await Task.Run(() =>
+
+            try
             {
-                jobws.Send(MetaData);
-            });
+                await Task.Run(() =>
+                {
+                    jobws.Send(MetaData);
+                    Log.Information("jobws => Meta data sent");
+                });
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information("jobws => Failed to send robot meta date" + ex.Message);
+            }
+
         }
     }
 }

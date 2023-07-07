@@ -90,21 +90,6 @@ namespace rpaService.Classes
         {
             // Log that the WebSocket is closed and provide the reason
             Log.Error($"WebSocket is closed: : {e.Reason}");
-            //Reconnect(); // Attempt reconnection
-            //while (!CheckInternetConnection())
-            //{
-            //    Thread.Sleep(TimeSpan.FromSeconds(5));
-            //}
-            //if (!e.WasClean)
-            //{
-            //    if (!ws.IsAlive)
-            //    {
-            //        //Thread.Sleep(10000);
-            //        //ws.Connect();
-            //        await MakeAuthenticationAsync();
-            //    }
-            //}
-
         }
 
         /// <summary>
@@ -117,8 +102,6 @@ namespace rpaService.Classes
             if (e.IsPing)
             {
                 Log.Information("Ping Received!");
-                // Restart the timer
-                Reconnect.timer.Change(Reconnect.timeoutDuration, Timeout.Infinite);
                 Reconnect.loggingWspingReceived = true;
             }
             else
@@ -131,25 +114,7 @@ namespace rpaService.Classes
             }
         }
         
-        //private static void Reconnect()
-        //{
-        //    while (!ws.IsAlive)
-        //    {
-        //        try
-        //        {
-        //            Log.Information("Orchestrator ws tring to reconnect!");
-        //            ws.Connect();
-        //        }
-        //        catch (Exception)
-        //        {
-        //            Log.Information("Orchestrator ws failed to reconnect!");
-        //            Thread.Sleep(TimeSpan.FromSeconds(5)); // Wait for 5 seconds before reconnecting
-        //        }
-
-        //    }
-
-
-        //}
+        
         static async Task<Token> GetToken()
         {
             Token token = null;
@@ -173,7 +138,7 @@ namespace rpaService.Classes
                 catch (Exception ex)
                 {
                     // Log the exception
-                    Log.Error("An error occurred during the POST request: Internet issue");
+                    Log.Error("An error occurred during the POST request: Internet issue" + ex.Message);
                     // Handle the exception or rethrow it to trigger a retry
                     throw;
                 }
@@ -186,15 +151,22 @@ namespace rpaService.Classes
                     // Log the successful status code
                     Log.Information("StatusCode 200[OK] is received!");
 
-
                     // Read the response content as a string
                     var responseContent = await response.Content.ReadAsStringAsync();
 
-                    // Deserialize the response content into a Token object
-                    token = JsonConvert.DeserializeObject<Token>(responseContent);
+                    try
+                    {
+                        // Deserialize the response content into a Token object
+                        token = JsonConvert.DeserializeObject<Token>(responseContent);
 
-                    // Log the obtained token
-                    Log.Information($"The Token: {token.token}");
+                        // Log the obtained token
+                        Log.Information($"The Token: {token.token}");
+                    }
+                    catch (Exception)
+                    {
+
+                        Log.Information("Orchws => Error in Deserializing the token");
+                    }
                     //Log.Information($"userID: {token.userID}");
                     //userID = token.userID;
                 }
@@ -205,6 +177,7 @@ namespace rpaService.Classes
                     // Deserialize the response content into a Message object
                     var responseContent = await response.Content.ReadAsStringAsync();
                     Message msg = JsonConvert.DeserializeObject<Message>(responseContent);
+                    Log.Information(msg.message);
                 }
             }
             return token;

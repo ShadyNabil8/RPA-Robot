@@ -14,14 +14,15 @@ namespace rpaService.Classes
     {
         public static bool loggingWspingReceived;
         public static bool jobWspingReceived;
-        public static int timeoutDuration = 30000;
+        public static int timeoutDuration = 20000;
         public static Timer timer = new Timer(TimerElapsed, null, timeoutDuration, Timeout.Infinite);
 
         public static void TimerElapsed(object state)
         {
-            Log.Information("Logging ws: No ping message received for the specified duration.");
+
             if (!loggingWspingReceived)
             {
+                Log.Information("Loggingws: No ping message received for the specified duration.");
                 if (CheckInternetConnection())
                 {
                     Task.Run(() =>
@@ -30,11 +31,20 @@ namespace rpaService.Classes
                     });
                 }
             }
-            else
+            if (!jobWspingReceived)
             {
-                loggingWspingReceived = false;
-                jobWspingReceived = false;
+                Log.Information("jobws: No ping message received for the specified duration.");
+                if (CheckInternetConnection())
+                {
+                    Task.Run(() =>
+                    {
+                        job.JobWsInit();
+                    });
+                }
             }
+
+            loggingWspingReceived = false;
+            jobWspingReceived = false;
 
             // Restart the timer
             timer.Change(timeoutDuration, Timeout.Infinite);
