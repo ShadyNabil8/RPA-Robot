@@ -19,6 +19,7 @@ namespace rpa_robot.Classes
         //============================================== GLOGBALs ==============================================//
 
         //============================================== GLOGBALs ==============================================//
+        public static string serviceName = "rpaService";
         public static string LogFilePath = @"C:\rboHive\RobotLog\RobotLog.log";
         public static string LogDirectoryPath = @"C:\rboHive\RobotLog\";
         //public static string WorkflowFilePath = @".\WfDest\Workflow.xaml";

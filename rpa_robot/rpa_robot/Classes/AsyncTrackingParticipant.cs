@@ -68,15 +68,16 @@ namespace rpa_robot
                         if (!activityStateRecord.Activity.Name.Equals("DynamicActivity"))
                         {
 
-                            //Globals.uiDispatcher.Invoke(() => {
-                            //    Globals.StatusTxtBox.AppendText(JsonConvert.SerializeObject(new Activity
-                            //    {
-                            //        Type = "LogType",
-                            //        Name = activityStateRecord.Activity.Name,
-                            //        Status = activityStateRecord.State,
-                            //        Time = activityStateRecord.EventTime.ToString()
-                            //    })+"\n");
-                            //});
+                            Globals.uiDispatcher.Invoke(() =>
+                            {
+                                Globals.StatusTxtBox.AppendText(JsonConvert.SerializeObject(new Activity
+                                {
+                                    Type = "LogType",
+                                    Name = activityStateRecord.Activity.Name,
+                                    Status = activityStateRecord.State,
+                                    Time = activityStateRecord.EventTime.ToString()
+                                }) + "\n");
+                            });
 
                             var log = JsonConvert.SerializeObject(new RpaLog
                             {

@@ -49,6 +49,7 @@ namespace rpa_robot
             //=======================================================================================
             Globals.watcher.Path = Globals.watcherPath;
             Globals.watcher.Created += Handler.OnFileCreated;
+            //Globals.watcher.
             // Enable the watcher
             Globals.watcher.EnableRaisingEvents = true;
 

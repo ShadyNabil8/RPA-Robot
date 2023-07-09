@@ -34,36 +34,36 @@ namespace rpaService.Classes
                     });
             await jobWsretryPolicy.ExecuteAsync(async () =>
             {
-                //jobws = new WebSocket($"{Globals.WebSocketCreationEndPoint}{token.token}");
+                jobws = new WebSocket("Ws://34.155.103.216/8000");
 
                 // Subscribe to WebSocket events
-                //jobws.OnMessage += jobWebSocketISR;
-                //jobws.OnClose += jobWSOnCloseAsync;
-                //jobws.OnError += jobWSOnError;
-                //jobws.EmitOnPing = true;
+                jobws.OnMessage += jobWebSocketISR;
+                jobws.OnClose += jobWSOnCloseAsync;
+                jobws.OnError += jobWSOnError;
+                jobws.EmitOnPing = true;
 
                 // Create a task completion source to track the completion of the connection
-                //var jobWsconnectionTask = new TaskCompletionSource<bool>();
+                var jobWsconnectionTask = new TaskCompletionSource<bool>();
 
                 // Handle the Open event to complete the task when the connection is established
-                //jobws.OnOpen += (sender, e) =>
-                //{
-                //    jobWsconnectionTask.SetResult(true);
-                //    Log.Information(" job Websocket is open");
-                //};
+                jobws.OnOpen += (sender, e) =>
+                {
+                    jobWsconnectionTask.SetResult(true);
+                    Log.Information(" job Websocket is open");
+                };
                 // Log the initiation of the WebSocket connection
                 Log.Information("Service is trying to connect to the job WebSocket!");
 
                 //// Connect to the WebSocket asynchronously
-                //await Task.Run(() => jobws.Connect());
+                await Task.Run(() => jobws.Connect());
 
                 //// Wait for the connection task to complete
-                //await jobWsconnectionTask.Task;
+                await jobWsconnectionTask.Task;
 
 
                 // Log the successful WebSocket connection
                 Log.Information("Service connected to the job WebSocket!");
-                //await SendMetaData();
+                await SendMetaData();
             });
         }
 
@@ -105,11 +105,21 @@ namespace rpaService.Classes
                     {
                         using (WebClient webClient = new WebClient())
                         {
+                            Package pkg = null;
+                            try
+                            {
+                                pkg = JsonConvert.DeserializeObject<Package>(data.value);
+                            }
+                            catch (Exception)
+                            {
+
+                                Log.Information("jobws => Error in Deserializing the package");
+                            }
                             try
                             {
                                 Task.Run(async () =>
                                 {
-                                    await webClient.DownloadFileTaskAsync(data.value.path, Globals.watcherSrcPath);
+                                    await webClient.DownloadFileTaskAsync(pkg.path, Globals.downloadPath);
                                     Log.Information("File downloaded successfully.");
                                 });
 
@@ -123,8 +133,7 @@ namespace rpaService.Classes
                     }
                     else
                     {
-                        Log.Information("jobws => Mete data sent with error");
-
+                        Log.Information(data._event);
                         Task.Run(async () =>
                         {
                             await SendMetaData();
@@ -134,8 +143,12 @@ namespace rpaService.Classes
                 else
                 {
                     Log.Information("jobws => Deserializing failled");
-
-                    jobws.SendAsync("Decline pkg reception", (completed) =>
+                    var MetaData = JsonConvert.SerializeObject(new Data
+                    {
+                        _event = "Decline pkg reception",
+                        value = ""
+                    });
+                    jobws.SendAsync(MetaData, (completed) =>
                     {
                         if (completed)
                         {

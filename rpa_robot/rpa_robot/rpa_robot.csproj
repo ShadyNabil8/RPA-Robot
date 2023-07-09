@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,18 +46,36 @@
     <Reference Include="ActivitiesTestLipraries">
       <HintPath>F:\CSE\4th comp\aaaa\aaaa\ActivitiesTestLipraries.dll</HintPath>
     </Reference>
+    <Reference Include="Browser-Engine">
+      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\Browser-Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\Excel.dll</HintPath>
+    </Reference>
     <Reference Include="IO-Modules, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\shady\Downloads\IO-Modules.dll</HintPath>
     </Reference>
+    <Reference Include="MailActivity">
+      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\MailActivity.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PDF">
+      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Processes Control">
+      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\Processes Control.dll</HintPath>
     </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
     </Reference>
     <Reference Include="Serilog.Sinks.File, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.Sinks.File.5.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Shortcuts">
+      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\Shortcuts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
@@ -72,6 +92,15 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Types">
+      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\Types.dll</HintPath>
+    </Reference>
+    <Reference Include="UI_Automation">
+      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\UI_Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.4.10.0\lib\net48\WebDriver.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -139,4 +168,11 @@
     <Resource Include="robot.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.WebDriver.4.10.0\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.10.0\build\Selenium.WebDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.4.10.0\build\Selenium.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.4.10.0\build\Selenium.WebDriver.targets'))" />
+  </Target>
 </Project>

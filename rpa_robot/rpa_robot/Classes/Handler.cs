@@ -8,6 +8,7 @@ using Serilog;
 using System.Threading;
 using System.ComponentModel;
 using System.IO;
+using System.ServiceProcess;
 
 namespace rpa_robot
 {
@@ -30,28 +31,19 @@ namespace rpa_robot
         /// </remarks>
         public static void RunWorkFlow()
         {
-            try
-            {
-                var workflow = ActivityXamlServices.Load(Globals.WorkflowFilePath);
+            var workflow = ActivityXamlServices.Load(Globals.WorkflowFilePath);
 
-                var wa = new WorkflowApplication(workflow);
+            var wa = new WorkflowApplication(workflow);
 
-                wa.Extensions.Add(new AsyncTrackingParticipant());
+            wa.Extensions.Add(new AsyncTrackingParticipant());
 
-                // Subscribe to the Completed event
-                wa.Completed += WorkflowCompleted;
+            // Subscribe to the Completed event
+            wa.Completed += WorkflowCompleted;
 
-                // Subscribe to the Unhandled Exception event
-                wa.OnUnhandledException += WorkflowUnhandledException;
+            // Subscribe to the Unhandled Exception event
+            wa.OnUnhandledException += WorkflowUnhandledException;
 
-
-                wa.Run();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error while running the Workflow!");
-            }
-
+            wa.Run();
         }
 
         /// <summary>
@@ -119,13 +111,15 @@ namespace rpa_robot
         /// <param name="e">The DoWorkEventArgs containing event data.</param>
         public static void RobotProcess(object sender, DoWorkEventArgs e)
         {
+            bool seviceInstalled = IsServiceInstalled();
+
             while (true)
             {
                 if (WorkFlowCreated && LastWorkFlowDone)
                 {
                     // Reset the flag for workflow creation and perform necessary actions
                     WorkFlowCreated = false;
-
+                    //DeleteeWorkFlow(Globals.sourceFilePath);
                     // Copy the work flow from the source path to the destination path to be ready for another workflow.
                     CpyWorkFlow();
 
@@ -135,22 +129,26 @@ namespace rpa_robot
                     // Create a thread to run the workflow.
                     StartWorkFlowThread();
                 }
-
-                if (LogQueue.Count > 0)
+                //if (File.Exists(Globals.sourceFilePath))
+                //{
+                //    File.Delete(Globals.sourceFilePath);
+                //}
+                if (seviceInstalled)
                 {
-                    lock (LogQueue)
+                    if (LogQueue.Count > 0)
                     {
-                        // Dequeue a log from the log queue
-                        // Send the log to the socket using the AsynchronousClient
-                        AsynchronousClient.StartClient(LogQueue.Dequeue());
+                        lock (LogQueue)
+                        {
+                            // Dequeue a log from the log queue
+                            // Send the log to the socket using the AsynchronousClient
+                            AsynchronousClient.StartClient(LogQueue.Dequeue());
+                        }
+                        Thread.Sleep(100);
                     }
-                    Thread.Sleep(100);
                 }
-                else
-                {
-                    // Sleep for a short period to avoid excessive looping when there are no logs to process
-                    Thread.Sleep(100);
-                }
+
+                // Sleep for a short period to avoid excessive looping when there are no logs to process
+                Thread.Sleep(100);
             }
 
         }
@@ -170,11 +168,13 @@ namespace rpa_robot
         internal static void OnFileCreated(object sender, FileSystemEventArgs e)
         {
             Log.Information($"FileCreated: {e.FullPath}");
+            DeleteeWorkFlow(Globals.destinationFilePath);
             //CpyWorkFlow();
+            //Thread.Sleep(10);
             //DeleteeWorkFlow(Globals.sourceFilePath);
             WorkFlowCreated = true;
         }
-        
+
 
         /// <summary>
         /// Copies the workflow file from the source directory to the destination directory.
@@ -189,8 +189,13 @@ namespace rpa_robot
             try
             {
                 // Copy the file
-                File.Copy(Globals.sourceFilePath, Globals.destinationFilePath, true);
-                Log.Information("File copied successfully.");
+                if (File.Exists(Globals.sourceFilePath))
+                {
+                    File.Copy(Globals.sourceFilePath, Globals.destinationFilePath, true);
+                    Log.Information("File copied successfully.");
+                }
+                //File.Copy(Globals.sourceFilePath, Globals.destinationFilePath, true);
+
             }
             catch (IOException er)
             {
@@ -201,7 +206,7 @@ namespace rpa_robot
                 Log.Information($"An error occurred: {ex.Message}");
             }
         }
-        
+
 
         /// <summary>
         /// Deletes the workflow file at the specified path.
@@ -216,8 +221,12 @@ namespace rpa_robot
             try
             {
                 // Delete the file
-                File.Delete(Path);
-                Log.Information("File deleted successfully.");
+                if (File.Exists(Path))
+                {
+                    File.Delete(Path);
+                    Log.Information("File deleted successfully.");
+                }
+                //File.Delete(Path);    
             }
             catch (IOException er)
             {
@@ -256,7 +265,31 @@ namespace rpa_robot
         private static void ThreadMethod()
         {
             LastWorkFlowDone = false;
-            RunWorkFlow();
+            try
+            {
+                RunWorkFlow();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public static bool IsServiceInstalled()
+        {
+            ServiceController[] services = ServiceController.GetServices();
+
+            foreach (ServiceController service in services)
+            {
+                if (service.ServiceName.Equals(Globals.serviceName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -83,7 +83,7 @@ namespace rpa_robot
             }
             catch (Exception e)
             {
-                Log.Information(e.ToString());
+                //Log.Information(e.Message);
             }
         }
 
