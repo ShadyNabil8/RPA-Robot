@@ -22,9 +22,10 @@ namespace rpa_robot.Classes
         public static string serviceName = "rpaService";
         public static string LogFilePath = @"C:\rboHive\RobotLog\RobotLog.log";
         public static string LogDirectoryPath = @"C:\rboHive\RobotLog\";
-        //public static string WorkflowFilePath = @".\WfDest\Workflow.xaml";
+        //public static string WorkflowFilePath = @"C:\Users\shady\Desktop\Assemblies\Workflow.xaml";
         public static string WorkflowFilePath = @"C:\rboHive\WfDest\Workflow.xaml";
-        public static string ImagePath = @"D:\New folder\CSE\grad.Proj\img\robot.ico";
+        //public static string ImagePath = @"D:\New folder\CSE\grad.Proj\img\robot.ico";
+        public static string ImagePath = @".\robot.ico";
         //public static string watcherPath = @".\WfSource\";
         public static string watcherPath = @"C:\rboHive\WfSource\";
         public static string destinationPath = @"C:\rboHive\WfDest\";

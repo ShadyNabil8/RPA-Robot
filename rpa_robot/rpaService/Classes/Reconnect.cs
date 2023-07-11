@@ -12,22 +12,23 @@ namespace rpaService.Classes
 {
     internal class Reconnect
     {
-        public static bool loggingWspingReceived;
-        public static bool jobWspingReceived;
+        public static bool loggingWspingReceived = false;
+        public static bool jobWspingReceived = false;
         public static int timeoutDuration = 20000;
         public static Timer timer = new Timer(TimerElapsed, null, timeoutDuration, Timeout.Infinite);
 
         public static void TimerElapsed(object state)
         {
+            Log.Information("Timer Elapsed");
 
             if (!loggingWspingReceived)
             {
                 Log.Information("Loggingws: No ping message received for the specified duration.");
                 if (CheckInternetConnection())
                 {
-                    Task.Run(() =>
+                    Task.Run(async () =>
                     {
-                        Orchestrator.MakeAuthenticationAsync();
+                        await Orchestrator.MakeAuthenticationAsync();
                     });
                 }
             }
@@ -36,9 +37,9 @@ namespace rpaService.Classes
                 Log.Information("jobws: No ping message received for the specified duration.");
                 if (CheckInternetConnection())
                 {
-                    Task.Run(() =>
+                    Task.Run(async () =>
                     {
-                        job.JobWsInit();
+                        await job.JobWsInit();
                     });
                 }
             }

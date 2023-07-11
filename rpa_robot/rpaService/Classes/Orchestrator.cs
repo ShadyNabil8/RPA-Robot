@@ -20,8 +20,8 @@ namespace rpaService.Classes
 
         public static Queue<string> OrchestratorProcessQueue = new Queue<string>();
         public static WebSocket ws = null; /* Authentication and logging ws */
-        public static int userID = 0;
-        private static int MaxRetryCount = 10;
+        //public static int userID = 0;
+        //private static int MaxRetryCount = 10;
 
 
         /// <summary>
@@ -40,33 +40,32 @@ namespace rpaService.Classes
         /// The method waits for the WebSocket connection to be established before logging the successful connection.
         /// If the authentication is unsuccessful (status code other than 200 [OK]), it deserializes the response content into a Message object.
         /// </remarks> 
-        public static async void MakeAuthenticationAsync()
+        public static async Task MakeAuthenticationAsync()
         {
-            // Serialize the robot information (username and password) into JSON format
-            var robotInformation = JsonConvert.SerializeObject(new RobotInfo
-            {
-                username = Globals.RobotUsername,
-                password = Globals.RobotPassword
-            });
-
             //.HandleResult<bool>(result => result != true)
-            var retryPolicy = Policy
-                .Handle<Exception>()
-                .WaitAndRetryAsync(
-                    retryCount: MaxRetryCount,
-                    sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
-                    onRetry: (exception, timespan, retryCount, context) =>
-                    {
-                        // Log the retry attempt
-                        Log.Information($"Authentication Ws:Retry attempt {retryCount}. Retrying in {timespan.TotalSeconds} seconds.");
-
-                    });
-
-            await retryPolicy.ExecuteAsync(async () =>
+            Token token = null;
+            try
             {
-                Token token = await GetToken();
+                token = await GetToken();
+                Globals.uuid = token.userID; /* used in job ws*/
+                //Log.Information("complate Token is"+ token.ToString());
+            }
+            catch (Exception)
+            {
+
+                Log.Information("Error in getting token");
+            }
+            try
+            {
                 await ConnectToWs(token);
-            });
+            }
+            catch (Exception)
+            {
+
+                Log.Information("Error in connecting to logging ws");
+            }
+
+
         }
 
 
@@ -113,8 +112,8 @@ namespace rpaService.Classes
                 }
             }
         }
-        
-        
+
+
         static async Task<Token> GetToken()
         {
             Token token = null;
@@ -153,7 +152,6 @@ namespace rpaService.Classes
 
                     // Read the response content as a string
                     var responseContent = await response.Content.ReadAsStringAsync();
-
                     try
                     {
                         // Deserialize the response content into a Token object
@@ -167,8 +165,8 @@ namespace rpaService.Classes
 
                         Log.Information("Orchws => Error in Deserializing the token");
                     }
-                    //Log.Information($"userID: {token.userID}");
-                    //userID = token.userID;
+                    Log.Information($"userID: {token.userID}");
+                    //Globals.uuid = token.userID;
                 }
 
                 else
@@ -210,7 +208,6 @@ namespace rpaService.Classes
 
             // Wait for the connection task to complete
             await connectionTaskCompletionSource.Task;
-
 
             // Log the successful WebSocket connection
             Log.Information("Service connected to the logging WebSocket!");

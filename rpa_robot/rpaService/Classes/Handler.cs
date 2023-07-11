@@ -23,11 +23,11 @@ namespace rpaService.Classes
         /// </summary>
         public static void LoggingProcessHandler()
         {
-            Task.Run(() =>
+            Task.Run(async () =>
             {
                 /* I removed the await here */
-                Orchestrator.MakeAuthenticationAsync();
-                job.JobWsInit();
+                await Orchestrator.MakeAuthenticationAsync();
+                await job.JobWsInit();
             });
 
             while (true)

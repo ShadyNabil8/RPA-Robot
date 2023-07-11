@@ -9,6 +9,6 @@ namespace rpaService.Formats
     internal class Token
     {
         public string token { get; set; }
-        //public int userID { get; set; }
+        public string userID { get; set; }
     }
 }

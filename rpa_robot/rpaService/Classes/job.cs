@@ -12,59 +12,26 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft;
 using System.Threading;
+using System.Net.NetworkInformation;
 
 namespace rpaService.Classes
 {
     internal class job
     {
         public static WebSocket jobws = null; /* workflow ws */
-        private static int MaxRetryCount = 10;
-        public static async void JobWsInit()
+        //private static int MaxRetryCount = 10;
+        public static async Task JobWsInit()
         {
-            var jobWsretryPolicy = Policy
-                .Handle<Exception>()
-                .WaitAndRetryAsync(
-                    retryCount: MaxRetryCount,
-                    sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
-                    onRetry: (exception, timespan, retryCount, context) =>
-                    {
-                        // Log the retry attempt
-                        Log.Information($"Job Ws:Retry attempt {retryCount}. Retrying in {timespan.TotalSeconds} seconds.");
-
-                    });
-            await jobWsretryPolicy.ExecuteAsync(async () =>
+            try
             {
-                jobws = new WebSocket("Ws://34.155.103.216/8000");
+                await ConnectToJobWs();
+            }
+            catch (Exception)
+            {
 
-                // Subscribe to WebSocket events
-                jobws.OnMessage += jobWebSocketISR;
-                jobws.OnClose += jobWSOnCloseAsync;
-                jobws.OnError += jobWSOnError;
-                jobws.EmitOnPing = true;
+                Log.Information("Error in connecting to job ws");
+            }
 
-                // Create a task completion source to track the completion of the connection
-                var jobWsconnectionTask = new TaskCompletionSource<bool>();
-
-                // Handle the Open event to complete the task when the connection is established
-                jobws.OnOpen += (sender, e) =>
-                {
-                    jobWsconnectionTask.SetResult(true);
-                    Log.Information(" job Websocket is open");
-                };
-                // Log the initiation of the WebSocket connection
-                Log.Information("Service is trying to connect to the job WebSocket!");
-
-                //// Connect to the WebSocket asynchronously
-                await Task.Run(() => jobws.Connect());
-
-                //// Wait for the connection task to complete
-                await jobWsconnectionTask.Task;
-
-
-                // Log the successful WebSocket connection
-                Log.Information("Service connected to the job WebSocket!");
-                await SendMetaData();
-            });
         }
 
         private static void jobWSOnError(object sender, ErrorEventArgs e)
@@ -117,9 +84,9 @@ namespace rpaService.Classes
                             }
                             try
                             {
-                                Task.Run(async () =>
+                                Task.Run( () =>
                                 {
-                                    await webClient.DownloadFileTaskAsync(pkg.path, Globals.downloadPath);
+                                    webClient.DownloadFile(pkg.path, Globals.downloadPath);
                                     Log.Information("File downloaded successfully.");
                                 });
 
@@ -165,16 +132,25 @@ namespace rpaService.Classes
         }
         private static async Task SendMetaData()
         {
+            string macAddr =
+            (
+                from nic in NetworkInterface.GetAllNetworkInterfaces()
+                where nic.OperationalStatus == OperationalStatus.Up
+                select nic.GetPhysicalAddress().ToString()
+            ).FirstOrDefault();
+            
             var MetaData = JsonConvert.SerializeObject(new RobotMetaData
             {
                 _event = "client robot metaData",
                 value = new MachineInfo
                 {
-                    robotName = "LAPTOP-TAUNF8FD",
-                    robotAddress = "001AFFDB45C2",
-                    uuid = "BUT THE TRE STRING" /* NOOOOOOOOOOOTE HERE*/
+                    //robotName = Environment.MachineName,
+                    robotName = Environment.MachineName,
+                    robotAddress = macAddr,
+                    uuid = Globals.uuid /* NOOOOOOOOOOOTE HERE*/
                 }
             });
+            Log.Information(MetaData);
 
             try
             {
@@ -189,6 +165,40 @@ namespace rpaService.Classes
 
                 Log.Information("jobws => Failed to send robot meta date" + ex.Message);
             }
+
+        }
+        static async Task ConnectToJobWs()
+        {
+            jobws = new WebSocket(Globals.jobEndPoint);
+
+            // Subscribe to WebSocket events
+            jobws.OnMessage += jobWebSocketISR;
+            jobws.OnClose += jobWSOnCloseAsync;
+            jobws.OnError += jobWSOnError;
+            jobws.EmitOnPing = true;
+
+            // Create a task completion source to track the completion of the connection
+            var jobWsconnectionTask = new TaskCompletionSource<bool>();
+
+            // Handle the Open event to complete the task when the connection is established
+            jobws.OnOpen += (sender, e) =>
+            {
+                jobWsconnectionTask.SetResult(true);
+                Log.Information("job Websocket is open");
+            };
+            // Log the initiation of the WebSocket connection
+            Log.Information("Service is trying to connect to the job WebSocket!");
+
+            //// Connect to the WebSocket asynchronously
+            await Task.Run(() => jobws.Connect());
+
+            //// Wait for the connection task to complete
+            await jobWsconnectionTask.Task;
+
+
+            // Log the successful WebSocket connection
+            Log.Information("Service connected to the job WebSocket!");
+            await SendMetaData();
 
         }
     }

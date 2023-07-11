@@ -71,7 +71,7 @@ namespace rpa_robot
             if (obj.CompletionState == ActivityInstanceState.Closed)
             {
                 // Workflow execution completed successfully
-                LastWorkFlowDone = true;
+                //LastWorkFlowDone = true;
                 Log.Information("Workflow completed successfully!");
                 Globals.uiDispatcher.Invoke(() =>
                 {
@@ -111,11 +111,11 @@ namespace rpa_robot
         /// <param name="e">The DoWorkEventArgs containing event data.</param>
         public static void RobotProcess(object sender, DoWorkEventArgs e)
         {
-            bool seviceInstalled = IsServiceInstalled();
+            //bool seviceInstalled = IsServiceInstalled();
 
             while (true)
             {
-                if (WorkFlowCreated && LastWorkFlowDone)
+                if (WorkFlowCreated /*&& LastWorkFlowDone*/)
                 {
                     // Reset the flag for workflow creation and perform necessary actions
                     WorkFlowCreated = false;
@@ -133,20 +133,15 @@ namespace rpa_robot
                 //{
                 //    File.Delete(Globals.sourceFilePath);
                 //}
-                if (seviceInstalled)
+                if (LogQueue.Count > 0)
                 {
-                    if (LogQueue.Count > 0)
+                    lock (LogQueue)
                     {
-                        lock (LogQueue)
-                        {
-                            // Dequeue a log from the log queue
-                            // Send the log to the socket using the AsynchronousClient
-                            AsynchronousClient.StartClient(LogQueue.Dequeue());
-                        }
-                        Thread.Sleep(100);
+                        // Dequeue a log from the log queue
+                        // Send the log to the socket using the AsynchronousClient
+                        AsynchronousClient.StartClient(LogQueue.Dequeue());
                     }
                 }
-
                 // Sleep for a short period to avoid excessive looping when there are no logs to process
                 Thread.Sleep(100);
             }
@@ -168,11 +163,46 @@ namespace rpa_robot
         internal static void OnFileCreated(object sender, FileSystemEventArgs e)
         {
             Log.Information($"FileCreated: {e.FullPath}");
-            DeleteeWorkFlow(Globals.destinationFilePath);
-            //CpyWorkFlow();
-            //Thread.Sleep(10);
-            //DeleteeWorkFlow(Globals.sourceFilePath);
-            WorkFlowCreated = true;
+
+            // Wait for the file to be completely downloaded
+            bool isFileDownloaded = false;
+            int timeoutSeconds = 30;
+            int elapsedSeconds = 0;
+            string filePath = e.FullPath;
+
+            while (!isFileDownloaded && elapsedSeconds < timeoutSeconds)
+            {
+                if (File.Exists(filePath))
+                {
+                    FileInfo fileInfo = new FileInfo(filePath);
+                    if (fileInfo.Length > 0)
+                    {
+                        isFileDownloaded = true;
+                    }
+                }
+
+                Thread.Sleep(1000);
+                elapsedSeconds++;
+            }
+            if (isFileDownloaded)
+            {
+                // File is completely downloaded
+                Log.Information($"File downloaded: {e.FullPath}");
+                // Proceed with further operations or workflows
+                Log.Information($"FileCreated: {e.FullPath}");
+                DeleteeWorkFlow(Globals.destinationFilePath);
+                //CpyWorkFlow();
+                //Thread.Sleep(10);
+                //DeleteeWorkFlow(Globals.sourceFilePath);
+                WorkFlowCreated = true;
+            }
+            else
+            {
+                // File download timed out or encountered an error
+                Log.Warning($"File download failed: {e.FullPath}");
+                // Handle the failure or cleanup operations
+            }
+
         }
 
 
@@ -264,7 +294,7 @@ namespace rpa_robot
         /// </remarks>
         private static void ThreadMethod()
         {
-            LastWorkFlowDone = false;
+            //LastWorkFlowDone = false;
             try
             {
                 RunWorkFlow();
