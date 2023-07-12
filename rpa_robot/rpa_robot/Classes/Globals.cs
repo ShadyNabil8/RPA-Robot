@@ -19,6 +19,12 @@ namespace rpa_robot.Classes
         //============================================== GLOGBALs ==============================================//
 
         //============================================== GLOGBALs ==============================================//
+        public static string rootPath = @"C:\rboHive\";
+        public static string usernamePath = @"C:\rboHive\info\username.txt";
+        public static string passwordPath = @"C:\rboHive\info\password.txt";
+        public static string userInfoPath = @"C:\rboHive\info";
+        public static string userIdFile = @"C:\rboHive\uuid.txt";
+        public static string robotAddressFile = @"C:\rboHive\info\ra.txt";
         public static string serviceName = "rpaService";
         public static string LogFilePath = @"C:\rboHive\RobotLog\RobotLog.log";
         public static string LogDirectoryPath = @"C:\rboHive\RobotLog\";

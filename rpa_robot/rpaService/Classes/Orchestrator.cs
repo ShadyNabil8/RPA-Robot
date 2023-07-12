@@ -12,6 +12,7 @@ using Polly;
 using System.Text;
 using System.Threading;
 using System.Net.NetworkInformation;
+using System.IO;
 
 namespace rpaService.Classes
 {
@@ -74,7 +75,7 @@ namespace rpaService.Classes
         /// </summary>
         /// <param name="sender">The sender object.</param>
         /// <param name="e">The ErrorEventArgs containing error information.</param>
-        private static void WSOnError(object sender, ErrorEventArgs e)
+        private static void WSOnError(object sender, WebSocketSharp.ErrorEventArgs e)
         {
             // Log the WebSocket error message
             Log.Error(e.Message);
@@ -119,8 +120,8 @@ namespace rpaService.Classes
             Token token = null;
             var robotInformation = JsonConvert.SerializeObject(new RobotInfo
             {
-                username = Globals.RobotUsername,
-                password = Globals.RobotPassword
+                username = GetUsername(),
+                password = GetPassword(),
             });
             Log.Information("Service is trying to connect to the Orchestrator");
             using (var client = new HttpClient())
@@ -166,6 +167,7 @@ namespace rpaService.Classes
                         Log.Information("Orchws => Error in Deserializing the token");
                     }
                     Log.Information($"userID: {token.userID}");
+                    Handler.CreateUserInformation(token.userID);
                     //Globals.uuid = token.userID;
                 }
 
@@ -212,6 +214,66 @@ namespace rpaService.Classes
             // Log the successful WebSocket connection
             Log.Information("Service connected to the logging WebSocket!");
 
+        }
+        public static string GetUsername()
+        {
+            string username = null;
+            if (File.Exists(Globals.usernamePath))
+            {
+                FileInfo fileInfo = new FileInfo(Globals.usernamePath);
+                if (fileInfo.Length > 0)
+                {
+                    try
+                    {
+                        username = File.ReadAllText(Globals.usernamePath);
+                        Log.Information($"username: {username}");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Log.Information($"Error while reading the username: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    Log.Information("Username is empty");
+                }
+            }
+            else
+            {
+                Log.Information("Username does not exist");
+            }
+            return username;
+        }
+        public static string GetPassword()
+        {
+            string password = null;
+            if (File.Exists(Globals.passwordPath))
+            {
+                FileInfo fileInfo = new FileInfo(Globals.passwordPath);
+                if (fileInfo.Length > 0)
+                {
+                    try
+                    {
+                        password = File.ReadAllText(Globals.passwordPath);
+                        Log.Information($"password: {password}");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Log.Information($"Error while reading the password: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    Log.Information("Password is empty");
+                }
+            }
+            else
+            {
+                Log.Information("Password does not exist");
+            }
+            return password;
         }
     }
 

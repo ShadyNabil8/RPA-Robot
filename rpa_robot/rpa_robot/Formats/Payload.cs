@@ -13,6 +13,7 @@ namespace rpa_robot.Formats
         public string status { get; set; }
         public string timestamp { get; set; }
         public string message { get; set; }
-        public int robotId { get; set; }
+        public string robotAddress { get; set; }
+        public string userId { get; set; }
     }
 }

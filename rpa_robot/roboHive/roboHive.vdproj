@@ -99,6 +99,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_584DACF4CA0943E3A5309F63B6E9444F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5C2534949F28419AB425B636D219DC4E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_67795EDA1C6A55FF22091186DCCA6AEC"
         "OwnerKey" = "8:_71BA9A62FADA45A28753E5548509CCE7"
         "MsmSig" = "8:_UNDEFINED"
@@ -149,6 +161,12 @@
         {
         "MsmKey" = "8:_93A71EB1995A36C137B33341A21D9237"
         "OwnerKey" = "8:_8B0532D64A474812BB12876541B05F57"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9A0403620F6848548DAAC63C0BD73BFC"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -368,6 +386,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -392,6 +418,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -760,6 +794,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_584DACF4CA0943E3A5309F63B6E9444F"
+            {
+            "SourcePath" = "8:..\\rpa_robot\\bin\\Debug\\selenium-manager\\macos\\selenium-manager"
+            "TargetName" = "8:selenium-manager"
+            "Tag" = "8:"
+            "Folder" = "8:_D3520FA0397F432CAE81F7F02B6E9D23"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5C2534949F28419AB425B636D219DC4E"
+            {
+            "SourcePath" = "8:..\\rpa_robot\\bin\\Debug\\selenium-manager\\linux\\selenium-manager"
+            "TargetName" = "8:selenium-manager"
+            "Tag" = "8:"
+            "Folder" = "8:_01B60DB558C94466B0A4D2BF11009DF8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_67795EDA1C6A55FF22091186DCCA6AEC"
             {
             "AssemblyRegister" = "3:1"
@@ -913,6 +987,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9A0403620F6848548DAAC63C0BD73BFC"
+            {
+            "SourcePath" = "8:..\\rpa_robot\\bin\\Debug\\selenium-manager\\windows\\selenium-manager.exe"
+            "TargetName" = "8:selenium-manager.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_AC67C761E3934FD5AFD604FBB95B7309"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A33D8CE8E6D7791C50F5E9A1BEC2AF66"
@@ -1159,6 +1253,50 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_25928AD4CD324CE893E74462612235F4"
+                    {
+                    "Name" = "8:selenium-manager"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_E2C3AE46DB814863A3773043F0DAFB4C"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_01B60DB558C94466B0A4D2BF11009DF8"
+                            {
+                            "Name" = "8:linux"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_1D0FACFB30E548EA99AC3F79A5E12ED5"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_AC67C761E3934FD5AFD604FBB95B7309"
+                            {
+                            "Name" = "8:windows"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_7826264C1E644D1F9D0615BFE065FD76"
+                                "Folders"
+                                {
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_D3520FA0397F432CAE81F7F02B6E9D23"
+                            {
+                            "Name" = "8:macos"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_130D8209182A448387B10F65A563485E"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1178,7 +1316,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:roboHive"
         "ProductCode" = "8:{5198504C-9CBB-4BEE-A7A5-B232B08A686A}"
-        "PackageCode" = "8:{CA5C5CBF-8854-4D90-A353-C463CCC43D02}"
+        "PackageCode" = "8:{519E8228-E590-477E-9C78-265E3C6D18CA}"
         "UpgradeCode" = "8:{B1DE5B18-F931-4BE0-A494-A0B9F9161ECB}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

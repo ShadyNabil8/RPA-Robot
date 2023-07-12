@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using WebSocketSharp;
@@ -25,9 +28,24 @@ namespace rpaService.Classes
         {
             Task.Run(async () =>
             {
-                /* I removed the await here */
-                await Orchestrator.MakeAuthenticationAsync();
-                await job.JobWsInit();
+
+                if (CheckForValidUsername() && CheckForValidPassword())
+                {
+                    await Orchestrator.MakeAuthenticationAsync();
+                }
+                else 
+                {
+                    Log.Information("No Authentication because there is no username or password");
+                }
+                if (CheckForValidUserID())
+                {
+                    await job.JobWsInit();
+                }
+                else 
+                {
+                    Log.Information("No Authentication because there is no uuid");
+                }
+
             });
 
             while (true)
@@ -134,6 +152,173 @@ namespace rpaService.Classes
             //Log.Information("Folder created successfully.");
         }
 
+        public static void CreateUserInformation(string uuid)
+        {
+            string robotAddress =
+            (
+                from nic in NetworkInterface.GetAllNetworkInterfaces()
+                where nic.OperationalStatus == OperationalStatus.Up
+                select nic.GetPhysicalAddress().ToString()
+            ).FirstOrDefault();
+
+            try
+            {
+                if (!Directory.Exists(Globals.rootPath))
+                {
+                    Directory.CreateDirectory(Globals.rootPath);
+                    Log.Information("rootPath created");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the rootPath: {ex.Message}");
+            }
+
+            try
+            {
+                if (!Directory.Exists(Globals.userInfoPath))
+                {
+                    Directory.CreateDirectory(Globals.userInfoPath);
+                    Log.Information("Information folder created");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the folder containing user information: {ex.Message}");
+            }
+            try
+            {
+                if (!File.Exists(Globals.userIdFile))
+                {
+                    using (File.Create(Globals.userIdFile))
+                    {
+                        Log.Information("user id file created");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the user id file: {ex.Message}");
+            }
+            try
+            {
+                if (!File.Exists(Globals.robotAddressFile))
+                {
+                    using (File.Create(Globals.robotAddressFile))
+                    {
+                        Log.Information("robot address file created");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the robot address file: {ex.Message}");
+            }
+
+            try
+            {
+                File.WriteAllText(Globals.userIdFile, uuid);
+                Log.Information("username is stored");
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Failed to store the username: {ex.Message}");
+            }
+            try
+            {
+                File.WriteAllText(Globals.robotAddressFile, robotAddress);
+                Log.Information("Password is stored");
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Failed to store the Password {ex.Message}");
+            }
+        }
+
+        public static bool CheckForValidUsername()
+        {
+            bool retval = false;
+            try
+            {
+                if (File.Exists(Globals.usernamePath))
+                {
+                    FileInfo fileInfo = new FileInfo(Globals.usernamePath);
+                    if (fileInfo.Length > 0)
+                    {
+                        retval = true;
+                    }
+                    else
+                    {
+                        Log.Information("usernames is empty from CheckForValidUsername");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check for the username file from CheckForValidUsername: {ex.Message}");
+            }
+            return retval;
+        }
+
+        public static bool CheckForValidPassword()
+        {
+            bool retval = false;
+            try
+            {
+                if (File.Exists(Globals.passwordPath))
+                {
+                    FileInfo fileInfo = new FileInfo(Globals.passwordPath);
+                    if (fileInfo.Length > 0)
+                    {
+                        retval = true;
+                    }
+                    else
+                    {
+                        Log.Information("password is empty from CheckForValidPassword");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check for the password file from CheckForValidPassword: {ex.Message}");
+            }
+            return retval;
+
+        }
+        public static bool CheckForValidUserID()
+        {
+            bool retval = false;
+            try
+            {
+                if (File.Exists(Globals.userIdFile))
+                {
+                    FileInfo fileInfo = new FileInfo(Globals.userIdFile);
+                    if (fileInfo.Length > 0)
+                    {
+                        retval = true;
+                    }
+                    else
+                    {
+                        Log.Information("userIdFile is empty from CheckForValidUserID");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check for the userIdFile file from CheckForValidUserID: {ex.Message}");
+            }
+            return retval;
+
+        }
 
         /// <summary>
         /// The ListenerFromRobothHandler function serves as an entry point for starting the asynchronous socket listener.

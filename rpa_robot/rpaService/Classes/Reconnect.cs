@@ -15,8 +15,8 @@ namespace rpaService.Classes
         public static bool loggingWspingReceived = false;
         public static bool jobWspingReceived = false;
         public static int timeoutDuration = 20000;
-        public static Timer timer = new Timer(TimerElapsed, null, timeoutDuration, Timeout.Infinite);
-
+        public static Timer timer;
+        //public static Timer timer = new Timer(TimerElapsed, null, timeoutDuration, Timeout.Infinite);
         public static void TimerElapsed(object state)
         {
             Log.Information("Timer Elapsed");
@@ -28,7 +28,14 @@ namespace rpaService.Classes
                 {
                     Task.Run(async () =>
                     {
-                        await Orchestrator.MakeAuthenticationAsync();
+                        if (Handler.CheckForValidUsername() && Handler.CheckForValidPassword())
+                        {
+                            await Orchestrator.MakeAuthenticationAsync();
+                        }
+                        else
+                        {
+                            Log.Information("No Authentication because there is no username or password reconnect");
+                        }
                     });
                 }
             }
@@ -39,7 +46,14 @@ namespace rpaService.Classes
                 {
                     Task.Run(async () =>
                     {
-                        await job.JobWsInit();
+                        if (Handler.CheckForValidUserID())
+                        {
+                            await job.JobWsInit();
+                        }
+                        else
+                        {
+                            Log.Information("No Authentication because there is no uuid from reconnect");
+                        }
                     });
                 }
             }

@@ -107,5 +107,87 @@ namespace rpa_robot
             }
             //Log.Information("Folder created successfully.");
         }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (!Directory.Exists(Globals.rootPath))
+                {
+                    Directory.CreateDirectory(Globals.rootPath);
+                    Log.Information("rootPath created");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the rootPath: {ex.Message}");
+            }
+            try
+            {
+                if (!Directory.Exists(Globals.userInfoPath))
+                {
+                    Directory.CreateDirectory(Globals.userInfoPath);
+                    Log.Information("Information folder created");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the folder containing user information: {ex.Message}");
+            }
+            try
+            {
+                if (!File.Exists(Globals.usernamePath))
+                {
+                    using (File.Create(Globals.usernamePath))
+                    {
+                        Log.Information("username file created");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the username file: {ex.Message}");
+            }
+            try
+            {
+                if (!File.Exists(Globals.passwordPath))
+                {
+                    using (File.Create(Globals.passwordPath))
+                    {
+                        Log.Information("Password file created");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the password file: {ex.Message}");
+            }
+            try
+            {
+                File.WriteAllText(Globals.usernamePath, txtUsername.Text);
+                Log.Information("username is stored");
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Failed to store the username: {ex.Message}");
+            }
+            try
+            {
+                File.WriteAllText(Globals.passwordPath, txtPassword.Password);
+                Log.Information("Password is stored");
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Failed to store the Password: {ex.Message}");
+            }
+            
+        }
+        
     }
 }

@@ -28,6 +28,25 @@
                         </Grid.RowDefinitions>
                     </Grid>
                 </TabItem>
+                <TabItem Header="Register" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Content="Username:" Margin="5"/>
+                        <TextBox Grid.Row="1" Name="txtUsername" Margin="5"/>
+
+                        <Label Grid.Row="2" Content="Password:" Margin="5"/>
+                        <PasswordBox Grid.Row="3" Name="txtPassword" Margin="5"/>
+
+                        <Button Grid.Row="4" Content="Register" Margin="5" Click="Register_Click"/>
+                    </Grid>
+                </TabItem>
             </TabControl>
         </Border>
     </Grid>

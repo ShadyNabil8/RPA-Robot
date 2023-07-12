@@ -89,7 +89,8 @@ namespace rpa_robot
                                     status = activityStateRecord.State,
                                     timestamp = activityStateRecord.EventTime.ToString(),
                                     message = "this is a log entry",
-                                    robotId = 1
+                                    robotAddress = Handler.ReadRobotAd(),
+                                    userId = Handler.ReadUserID()
                                 }
                             });
                             lock (Handler.LogQueue)

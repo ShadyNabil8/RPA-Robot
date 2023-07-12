@@ -11,16 +11,17 @@ namespace rpaService
 {
     public partial class rpaService : ServiceBase
     {
-
+        Thread ListenerFromRobot;
+        Thread LoggingProcess;
         public rpaService()
         {
             InitializeComponent();
-            
+
             try
             {
                 Handler.CreateWorkflowFolders();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //Log.Information("Error creating folder: " + ex.Message);
             }
@@ -41,13 +42,43 @@ namespace rpaService
             {
                 Log.Information("Error while checking the log file size!");
             }
+            try
+            {
+                Reconnect.timer = new Timer(Reconnect.TimerElapsed, null, Reconnect.timeoutDuration, Timeout.Infinite);
+                Log.Information("Timer started");
+            }
+            catch (Exception)
+            {
+
+                Log.Information("Timer init failed");
+            }
+            try
+            {
+                ListenerFromRobot = new Thread(Handler.ListenerFromRobothHandler);
+                Log.Information("Robot listener thread started");
+            }
+            catch (Exception)
+            {
+
+                Log.Information("Robot listener thread failed");
+            }
+            try
+            {
+                LoggingProcess = new Thread(Handler.LoggingProcessHandler);
+                Log.Information("loggingr thread started");
+            }
+            catch (Exception)
+            {
+
+                Log.Information("loggingr thread failed");
+            }
         }
 
         protected override void OnStart(string[] args)
         {
             Log.Information(Info.SERVICE_STARTED);
-            Globals.ListenerFromRobot.Start();
-            Globals.LoggingProcess.Start();
+            ListenerFromRobot.Start();
+            LoggingProcess.Start();
         }
         protected override void OnStop()
         {
@@ -63,6 +94,6 @@ namespace rpaService
         {
             Log.Information(Info.SERVICE_SHUTDOWN);
         }
-        
+
     }
 }

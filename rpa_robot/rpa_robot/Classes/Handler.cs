@@ -9,6 +9,7 @@ using System.Threading;
 using System.ComponentModel;
 using System.IO;
 using System.ServiceProcess;
+using System.Reflection.Emit;
 
 namespace rpa_robot
 {
@@ -320,6 +321,68 @@ namespace rpa_robot
             }
 
             return false;
+        }
+
+        public static string ReadUserID() 
+        {
+            string uuid = null;
+            if (File.Exists(Globals.userIdFile))
+            {
+                FileInfo fileInfo = new FileInfo(Globals.userIdFile);
+                if (fileInfo.Length > 0)
+                {
+                    try
+                    {
+                        uuid = File.ReadAllText(Globals.userIdFile);
+                        Log.Information($"uuid: {uuid}");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Log.Information($"Error while reading the userid {ex.Message}");
+                    }
+                }
+                else
+                {
+                    Log.Information("userid is empty");
+                }
+            }
+            else
+            {
+                Log.Information("userid does not exist");
+            }
+            return uuid;
+        }
+
+        public static string ReadRobotAd() 
+        {
+            string ra = null;
+            if (File.Exists(Globals.robotAddressFile))
+            {
+                FileInfo fileInfo = new FileInfo(Globals.robotAddressFile);
+                if (fileInfo.Length > 0)
+                {
+                    try
+                    {
+                        ra = File.ReadAllText(Globals.robotAddressFile);
+                        Log.Information($"robotAddress: {ra}");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Log.Information($"Error while reading the robot address: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    Log.Information("robot address is empty");
+                }
+            }
+            else
+            {
+                Log.Information("robot address does not exist");
+            }
+            return ra;       
         }
     }
 }
