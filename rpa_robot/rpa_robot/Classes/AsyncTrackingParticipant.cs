@@ -6,6 +6,7 @@ using System.Activities.Tracking;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Threading;
 
 namespace rpa_robot
@@ -68,31 +69,50 @@ namespace rpa_robot
                         if (!activityStateRecord.Activity.Name.Equals("DynamicActivity"))
                         {
 
+                            //Globals.uiDispatcher.Invoke(() =>
+                            //{
+                            //    Globals.StatusTxtBox.AppendText(JsonConvert.SerializeObject(new Activity
+                            //    {
+                            //        Type = "LogType",
+                            //        Name = activityStateRecord.Activity.Name,
+                            //        Status = activityStateRecord.State,
+                            //        Time = activityStateRecord.EventTime.ToString()
+                            //    }) + "\n");
+                            //});
                             Globals.uiDispatcher.Invoke(() =>
                             {
-                                Globals.StatusTxtBox.AppendText(JsonConvert.SerializeObject(new Activity
-                                {
-                                    Type = "LogType",
-                                    Name = activityStateRecord.Activity.Name,
-                                    Status = activityStateRecord.State,
-                                    Time = activityStateRecord.EventTime.ToString()
-                                }) + "\n");
+                                Globals.StatusTxtBox.AppendText($"Activity name: {activityStateRecord.Activity.Name}\nStatus: {activityStateRecord.State}\nTime: {activityStateRecord.EventTime}\n--------------------\n"
+                                    );
                             });
+
+                            DateTime utcTime = DateTime.UtcNow;
+
+                            TimeZoneInfo cairoTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Egypt Standard Time");
+
+                            DateTime cairoTime = TimeZoneInfo.ConvertTime(utcTime, cairoTimeZone);
+
+                            string cairoTimeString = cairoTime.ToString("o", CultureInfo.InvariantCulture);
 
                             var log = JsonConvert.SerializeObject(new RpaLog
                             {
                                 eventType = "logEmitEvent",
                                 payload = new Payload
                                 {
-                                    logType = "ERROR",
+                                    logType = "Info",
                                     name = activityStateRecord.Activity.Name,
                                     status = activityStateRecord.State,
-                                    timestamp = activityStateRecord.EventTime.ToString(),
+                                    //timestamp = activityStateRecord.EventTime.ToString(),
+                                    timestamp = cairoTimeString,
                                     message = "this is a log entry",
                                     robotAddress = Handler.ReadRobotAd(),
                                     userId = Handler.ReadUserID()
                                 }
                             });
+                            //Globals.uiDispatcher.Invoke(() =>
+                            //{
+                            //    Globals.StatusTxtBox.AppendText($"{log}\n"
+                            //        );
+                            //});
                             lock (Handler.LogQueue)
                             {
                                 Handler.LogQueue.Enqueue(log);

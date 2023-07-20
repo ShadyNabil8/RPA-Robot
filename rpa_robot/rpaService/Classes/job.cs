@@ -86,6 +86,7 @@ namespace rpaService.Classes
                             {
                                 Task.Run( () =>
                                 {
+                                    Handler.DeleteeWorkFlow(Globals.downloadPath);
                                     webClient.DownloadFile(pkg.path, Globals.downloadPath);
                                     Log.Information("File downloaded successfully.");
                                 });

@@ -32,7 +32,9 @@ namespace rpaService
                .CreateLogger();
             }
             catch (Exception)
-            { throw; }
+            {
+                Log.Error("Error in creating logger");
+            }
 
             try
             {

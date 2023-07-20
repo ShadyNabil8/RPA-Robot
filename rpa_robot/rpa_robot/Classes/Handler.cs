@@ -83,11 +83,19 @@ namespace rpa_robot
             {
                 // Workflow execution was canceled
                 Log.Information("Workflow was canceled!");
+                Globals.uiDispatcher.Invoke(() =>
+                {
+                    Globals.LogsTxtBox.AppendText("Workflow was canceled!\n");
+                });
             }
             else if (obj.CompletionState == ActivityInstanceState.Faulted)
             {
                 // Workflow execution encountered an error
                 Log.Information("Workflow encountered an error!");
+                Globals.uiDispatcher.Invoke(() =>
+                {
+                    Globals.LogsTxtBox.AppendText("Workflow encountered an error!\n");
+                });
             }
         }
 
@@ -116,6 +124,7 @@ namespace rpa_robot
 
             while (true)
             {
+
                 if (WorkFlowCreated /*&& LastWorkFlowDone*/)
                 {
                     // Reset the flag for workflow creation and perform necessary actions
@@ -134,6 +143,7 @@ namespace rpa_robot
                 //{
                 //    File.Delete(Globals.sourceFilePath);
                 //}
+
                 if (LogQueue.Count > 0)
                 {
                     lock (LogQueue)
@@ -303,7 +313,7 @@ namespace rpa_robot
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Error while running wf {ex.Message}");
             }
 
         }
@@ -323,7 +333,7 @@ namespace rpa_robot
             return false;
         }
 
-        public static string ReadUserID() 
+        public static string ReadUserID()
         {
             string uuid = null;
             if (File.Exists(Globals.userIdFile))
@@ -334,7 +344,7 @@ namespace rpa_robot
                     try
                     {
                         uuid = File.ReadAllText(Globals.userIdFile);
-                        Log.Information($"uuid: {uuid}");
+                        //Log.Information($"uuid: {uuid}");
                     }
                     catch (Exception ex)
                     {
@@ -354,7 +364,7 @@ namespace rpa_robot
             return uuid;
         }
 
-        public static string ReadRobotAd() 
+        public static string ReadRobotAd()
         {
             string ra = null;
             if (File.Exists(Globals.robotAddressFile))
@@ -365,7 +375,7 @@ namespace rpa_robot
                     try
                     {
                         ra = File.ReadAllText(Globals.robotAddressFile);
-                        Log.Information($"robotAddress: {ra}");
+                        //Log.Information($"robotAddress: {ra}");
                     }
                     catch (Exception ex)
                     {
@@ -382,7 +392,100 @@ namespace rpa_robot
             {
                 Log.Information("robot address does not exist");
             }
-            return ra;       
+            return ra;
         }
+        public static bool CheckForFolders()
+        {
+            bool allOk = true;
+            try
+            {
+                if (!Directory.Exists(Globals.rootPath))
+                {
+                    Directory.CreateDirectory(Globals.rootPath);
+                    Log.Information("rootPath created");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the rootPath: {ex.Message}");
+                allOk = false;
+            }
+            try
+            {
+                if (!Directory.Exists(Globals.userInfoPath))
+                {
+                    Directory.CreateDirectory(Globals.userInfoPath);
+                    Log.Information("Information folder created");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the folder containing user information: {ex.Message}");
+                allOk = false;
+            }
+            try
+            {
+                if (!File.Exists(Globals.usernamePath))
+                {
+                    using (File.Create(Globals.usernamePath))
+                    {
+                        Log.Information("username file created");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the username file: {ex.Message}");
+                allOk = false;
+            }
+            try
+            {
+                if (!File.Exists(Globals.passwordPath))
+                {
+                    using (File.Create(Globals.passwordPath))
+                    {
+                        Log.Information("Password file created");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Filed to check or create the password file: {ex.Message}");
+                allOk = false;
+            }
+            return allOk;
+        }
+        public static bool CreateFiles(string username, string password)
+        {
+            bool allOk = true;
+            try
+            {
+                File.WriteAllText(Globals.usernamePath, username);
+                Log.Information("username is stored");
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Failed to store the username: {ex.Message}");
+                allOk = false;
+            }
+            try
+            {
+                File.WriteAllText(Globals.passwordPath, password);
+                Log.Information("Password is stored");
+            }
+            catch (Exception ex)
+            {
+
+                Log.Information($"Failed to store the Password: {ex.Message}");
+                allOk = false;
+            }
+            return allOk;
+        }
+
     }
 }

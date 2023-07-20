@@ -15,7 +15,7 @@ namespace rpaService.Classes
         public static string usernamePath = @"C:\rboHive\info\username.txt";
         public static string passwordPath = @"C:\rboHive\info\password.txt";
         public static string userInfoPath = @"C:\rboHive\info";
-        public static string userIdFile = @"C:\rboHive\uuid.txt";
+        public static string userIdFile = @"C:\rboHive\info\uuid.txt";
         public static string robotAddressFile = @"C:\rboHive\info\ra.txt";
         public static string RobotUsername = "luda";
         public static string RobotPassword = "luda";

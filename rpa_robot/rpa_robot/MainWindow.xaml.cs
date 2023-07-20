@@ -1,10 +1,16 @@
-﻿using rpa_robot.Classes;
+﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using rpa_robot.Classes;
 using Serilog;
 using System;
 using System.IO;
+using System.Net.Http;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
+using rpa_robot.Formats;
 
 namespace rpa_robot
 {
@@ -108,86 +114,74 @@ namespace rpa_robot
             //Log.Information("Folder created successfully.");
         }
 
-        private void Register_Click(object sender, RoutedEventArgs e)
+        private async void Register_Click(object sender, RoutedEventArgs e)
         {
-            try
+            bool allOk = Handler.CheckForFolders();
+            if (allOk)
             {
-                if (!Directory.Exists(Globals.rootPath))
+                string username = txtUsername.Text;
+                string password = txtUsername.Text;
+                bool check = await verify(username, password);
+                if (check)
                 {
-                    Directory.CreateDirectory(Globals.rootPath);
-                    Log.Information("rootPath created");
+                    Handler.CreateFiles(username, password);
+                    MessageBox.Show("Registered successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password");
                 }
             }
-            catch (Exception ex)
+            else 
             {
+                Log.Error("Error in dealing with folders");
+            }
 
-                Log.Information($"Filed to check or create the rootPath: {ex.Message}");
-            }
-            try
-            {
-                if (!Directory.Exists(Globals.userInfoPath))
-                {
-                    Directory.CreateDirectory(Globals.userInfoPath);
-                    Log.Information("Information folder created");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Log.Information($"Filed to check or create the folder containing user information: {ex.Message}");
-            }
-            try
-            {
-                if (!File.Exists(Globals.usernamePath))
-                {
-                    using (File.Create(Globals.usernamePath))
-                    {
-                        Log.Information("username file created");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Log.Information($"Filed to check or create the username file: {ex.Message}");
-            }
-            try
-            {
-                if (!File.Exists(Globals.passwordPath))
-                {
-                    using (File.Create(Globals.passwordPath))
-                    {
-                        Log.Information("Password file created");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Log.Information($"Filed to check or create the password file: {ex.Message}");
-            }
-            try
-            {
-                File.WriteAllText(Globals.usernamePath, txtUsername.Text);
-                Log.Information("username is stored");
-            }
-            catch (Exception ex)
-            {
-
-                Log.Information($"Failed to store the username: {ex.Message}");
-            }
-            try
-            {
-                File.WriteAllText(Globals.passwordPath, txtPassword.Password);
-                Log.Information("Password is stored");
-            }
-            catch (Exception ex)
-            {
-
-                Log.Information($"Failed to store the Password: {ex.Message}");
-            }
-            
         }
-        
+        static async Task<bool> verify(string username, string password)
+        {
+
+            var robotInformation = JsonConvert.SerializeObject(new RobotInfo
+            {
+                username = username,
+                password = password,
+            });
+            Log.Information("Service is trying to connect to the Orchestrator");
+            using (var client = new HttpClient())
+            {
+                HttpResponseMessage response;
+                try
+                {
+                    // Create the content for the POST request with the serialized robot information
+                    var content = new StringContent(robotInformation, Encoding.UTF8, "application/json");
+
+                    // Send a POST request to the specified URL with the content and get the response
+                    response = await client.PostAsync(Globals.AuthenticationEndPoint, content);
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception
+                    Log.Error("An error occurred during the POST request: Internet issue" + ex.Message);
+                    // Handle the exception or rethrow it to trigger a retry
+                    throw;
+                }
+
+                // Get the status code
+                HttpStatusCode statusCode = response.StatusCode;
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    return true;
+                }
+
+                else
+                {
+                    // Authentication unsuccessful (status code other than 200 [OK])
+                    // Deserialize the response content into a Message object
+                    return false;
+                }
+            }
+            return false;
+        }
+
     }
 }

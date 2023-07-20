@@ -23,7 +23,7 @@ namespace rpa_robot.Classes
         public static string usernamePath = @"C:\rboHive\info\username.txt";
         public static string passwordPath = @"C:\rboHive\info\password.txt";
         public static string userInfoPath = @"C:\rboHive\info";
-        public static string userIdFile = @"C:\rboHive\uuid.txt";
+        public static string userIdFile = @"C:\rboHive\info\uuid.txt";
         public static string robotAddressFile = @"C:\rboHive\info\ra.txt";
         public static string serviceName = "rpaService";
         public static string LogFilePath = @"C:\rboHive\RobotLog\RobotLog.log";
@@ -40,6 +40,7 @@ namespace rpa_robot.Classes
         //public static string destinationFilePath = @".\WfDest\Workflow.xaml";
         public static string destinationFilePath = @"C:\rboHive\WfDest\Workflow.xaml";
         public static string serviceExePath = @"D:\New folder\CSE\grad.Proj\rpa_robot\rpaService\bin\Debug\rpaService.exe";
+        public static string AuthenticationEndPoint = "http://34.155.103.216/api/robot/login/";
         public static TextBox LogsTxtBox   = new TextBox();
         public static TextBox StatusTxtBox = new TextBox();
         public static System.Windows.Threading.Dispatcher uiDispatcher = Application.Current.Dispatcher;

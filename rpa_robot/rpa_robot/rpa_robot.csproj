@@ -49,15 +49,17 @@
     <Reference Include="Browser-Engine">
       <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\Browser-Engine.dll</HintPath>
     </Reference>
-    <Reference Include="Excel">
-      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\Excel.dll</HintPath>
+    <Reference Include="Excel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\shady\Desktop\a\Assemblies\Excel.dll</HintPath>
     </Reference>
     <Reference Include="IO-Modules, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\shady\Downloads\IO-Modules.dll</HintPath>
     </Reference>
-    <Reference Include="MailActivity">
-      <HintPath>C:\Users\shady\Desktop\Assemblies\Assemblies\MailActivity.dll</HintPath>
+    <Reference Include="MailActivity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\shady\Desktop\a\Assemblies\MailActivity.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -129,6 +131,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Formats\Payload.cs" />
+    <Compile Include="Formats\RobotInfo.cs" />
     <Compile Include="Formats\RpaLog.cs" />
     <Compile Include="Formats\ServiceRobotCMD.cs" />
     <Compile Include="MainWindow.xaml.cs">

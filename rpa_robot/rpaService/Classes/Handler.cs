@@ -125,7 +125,7 @@ namespace rpaService.Classes
             const long bytesInMegabyte = 1024 * 1024;
             long fileSizeInMegabytes = fileSizeInBytes / bytesInMegabyte;
 
-            if (fileSizeInMegabytes > 100)
+            if (fileSizeInMegabytes > 2)
             {
                 // Delete the file
                 File.Delete(Globals.LogFilePath);
@@ -318,6 +318,27 @@ namespace rpaService.Classes
             }
             return retval;
 
+        }
+        public static void DeleteeWorkFlow(string Path)
+        {
+            try
+            {
+                // Delete the file
+                if (File.Exists(Path))
+                {
+                    File.Delete(Path);
+                    Log.Information("File deleted successfully.");
+                }
+                //File.Delete(Path);    
+            }
+            catch (IOException er)
+            {
+                Log.Information($"An error occurred while deleting the file: {er.Message}");
+            }
+            catch (Exception ex)
+            {
+                Log.Information($"An error occurred: {ex.Message}");
+            }
         }
 
         /// <summary>
