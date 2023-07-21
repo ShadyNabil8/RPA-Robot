@@ -24,24 +24,7 @@ namespace rpa_robot
         // The response from the remote device.
         private static string response = string.Empty;
 
-        //public static void SendToSocket(string mgs) 
-        //{
-        //    if (Service.IsInstalled())
-        //    {
-        //        if (Service.IsStarted())
-        //        {
-        //            StartClient(mgs);
-        //        }
-        //        else 
-        //        {
-        //            Log.Information(Info.SERVICE_IS_ALREADY_STOPED);
-        //        }
-        //    }
-        //    else 
-        //    {
-        //        Log.Information(Info.SERVICE_NEED_TO_BE_INSTALLED);
-        //    }
-        //}
+        
         public static void StartClient(string mgs)
         {
             // Connect to a remote device.

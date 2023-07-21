@@ -11,6 +11,7 @@ using System.Activities.Tracking;
 using System.Collections.Concurrent;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using rpa_robot.Classes;
 
 namespace rpa_robot
 {
@@ -18,21 +19,11 @@ namespace rpa_robot
     {
         // Thread signal.
         public static ManualResetEvent allDone = new ManualResetEvent(false);
-
-        // A queue to store the commands
-        public Queue<String> ProcessQueue;
-        
-        
-
-        // Handler to deal with the workflow execution
-
         public AsynchronousSocketListener()
         {
-            this.ProcessQueue = new Queue<String>();
-            
-        }
 
-        public void StartListening()
+        }
+        public static void StartListening()
         {
             // Data buffer for incoming data.
             byte[] bytes = new Byte[1024];
@@ -73,13 +64,9 @@ namespace rpa_robot
             {
                 Log.Information(e.ToString());
             }
-
-            
-            
-
         }
 
-        private void AcceptCallback(IAsyncResult ar)
+        private static void AcceptCallback(IAsyncResult ar)
         {
             // Signal the main thread to continue.
             allDone.Set();
@@ -95,9 +82,9 @@ namespace rpa_robot
                 new AsyncCallback(ReadCallback), state);
         }
 
-        private void ReadCallback(IAsyncResult ar)
+        private static void ReadCallback(IAsyncResult ar)
         {
-            String content = String.Empty;
+            string content = string.Empty;
 
             // Retrieve the state object and the handler socket
             // from the asynchronous state object.
@@ -119,13 +106,10 @@ namespace rpa_robot
                 if (content.IndexOf("<EOF>") > -1)
                 {
                     // All the data has been read from the
-                    lock (this.ProcessQueue)
-                    {
-                        this.ProcessQueue.Enqueue(content);
-                    }
+                    Listener.DataReceivedHandler(content.Replace("<EOF>", string.Empty));
                     // Echo the data back to the client.
                     //Send(handler, "ACK");
-                    
+
                 }
                 else
                 {
@@ -136,7 +120,7 @@ namespace rpa_robot
             }
         }
 
-        private void Send(Socket handler, String data)
+        private static void Send(Socket handler, String data)
         {
             // Convert the string data to byte data using ASCII encoding.
             byte[] byteData = Encoding.ASCII.GetBytes(data);
@@ -146,7 +130,7 @@ namespace rpa_robot
                 new AsyncCallback(SendCallback), handler);
         }
 
-        private void SendCallback(IAsyncResult ar)
+        private static void SendCallback(IAsyncResult ar)
         {
             try
             {

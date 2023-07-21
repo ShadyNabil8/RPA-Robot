@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
+using Serilog;
 
 namespace rpa_robot
 {
@@ -51,8 +52,6 @@ namespace rpa_robot
             throw new NotImplementedException();
         }
 
-
-
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
             // Loop until cancelled
@@ -69,16 +68,7 @@ namespace rpa_robot
                         if (!activityStateRecord.Activity.Name.Equals("DynamicActivity"))
                         {
 
-                            //Globals.uiDispatcher.Invoke(() =>
-                            //{
-                            //    Globals.StatusTxtBox.AppendText(JsonConvert.SerializeObject(new Activity
-                            //    {
-                            //        Type = "LogType",
-                            //        Name = activityStateRecord.Activity.Name,
-                            //        Status = activityStateRecord.State,
-                            //        Time = activityStateRecord.EventTime.ToString()
-                            //    }) + "\n");
-                            //});
+
                             Globals.uiDispatcher.Invoke(() =>
                             {
                                 Globals.StatusTxtBox.AppendText($"Activity name: {activityStateRecord.Activity.Name}\nStatus: {activityStateRecord.State}\nTime: {activityStateRecord.EventTime}\n--------------------\n"
@@ -93,32 +83,22 @@ namespace rpa_robot
 
                             string cairoTimeString = cairoTime.ToString("o", CultureInfo.InvariantCulture);
 
-                            var log = JsonConvert.SerializeObject(new RpaLog
+                            var log = JsonConvert.SerializeObject(new Data
                             {
                                 eventType = "logEmitEvent",
-                                payload = new Payload
+                                payload = JsonConvert.SerializeObject(new Payload
                                 {
                                     logType = "Info",
                                     name = activityStateRecord.Activity.Name,
                                     status = activityStateRecord.State,
-                                    //timestamp = activityStateRecord.EventTime.ToString(),
                                     timestamp = cairoTimeString,
                                     message = "this is a log entry",
-                                    robotAddress = Handler.ReadRobotAd(),
-                                    userId = Handler.ReadUserID()
-                                }
+                                    robotAddress = Helper.ReadRobotAd(),
+                                    userId = Helper.ReadUserID()
+                                })
                             });
-                            //Globals.uiDispatcher.Invoke(() =>
-                            //{
-                            //    Globals.StatusTxtBox.AppendText($"{log}\n"
-                            //        );
-                            //});
-                            lock (Handler.LogQueue)
-                            {
-                                Handler.LogQueue.Enqueue(log);
-                            }
-
-
+                            Log.Information(log);
+                            Helper.LogCreatedHandler(log);
                         }
                     }
                 }

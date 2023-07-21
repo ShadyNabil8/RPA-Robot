@@ -11,14 +11,6 @@ namespace rpa_robot.Classes
 
     internal class Globals
     {
-        //============================================== GLOGBALs ==============================================//
-        //public static AsynchronousSocketListener RobotAsyncListenerFromService       = new AsynchronousSocketListener();
-        //public static AsynchronousClient         RobotAsyncClientFromService         = new AsynchronousClient();
-        public static BackgroundWorker  Robot   = new BackgroundWorker();
-        public static FileSystemWatcher watcher = new FileSystemWatcher();
-        //============================================== GLOGBALs ==============================================//
-
-        //============================================== GLOGBALs ==============================================//
         public static string rootPath = @"C:\rboHive\";
         public static string usernamePath = @"C:\rboHive\info\username.txt";
         public static string passwordPath = @"C:\rboHive\info\password.txt";
@@ -26,6 +18,7 @@ namespace rpa_robot.Classes
         public static string userIdFile = @"C:\rboHive\info\uuid.txt";
         public static string robotAddressFile = @"C:\rboHive\info\ra.txt";
         public static string serviceName = "rpaService";
+        public static string uuid = string.Empty;
         public static string LogFilePath = @"C:\rboHive\RobotLog\RobotLog.log";
         public static string LogDirectoryPath = @"C:\rboHive\RobotLog\";
         //public static string WorkflowFilePath = @"C:\Users\shady\Desktop\Assemblies\Workflow.xaml";
@@ -45,11 +38,7 @@ namespace rpa_robot.Classes
         public static TextBox StatusTxtBox = new TextBox();
         public static System.Windows.Threading.Dispatcher uiDispatcher = Application.Current.Dispatcher;
         public static System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
-        //============================================== GLOGBALs ==============================================//
 
-        //============================================== GLOGBALs ==============================================//
-
-        //============================================== GLOGBALs ==============================================//
 
     }
 }

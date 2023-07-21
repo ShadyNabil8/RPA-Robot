@@ -69,10 +69,12 @@
     <Compile Include="Classes\AsynchronousSocketListener .cs" />
     <Compile Include="Classes\Globals.cs" />
     <Compile Include="Classes\Handler.cs" />
-    <Compile Include="Classes\Info.cs" />
-    <Compile Include="Classes\job.cs" />
-    <Compile Include="Classes\Orchestrator.cs" />
-    <Compile Include="Classes\Reconnect.cs" />
+    <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Classes\Initialization.cs" />
+    <Compile Include="Classes\PackageReceiver.cs" />
+    <Compile Include="Classes\Listener.cs" />
+    <Compile Include="Classes\LogSender.cs" />
+    <Compile Include="Classes\Reconnector.cs" />
     <Compile Include="Formats\Data.cs" />
     <Compile Include="Formats\Error.cs" />
     <Compile Include="Formats\MachineInfo.cs" />
@@ -81,7 +83,7 @@
     <Compile Include="Formats\Payload.cs" />
     <Compile Include="Formats\RobotInfo.cs" />
     <Compile Include="Formats\RobotMetaData.cs" />
-    <Compile Include="Formats\RpaLog.cs" />
+    <Compile Include="Formats\RobotMsg.cs" />
     <Compile Include="Formats\Token.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>

@@ -109,10 +109,7 @@ namespace rpaService
                     // client. Display it on the console.
                     //Log.Information("Read {0} bytes from socket. \n Data : {1}",
                     //    content.Length, content);
-                    lock (Handler.LogQueue)
-                    {
-                        Handler.LogQueue.Enqueue(content.Replace("<EOF>", string.Empty));
-                    }
+                    Listener.DataReceivedHandler(content.Replace("<EOF>", string.Empty));
                     // Echo the data back to the client.
                     //Send(handler, "ACK");
                 }

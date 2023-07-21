@@ -27,7 +27,7 @@ namespace rpaService
         // The response from the remote device.
         private static string response = string.Empty;
 
-        public void StartClient(string msg)
+        public static void StartClient(string msg)
         {
             // Connect to a remote device.
             try
@@ -68,7 +68,7 @@ namespace rpaService
             }
             catch (Exception e)
             {
-                Log.Information(e.ToString());
+                //Log.Information(e.ToString());
             }
         }
 

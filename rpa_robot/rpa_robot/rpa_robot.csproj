@@ -113,14 +113,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\Activity.cs" />
     <Compile Include="Classes\AsynchronousClient.cs" />
     <Compile Include="Classes\AsynchronousSocketListener .cs" />
     <Compile Include="Classes\AsyncTrackingParticipant.cs" />
     <Compile Include="Classes\Globals.cs" />
-    <Compile Include="Classes\Handler.cs" />
-    <Compile Include="Classes\Info.cs" />
-    <Compile Include="Classes\Service.cs" />
+    <Compile Include="Classes\Listener.cs" />
+    <Compile Include="Classes\WorkflowHandler.cs" />
+    <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Classes\Initialization.cs" />
     <Compile Include="Classes\StateObject.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -130,10 +130,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Watcher.cs" />
     <Compile Include="Formats\Payload.cs" />
     <Compile Include="Formats\RobotInfo.cs" />
-    <Compile Include="Formats\RpaLog.cs" />
-    <Compile Include="Formats\ServiceRobotCMD.cs" />
+    <Compile Include="Formats\Data.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

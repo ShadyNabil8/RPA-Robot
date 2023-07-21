@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace rpa_robot.Formats
+namespace rpaService.Formats
 {
-    internal class RpaLog
+    internal class RobotMsg
     {
         public string eventType { get; set; }
-        public Payload payload { get; set; }
+        public string payload { get; set; }
     }
 }
