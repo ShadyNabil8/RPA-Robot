@@ -17,10 +17,8 @@ namespace rpa_robot
 
         public MainWindow()
         {
-
             InitializeComponent();
             Initialization.AppInit();
-
             Grid.SetRow(Globals.LogsTxtBox, 1);
             Grid.SetRow(Globals.StatusTxtBox, 1);
             logs.Children.Add(Globals.LogsTxtBox);
@@ -57,33 +55,5 @@ namespace rpa_robot
             // Show or hide the main window when the user clicks on the NotifyIcon
             Visibility = Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
         }
-
-
-        private async void Register_Click(object sender, RoutedEventArgs e)
-        {
-            string username = txtUsername.Text;
-            string password = txtUsername.Text;
-            bool check = await Helper.verify(username, password);
-            if (check)
-            {
-                var robotInformation = JsonConvert.SerializeObject(new Data
-                {
-                    eventType = "login",
-                    payload = JsonConvert.SerializeObject(new RobotInfo
-                    {
-                        username = username,
-                        password = password
-                    })
-                });
-                AsynchronousClient.StartClient(robotInformation);
-                MessageBox.Show("Registered successfully!");
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password");
-            }
-        }
-
-
     }
 }

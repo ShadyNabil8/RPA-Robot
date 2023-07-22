@@ -67,22 +67,8 @@ namespace rpa_robot
 
                         if (!activityStateRecord.Activity.Name.Equals("DynamicActivity"))
                         {
-
-
-                            Globals.uiDispatcher.Invoke(() =>
-                            {
-                                Globals.StatusTxtBox.AppendText($"Activity name: {activityStateRecord.Activity.Name}\nStatus: {activityStateRecord.State}\nTime: {activityStateRecord.EventTime}\n--------------------\n"
-                                    );
-                            });
-
-                            DateTime utcTime = DateTime.UtcNow;
-
-                            TimeZoneInfo cairoTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Egypt Standard Time");
-
-                            DateTime cairoTime = TimeZoneInfo.ConvertTime(utcTime, cairoTimeZone);
-
-                            string cairoTimeString = cairoTime.ToString("o", CultureInfo.InvariantCulture);
-
+                            Helper.PrintOnUI($"Activity name: {activityStateRecord.Activity.Name}\nStatus: {activityStateRecord.State}\nTime: {activityStateRecord.EventTime}\n--------------------\n");
+                            
                             var log = JsonConvert.SerializeObject(new Data
                             {
                                 eventType = "logEmitEvent",
@@ -91,14 +77,14 @@ namespace rpa_robot
                                     logType = "Info",
                                     name = activityStateRecord.Activity.Name,
                                     status = activityStateRecord.State,
-                                    timestamp = cairoTimeString,
+                                    timestamp = Helper.GetTime(),
                                     message = "this is a log entry",
                                     robotAddress = Helper.ReadRobotAd(),
                                     userId = Helper.ReadUserID()
                                 })
                             });
                             Log.Information(log);
-                            Helper.LogCreatedHandler(log);
+                            Helper.SendToService(log);
                         }
                     }
                 }

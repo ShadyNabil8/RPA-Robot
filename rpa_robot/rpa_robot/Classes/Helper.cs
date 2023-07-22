@@ -12,6 +12,9 @@ using rpa_robot.Formats;
 using Serilog;
 using System.Threading;
 using System.Net.NetworkInformation;
+using System.Windows;
+using System.Activities.Tracking;
+using System.Globalization;
 
 namespace rpa_robot.Classes
 {
@@ -223,16 +226,32 @@ namespace rpa_robot.Classes
             }
             return false;
         }
-        public static void LogCreatedHandler(string log) 
+        public static void SendToService(string log) 
         {
-            //lock (LogQueue)
-            //{
-            //    LogQueue.Enqueue(log);
-            //}
             AsynchronousClient.StartClient(log);
-
         }
-        
-
+        public static void OnLoggedIn(string cardinalities)
+        {
+            SendToService(cardinalities);
+            MainWindow main = new MainWindow();
+            main.Show();
+            
+            MessageBox.Show("Registered successfully!");
+        }
+        public static void PrintOnUI(string data)
+        {
+            Globals.uiDispatcher.Invoke(() =>
+            {
+                Globals.StatusTxtBox.AppendText(data);
+            });
+        }
+        public static string GetTime()
+        {
+            DateTime utcTime = DateTime.UtcNow;
+            TimeZoneInfo cairoTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Egypt Standard Time");
+            DateTime cairoTime = TimeZoneInfo.ConvertTime(utcTime, cairoTimeZone);
+            string cairoTimeString = cairoTime.ToString("o", CultureInfo.InvariantCulture);
+            return cairoTimeString;
+        }
     }
 }

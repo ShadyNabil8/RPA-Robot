@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MaterialDesignThemes.Wpf;
+using Newtonsoft.Json;
+using rpa_robot.Classes;
+using rpa_robot.Formats;
 
 namespace rpa_robot
 {
@@ -26,6 +29,7 @@ namespace rpa_robot
         {
             InitializeComponent();
         }
+
 
         private void toggleTheme(object sender, RoutedEventArgs e)
         {
@@ -54,9 +58,30 @@ namespace rpa_robot
             DragMove();
         }
 
-        private void loginbtn_Click(object sender, RoutedEventArgs e)
+        private async void loginbtn_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            string username = txtUsername.Text;
+            string password = txtUsername.Text;
+            bool check = await Helper.verify(username, password);
+            if (check)
+            {
+                var robotInformation = JsonConvert.SerializeObject(new Data
+                {
+                    eventType = "login",
+                    payload = JsonConvert.SerializeObject(new RobotInfo
+                    {
+                        username = username,
+                        password = password
+                    })
+                });
+                Helper.OnLoggedIn(robotInformation);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+            }
+            
         }
     }
 }
