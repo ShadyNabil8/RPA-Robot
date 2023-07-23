@@ -6,7 +6,11 @@ using System.Windows;
 using System.Windows.Controls;
 using rpa_robot.Formats;
 using OpenQA.Selenium.DevTools;
-using Serilog;
+using Serilog.Sinks.RichTextBox;
+using Serilog.Core;
+using MaterialDesignThemes.Wpf;
+using System.Windows.Input;
+
 namespace rpa_robot
 {
     /// <summary>
@@ -14,15 +18,25 @@ namespace rpa_robot
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public bool IsDarkTheme { get; set; }
+        public readonly PaletteHelper paletteHelper = new PaletteHelper();
+        public static Logger UILogger;
         public MainWindow()
         {
             InitializeComponent();
+
             Initialization.AppInit();
-            Grid.SetRow(Globals.LogsTxtBox, 1);
-            Grid.SetRow(Globals.StatusTxtBox, 1);
-            logs.Children.Add(Globals.LogsTxtBox);
-            status.Children.Add(Globals.StatusTxtBox);
+            try
+            {
+                UILogger = new LoggerConfiguration()
+                .WriteTo.RichTextBox(rtblogger, theme: LoggerTheme.Theme)
+                .CreateLogger();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             StateChanged += MainWindow_StateChanged;
             Globals.notifyIcon.Icon = new System.Drawing.Icon(Globals.ImagePath);
             Globals.notifyIcon.Text = "rpa_robot";
@@ -54,6 +68,33 @@ namespace rpa_robot
         {
             // Show or hide the main window when the user clicks on the NotifyIcon
             Visibility = Visibility == Visibility.Visible ? Visibility.Hidden : Visibility.Visible;
+        }
+
+        private void toggleTheme(object sender, RoutedEventArgs e)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+
+        }
+
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
         }
     }
 }

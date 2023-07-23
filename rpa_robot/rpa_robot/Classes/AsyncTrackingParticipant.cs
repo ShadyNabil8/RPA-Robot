@@ -67,7 +67,7 @@ namespace rpa_robot
 
                         if (!activityStateRecord.Activity.Name.Equals("DynamicActivity"))
                         {
-                            Helper.PrintOnUI($"Activity name: {activityStateRecord.Activity.Name}\nStatus: {activityStateRecord.State}\nTime: {activityStateRecord.EventTime}\n--------------------\n");
+                            //Helper.PrintOnUI($"Activity name: {activityStateRecord.Activity.Name}\nStatus: {activityStateRecord.State}\nTime: {activityStateRecord.EventTime}\n--------------------\n");
                             
                             var log = JsonConvert.SerializeObject(new Data
                             {

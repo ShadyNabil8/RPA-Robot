@@ -1,9 +1,12 @@
 ﻿using Serilog;
+using Serilog.Core;
 using System;
 using System.ComponentModel;
 using System.IO;
 using System.Threading;
 using System.Windows.Controls;
+using System.Windows.Forms;
+using Serilog;
 
 namespace rpa_robot.Classes
 {
@@ -13,6 +16,7 @@ namespace rpa_robot.Classes
         //public static WorkflowHandler HandlerObj = new WorkflowHandler();
         //public static Thread ListenerFromService = new Thread(AsynchronousSocketListener.StartListening);
         public static BackgroundWorker ListenerWorker = new BackgroundWorker();
+        
         public static void AppInit()
         {
 
@@ -71,7 +75,6 @@ namespace rpa_robot.Classes
             }
             catch (Exception)
             { throw; }
-
         }
         public static void SocketListenerInit()
         {

@@ -50,28 +50,19 @@ namespace rpa_robot
                 // Workflow execution completed successfully
                 //LastWorkFlowDone = true;
                 Log.Information("Workflow completed successfully!");
-                Globals.uiDispatcher.Invoke(() =>
-                {
-                    Globals.LogsTxtBox.AppendText("Workflow completed successfully!\n");
-                });
+                Helper.PrintOnUI("Workflow completed successfully!");
             }
             else if (obj.CompletionState == ActivityInstanceState.Canceled)
             {
                 // Workflow execution was canceled
                 Log.Information("Workflow was canceled!");
-                Globals.uiDispatcher.Invoke(() =>
-                {
-                    Globals.LogsTxtBox.AppendText("Workflow was canceled!\n");
-                });
+                Helper.PrintOnUI("Workflow was canceled!");
             }
             else if (obj.CompletionState == ActivityInstanceState.Faulted)
             {
                 // Workflow execution encountered an error
                 Log.Information("Workflow encountered an error!");
-                Globals.uiDispatcher.Invoke(() =>
-                {
-                    Globals.LogsTxtBox.AppendText("Workflow encountered an error!\n");
-                });
+                Helper.PrintOnUI("Workflow encountered an error!");
             }
         }
   

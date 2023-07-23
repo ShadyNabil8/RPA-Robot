@@ -24,7 +24,7 @@ namespace rpa_robot
     public partial class Login : Window
     {
         public bool IsDarkTheme { get; set; }
-        private readonly PaletteHelper paletteHelper = new PaletteHelper();
+        public readonly PaletteHelper paletteHelper = new PaletteHelper();
         public Login()
         {
             InitializeComponent();

@@ -15,6 +15,7 @@ using System.Net.NetworkInformation;
 using System.Windows;
 using System.Activities.Tracking;
 using System.Globalization;
+using Serilog.Core;
 
 namespace rpa_robot.Classes
 {
@@ -235,15 +236,10 @@ namespace rpa_robot.Classes
             SendToService(cardinalities);
             MainWindow main = new MainWindow();
             main.Show();
-            
-            MessageBox.Show("Registered successfully!");
         }
         public static void PrintOnUI(string data)
         {
-            Globals.uiDispatcher.Invoke(() =>
-            {
-                Globals.StatusTxtBox.AppendText(data);
-            });
+            MainWindow.UILogger.Information(data);
         }
         public static string GetTime()
         {

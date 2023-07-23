@@ -34,8 +34,6 @@ namespace rpa_robot.Classes
         public static string destinationFilePath = @"C:\rboHive\WfDest\Workflow.xaml";
         public static string serviceExePath = @"D:\New folder\CSE\grad.Proj\rpa_robot\rpaService\bin\Debug\rpaService.exe";
         public static string AuthenticationEndPoint = "http://34.155.103.216/api/robot/login/";
-        public static TextBox LogsTxtBox   = new TextBox();
-        public static TextBox StatusTxtBox = new TextBox();
         public static System.Windows.Threading.Dispatcher uiDispatcher = Application.Current.Dispatcher;
         public static System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
 
