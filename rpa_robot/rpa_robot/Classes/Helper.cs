@@ -233,7 +233,7 @@ namespace rpa_robot.Classes
         }
         public static void OnLoggedIn(string cardinalities)
         {
-            SendToService(cardinalities);
+            //SendToService(cardinalities);
             MainWindow main = new MainWindow();
             main.Show();
         }

@@ -14,7 +14,7 @@ namespace rpa_robot.Classes
         (
             new Dictionary<RichTextBoxThemeStyle, RichTextBoxConsoleThemeStyle>
             {
-                [RichTextBoxThemeStyle.Text] = new RichTextBoxConsoleThemeStyle { Foreground = ColorToHtmlColorCode(Color.LightSkyBlue) },
+                [RichTextBoxThemeStyle.Text] = new RichTextBoxConsoleThemeStyle { Foreground = ColorToHtmlColorCode(Color.CornflowerBlue) },
                 [RichTextBoxThemeStyle.SecondaryText] = new RichTextBoxConsoleThemeStyle { Foreground = ColorToHtmlColorCode(Color.Gray) },
                 [RichTextBoxThemeStyle.TertiaryText] = new RichTextBoxConsoleThemeStyle { Foreground = ColorToHtmlColorCode(Color.DarkGray) },
                 [RichTextBoxThemeStyle.Invalid] = new RichTextBoxConsoleThemeStyle { Foreground = ColorToHtmlColorCode(Color.Yellow) },

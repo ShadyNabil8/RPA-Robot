@@ -24,7 +24,7 @@ namespace rpa_robot.Classes
         //public static string WorkflowFilePath = @"C:\Users\shady\Desktop\Assemblies\Workflow.xaml";
         public static string WorkflowFilePath = @"C:\rboHive\WfDest\Workflow.xaml";
         //public static string ImagePath = @"D:\New folder\CSE\grad.Proj\img\robot.ico";
-        public static string ImagePath = @".\robot.ico";
+        public static string ImagePath = @".\logo.ico";
         //public static string watcherPath = @".\WfSource\";
         public static string watcherPath = @"C:\rboHive\WfSource\";
         public static string destinationPath = @"C:\rboHive\WfDest\";

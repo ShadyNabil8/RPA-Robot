@@ -6,17 +6,17 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:rpa_robot"
         mc:Ignorable="d"
-        Title="RoboHive" Height="760" Width="450"
+        Title="RoboHive" Height="600" Width="400"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{x:Null}"
-        AllowsTransparency="True"
-        WindowStyle="None"
+        AllowsTransparency="False"
+        WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterScreen">
-    <materialDesign:Card UniformCornerRadius="15" Background="{DynamicResource MaterialDesignPaper}" Margin="25">
+    <materialDesign:Card UniformCornerRadius="0" Background="{DynamicResource MaterialDesignPaper}" Margin="0">
         <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost">
             <StackPanel>
                 <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0" PlacementMode="BottomAndAlignRightEdges"
-                                         StaysOpen="False" Height="25" materialDesign:ElevationAssist.Elevation="Dp0">
+                StaysOpen="False" Height="25" materialDesign:ElevationAssist.Elevation="Dp0">
                     <StackPanel>
                         <StackPanel Margin="16 10 0 6" Orientation="Horizontal"
                     HorizontalAlignment="Center">
@@ -31,13 +31,13 @@
                 <Image Margin="0 0 0 5" Source="logo.png" Height="100" />
                 <RichTextBox
                     x:Name="rtblogger" Background="Transparent" Foreground="Transparent" BorderThickness="2"
-                         BorderBrush="{DynamicResource MaterialDesignDivider}"
+                    BorderBrush="{DynamicResource MaterialDesignDivider}"
                     FontFamily="Cascadia Mono, Consolas, Courier New, monospace"
-                    VerticalScrollBarVisibility="Auto" IsReadOnly="true"
-                    Width="350" Height="500" materialDesign:TextFieldAssist.TextFieldCornerRadius="10"/>
+                    VerticalScrollBarVisibility="Auto" IsReadOnly="true" FontSize="14" 
+                    Margin="20 0 20 0" materialDesign:TextFieldAssist.TextFieldCornerRadius="5"
+                    Height="400"
+                    />
             </StackPanel>
-            
         </materialDesign:DialogHost>
-        
     </materialDesign:Card>
 </Window>

@@ -84,7 +84,7 @@ namespace rpa_robot
                                 })
                             });
                             Log.Information(log);
-                            Helper.SendToService(log);
+                            //Helper.SendToService(log);
                         }
                     }
                 }
